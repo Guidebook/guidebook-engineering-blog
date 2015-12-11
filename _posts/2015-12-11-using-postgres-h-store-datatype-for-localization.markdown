@@ -8,12 +8,6 @@ authors:
     name: David Muller
     title: Developer
     twitter: dma
-  - slug: plada
-    name: Peter Lada
-    title: Creative Director
-    twitter: pklada
-
-
 
 tags:
   - postgres
