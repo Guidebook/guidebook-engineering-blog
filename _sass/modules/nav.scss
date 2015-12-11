@@ -134,7 +134,7 @@ $navbar-roof-height: 30px;
         background-size: 109px 23px;
         position: relative;
         top: 2px;
-        @include image-2x($asset-url + "img/img_nav_logo@2x.png", 109px, 23px);
+        @include image-2x($guidebook-image-url + "img_nav_logo@2x.png", 109px, 23px);
       }
 
       > h1 {

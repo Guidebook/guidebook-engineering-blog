@@ -46,6 +46,16 @@
   <!-- test for mobile browser size -->
   <div class="js-mobile-test"></div>
 
+  <script type="text/javascript">
+  // toggle mobile menu
+  $('.js-mobile-menu').on('click', function(e) {
+    e.preventDefault();
+    $('html').removeClass('mobile-menu-hidden');
+    $('.layout').toggleClass('is-open');
+  });
+  </script>
+
+
 </body>
 
 

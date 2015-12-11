@@ -10,6 +10,14 @@ html {
   height: auto;
 }
 
+@media only screen and (max-width: 600px) {
+  /* line 31, ../_sass/blog.scss */
+  .title-text {
+    display: block;
+    margin-top: 5px;
+  }
+}
+
 /* line 18, ../bower_components/guidebook-common-styles/mixins/_blumess-support.sass */
 .post {
   width: 750px;

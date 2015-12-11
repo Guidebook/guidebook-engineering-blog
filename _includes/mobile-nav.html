@@ -1,22 +1,19 @@
 <nav class="mmu">
   <ul class="mmu_section">
     <li class="mmu_item">
-      <a href="{{ site.baseurl }}/" class="mmu_link js-pjax {% if page.selected == "overview" %}is-selected{% endif %}">Home</a>
+      <a href="{{ site.baseurl }}" class="mmu_link">Blog home</a>
     </li>
     <li class="mmu_item">
-      <a href="{{ site.baseurl }}/pricing/" class="mmu_link js-pjax {% if page.selected == "pricing" %}is-selected{% endif %}">Pricing</a>
+      <a href="{{ site.guidebookbaseurl }}/careers/" class="mmu_link">Come build with us!</a>
     </li>
     <li class="mmu_item">
-      <a href="{{ site.baseurl }}/reviews/" class="mmu_link js-pjax {% if page.selected == "reviews" %}is-selected{% endif %}">Customers</a>
+      <a href="{{ guidebookbaseurl.baseurl }}/guides/" class="mmu_link js-pjax {% if page.selected == "guides" %}is-selected{% endif %}">Find guide</a>
     </li>
     <li class="mmu_item">
-      <a href="{{ site.baseurl }}/guides/" class="mmu_link js-pjax {% if page.selected == "guides" %}is-selected{% endif %}">Find guide</a>
+      <a href="{{ site.guidebookbaseurl }}/contact/" class="mmu_link js-pjax {% if page.selected == "contact" %}is-selected{% endif %}"Contact</a>
     </li>
     <li class="mmu_item">
-      <a href="{{ site.baseurl }}/contact/" class="mmu_link js-pjax {% if page.selected == "contact" %}is-selected{% endif %}"Contact</a>
-    </li>
-    <li class="mmu_item">
-      <a href="{{ site.baseurl }}/login/" class="btn mmu_btn btn-primary js-pjax" data-event-name="Login (Mobile Nav)">Login</a>
+      <a href="{{ site.guidebookbaseurl }}/login/" class="btn mmu_btn btn-primary js-pjax" data-event-name="Login (Mobile Nav)">Login</a>
     </li>
   </ul>
 </nav>

@@ -17,6 +17,24 @@
 // Settings
 @import "settings";
 
+// Blog title
+
+.title {
+
+}
+
+.title-gear {
+  @include mobile {
+  }
+}
+
+.title-text {
+  @include mobile {
+    display: block;
+    margin-top: 5px;
+  }
+}
+
 // Modules
 
 @import "modules/post";

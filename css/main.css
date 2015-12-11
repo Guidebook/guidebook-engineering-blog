@@ -3813,7 +3813,7 @@ p > code, ul > code, ol > code {
   /* line 116, ../_sass/modules/nav.scss */
   .nav_item > .logo {
     /* on retina, use image that's scaled by 2 */
-    background-image: url("/img/img_nav_logo@2x.png");
+    background-image: url("http://guidebook.com/img/img_nav_logo@2x.png");
     background-size: 109px 23px;
   }
 }
@@ -4167,6 +4167,14 @@ p > code, ul > code, ol > code {
     -webkit-background-size: 48px auto;
     background-size: 48px auto;
     background-position: 0 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  /* line 31, ../_sass/blog.scss */
+  .title-text {
+    display: block;
+    margin-top: 5px;
   }
 }
 
