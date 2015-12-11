@@ -16,6 +16,42 @@
     <meta name="analytics_page_name" content="{{ page.analytics_page_name }}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' }}">
 
+    {% if page.id %}
+    <meta name="description" content="{{ page.content | strip_html | truncate: 200 }}" />
+    <title>{{ page.title }} | {{ site.name }}</title>
+    <meta property="og:title" content="{{page.title}} | {{ site.name }}" />
+    <meta property="og:description" content="{{ page.content | strip_html | truncate: 200 }}" />
+    <meta name="twitter:title" content="{{page.title}} | {{ site.name }}" />
+    <meta name="twitter:description" content="{{ page.content | strip_html | truncate: 200 }}" />
+    {% else %}
+    <meta name="description" content="{{site.description}}" />
+    <title>{{ site.name }}</title>
+    <meta property="og:title" content="{{site.name}}" />
+    <meta property="og:description" content="{{ site.description }}" />
+    <meta name="twitter:title" content="{{site.name}}" />
+    <meta name="twitter:description" content="{{ site.description }}" />
+    {% endif %}
+
+    <!-- fb open grah -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="{{ site.name }}" />
+    <meta property="og:url" content="http://engineering.guidebook.com" />
+
+    <!-- twitter meta -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@guidebook" />
+    <meta name="twitter:creator" content="@guidebook" />
+
+    {% if page.img %}
+    <link rel="image_src" href="{{ page.img }}" />
+    <meta property="og:image" content="{{ page.img }}" />
+    <meta name="twitter:image" content="{{ page.img }}" />
+    {% else %}
+    <link rel="image_src" href="http://guidebook.com/img/img_guidebook_engineering.png" />
+    <meta property="og:image" content="http://guidebook.com/img/img_guidebook_engineering.png" />
+    <meta name="twitter:image" content="http://guidebook.com/img/img_guidebook_engineering.png" />
+    {% endif %}
+
     <!-- typography css, necessary for whitney and gotham -->
     <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6167292/627024/css/fonts.css" >
 
