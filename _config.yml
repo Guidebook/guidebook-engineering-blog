@@ -2,7 +2,7 @@
 title: Guidebook Engineering
 email: engineering@domain.com
 description: Guidebook's engineering blog
-baseurl: "/"
+baseurl: ""
 url: "http://engineering.guidebook.com" # the base hostname & protocol for your site
 twitter_username: guidebook
 github_username:  guidebook
