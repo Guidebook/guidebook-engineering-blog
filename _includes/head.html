@@ -1,0 +1,30 @@
+<head>
+
+    {% if site.env == 'prod' %}
+        <script type="text/javascript" src="//cdn.bizible.com/scripts/bizible.js" async=""></script>
+        {% if site.lang == 'en' %}
+            <script src="//cdn.optimizely.com/js/2208012285.js"></script>
+        {% endif %}
+    {% endif %}
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="google-site-verification" content="fuwPJZJgfjuODVEBIRsgX0W302JaRLE1JL8XndKvcyA" />
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="analytics_page_name" content="{{ page.analytics_page_name }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' }}">
+
+    <!-- typography css, necessary for whitney and gotham -->
+    <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6167292/627024/css/fonts.css" >
+
+    <!-- our main css -->
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/main.css" >
+
+    <script>window.jQuery || document.write("<script src='{{ 'js/vendor/jquery.js' | prepend: site.asseturl }}'><\/script>")</script>
+
+    <!-- favicon-->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ 'favicon.ico' | prepend: site.asseturl }}" />
+
+</head>

@@ -1,0 +1,109 @@
+
+// ----- Helper Classes ----- //
+$distances: 0, 2, 3, 4, 5, 10, 20, 30, 40, 50, 80, 100;
+@each $i in $distances {
+  .p#{$i}{
+    padding: #{$i}px !important;
+  }
+  .pt#{$i}{
+    padding-top: #{$i}px !important;
+  }
+  .pb#{$i}{
+    padding-bottom: #{$i}px !important;
+  }
+  .pl#{$i}{
+    padding-left: #{$i}px !important;
+  }
+  .pr#{$i}{
+    padding-right: #{$i}px !important;
+  }
+  .m#{$i}{
+    margin: #{$i}px !important;
+  }
+  .mt#{$i}{
+    margin-top: #{$i}px !important;
+  }
+  .mb#{$i}{
+    margin-bottom: #{$i}px !important;
+  }
+  .ml#{$i}{
+    margin-left: #{$i}px !important;
+  }
+  .mr#{$i}{
+    margin-right: #{$i}px !important;
+  }
+}
+
+.mb-rhythm {
+  margin-bottom: rhythm(1) !important;
+}
+
+.mb-rhythm-2 {
+  margin-bottom: rhythm(2) !important;
+}
+
+.mt-rhythm {
+  margin-top: rhythm(1) !important;
+}
+
+.mb-rhythm-2 {
+  margin-bottom: rhythm(2) !important;
+}
+
+.mb-rhythm-mobile {
+  @include mobile {
+    margin-bottom: rhythm(1) !important;
+  }
+}
+
+.mb-rhythm-2-mobile {
+  @include tablet-and-mobile {
+    margin-bottom: rhythm(2) !important;
+  }
+}
+
+.tac {
+  text-align: center;
+}
+
+.tal {
+  text-align: left;
+}
+
+.tar {
+  text-align: right;
+}
+
+.caps {
+  text-transform: uppercase;
+}
+
+.hidden {
+  display: none;
+}
+
+.pull-left{
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.vam {
+  vertical-align: middle;
+}
+
+.item {
+  padding-left: 40px;
+  padding-right: 40px;
+
+  @include tablet-and-mobile {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+
+
+

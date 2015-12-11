@@ -1,0 +1,144 @@
+
+// Guide Cards (GDC)
+// ======================================
+
+// Variables
+
+$gdc-border-radius: 4px;
+$gdc-width: 140px;
+$gdc-height: 240px;
+$gdc-background: #fff;
+
+$gdc-width-mobile: 100px;
+$gdc-height-mobile: 170px;
+
+
+// Base
+
+@include module(gdc) {
+
+  @include box-shadow(0 3px 7px rgba(0, 0, 0, .2), 0 0 1px rgba(0, 0, 0, .55));
+  position: relative;
+  width: $gdc-width;
+  height: $gdc-height;
+  border-radius: $gdc-border-radius;
+  padding: $base-padding;
+  background-color: white;
+  display: block;
+  text-decoration: none !important;
+  @include transition(opacity ease-in-out 100ms);
+
+  @include submodule (subtle) {
+    @include box-shadow(0 0 0 1px rgba(0, 0, 0, .07), 0 3px 7px 0 rgba(0, 0, 0, .12));
+  }
+
+  @include submodule (clickable) {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+    &:hover,
+    &:focus{
+      background-color: darken(white, 1%);
+
+      .gdc_title {
+
+        &:before {
+          @include background(linear-gradient(top, rgba(255,255,255,0), darken(white, 1%)));
+        }
+      }
+    }
+
+    &:active,
+    &.clicked {
+      background-color: darken(white, 3%);
+
+      .gdc_title {
+
+        &:before {
+          @include background(linear-gradient(top, rgba(255,255,255,0), darken(white, 3%)));
+        }
+      }
+    }
+  }
+
+  @include submodule (hidden) {
+    opacity: 0;
+  }
+
+  @include submodule (visible) {
+    opacity: 1;
+  }
+
+  @include mobile {
+    width: 100%;
+    max-width: $gdc-width-mobile;
+    height: $gdc-height-mobile;
+    padding: 10px;
+  }
+
+  @include element(icon) {
+    width: 100px;
+    height: 82px;
+    border-radius: $gdc-border-radius;
+    margin: 0 auto ($base-padding * 0.75) auto;
+    display: block;
+    text-align: left;
+    
+    > img {
+      max-width: 100%;
+    }
+
+    @include mobile {
+      width: 60px;
+      height: 49.5px;
+      margin: 0 0 10px 0;
+    }
+  }
+
+  @include element(title) {
+    @include adjust-font-size-to(14px);
+    display: block;
+    color: color('steel-gray');
+    font-weight: $base-weight-bold;
+    @include adjust-leading-to(1, 14px);
+    height: 80px;
+    overflow: hidden;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: "";
+      height: 40px;
+      @include background(linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,1)));
+    }
+
+    @include mobile {
+      @include adjust-font-size-to(11px);
+      @include adjust-leading-to(1, 11px);
+      height: 60px;
+    }
+  }
+
+  @include element(date) {
+    @include adjust-font-size-to(10px);
+    @include adjust-leading-to(1, 10px);
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    font-weight: $base-weight;
+    color: color('steel-gray');
+
+    @include mobile {
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+      @include adjust-font-size-to(9px);
+      @include adjust-leading-to(1, 9px);
+    }
+  }
+
+}

@@ -1,0 +1,112 @@
+// *************************************
+//
+//   Mobile Menu
+//
+// *************************************
+
+//   Variables
+
+
+
+//   Base
+
+
+@include module (mmu) {
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 260px;
+  height: 100%;
+  min-height: 100%;
+  background-color: color('dark-slate-gray');
+  z-index:1;
+  padding-top: 20px;
+  display: none;
+  opacity: 1;
+  
+  @include tablet-and-mobile {
+    display: block;
+  }
+
+  .mobile-menu-hidden & {
+    opacity: 0;
+  }
+
+  //   Modifiers
+
+
+
+  //   Elements
+
+
+  @include element( section ) {
+    list-style: none;
+    display: block;
+    padding: 20px;
+  }
+
+  @include element( item ) {
+    display: block;
+    padding: 0 0 20px 0;
+    margin: 0;
+  }
+
+  @include element (link) {
+    color: color('white');
+    text-transform: uppercase;
+    font-family: $gotham;
+    letter-spacing: 1px;
+    position: relative;
+    display: block;
+
+    &:hover {
+      color: color('white');
+    }
+
+    &:after {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      margin-top: -8px;
+      width: 14px;
+      height: 14px;
+      border: 2px solid color('white');
+      @include border-radius(100%);
+      background: transparent;
+      border-left-color: transparent;
+      content: "";
+      opacity: 0;
+      @include transition(opacity $anim-ease $anim-speed-normal);
+      @include animation(rotate 1250ms infinite linear);
+    }
+
+    &.is-waiting {
+
+      &:after {
+        opacity: 1;
+      }
+    }
+
+    &.is-selected {
+      opacity: .4;
+    }
+  }
+
+  @include element (btn) {
+    display: block;
+    margin: 0 0 20px 0;
+    width: 100%;
+    text-transform: uppercase;
+    font-family: $gotham;
+    letter-spacing: 1px;
+  }
+
+}
+
+
+
+
+
+
+

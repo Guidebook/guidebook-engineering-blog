@@ -1,0 +1,11 @@
+// Mixins for hi-res artwork.
+// Caution: @2x images "should be divisible by 4", says README. Unclear
+// if this means divisible by 2 in each dimension for a total of by 4 pixels area,
+// or each dimension should be divisible by 4
+// (the latter seems a more straight-forward interpretation).
+//
+// https://github.com/alanhogan/Retina-Sprites-for-Compass/tree/release-2.0
+
+@import "retina/retina";
+@import "retina/sprite";
+@import "retina/background";

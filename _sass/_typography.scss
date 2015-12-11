@@ -1,0 +1,145 @@
+
+
+// Typography
+// ======================================
+
+h1, h2, h3, h4, h5, h6 {
+  color: $base-ink-light;
+  font-family: $base-font-family;
+  font-weight: $base-weight;
+  margin: 0; 
+}
+h1 { @include adjust-font-size-to(50px); @include adjust-leading-to(2.5); padding-bottom: rhythm(1); font-weight: $base-weight-light}
+h2 { @include adjust-font-size-to(40px); @include adjust-leading-to(2.5); padding-bottom: rhythm(1); font-weight: $base-weight-light}
+h3 { @include adjust-font-size-to(22px); @include adjust-leading-to(1.5); padding-bottom: rhythm(1); }
+h4 { @include adjust-font-size-to(14px); @include adjust-leading-to(1); padding-bottom: rhythm(.5); font-weight: $base-weight-bold;}
+h5 { @include adjust-font-size-to(14px); @include adjust-leading-to(1); padding-bottom: rhythm(.5); }
+h6 { font-size: 17px; line-height: 24px; }
+.subheader { color: #777; }
+
+
+p {
+  @include font-size($base-font-size);
+  color: $base-ink;
+  font-weight: $base-weight;
+  padding-bottom: rhythm(1);
+  margin-bottom: 0;
+  margin-top: 0;
+  @include adjust-leading-to(1);
+
+  &:first-child {
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+}
+
+.large {
+  @include adjust-font-size-to(16px);
+  @include adjust-leading-to(1, 16px);
+
+  @include mobile {
+    @include adjust-font-size-to($base-font-size);
+    @include adjust-leading-to(1, $base-font-size);
+  }
+}
+
+ul, ol {
+  @extend p;
+  list-style: none;
+
+  li {
+    margin-bottom: rhythm(.5);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.bulleted-list {
+
+  li {
+    padding-left: 14px;
+    text-indent: -14px;
+
+    &:before {
+      margin-right: 8px;
+      content: "•";
+      color: color('gray');
+    }
+  }
+}
+
+.icon-list {
+
+  li {
+    position: relative;
+    padding-left: 32px;
+  }
+
+  .icon-list_icon {
+    position: absolute;
+    left: 0;
+    top: 2px;
+
+    @include mobile {
+      top: 0;
+    }
+  }
+}
+
+.spaced-list {
+
+  li {
+    margin-bottom: rhythm(1);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.prose {
+  @include adjust-font-size-to(16px);
+  @include adjust-leading-to(1, 16px);
+
+  color: color('dark-gray');
+
+  @include mobile {
+    @include adjust-font-size-to($base-font-size);
+    @include adjust-leading-to(1, $base-font-size);
+  }
+}
+
+a {
+  color: $base-primary;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+hr { border: solid $base-placeholder; border-width: 1px 0 0; clear: both; margin: 10px auto 30px auto; height: 0; }
+
+p > code {
+  border: 1px solid color('border');
+  @include border-radius($base-border-radius);
+  background: #fcfdfe;
+  padding: 2px 5px;
+}
+
+
+@include mobile {
+  p { @include adjust-leading-to(1); }
+  h1 { @include adjust-font-size-to(30px); @include adjust-leading-to(1, 25px);}
+  h2 { @include adjust-font-size-to(20px); @include adjust-leading-to(1, 20px);}
+  h3 { @include adjust-font-size-to(16px); @include adjust-leading-to(1, 16px);}
+  h4 { @include adjust-font-size-to(13px); @include adjust-leading-to(1, 13px);}
+  h5 { @include adjust-font-size-to(12px); @include adjust-leading-to(.8, 12px);}
+}

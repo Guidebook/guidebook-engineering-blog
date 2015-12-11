@@ -1,0 +1,39 @@
+// Home page
+
+
+.l-hero-home-iphone6 {
+  top: 63px;
+  width: 320px;
+  height: 641px;
+  z-index: $z-content+1;
+
+  @include tablet-and-mobile {
+    top: auto;
+    left: auto;
+    right: auto;
+    text-align: center;
+    width: auto;
+
+    &:before {
+      display: none;
+    }
+  }
+}
+
+.l-hero-home-nexus5 {
+  right: -100px;
+  top: 35px;
+  z-index: $z-content;
+
+  @include desktop {
+    right: -180px;
+  }
+
+  @include laptop {
+    right: -180px;
+  }
+
+  @include tablet-and-mobile {
+    display: none;
+  }
+}

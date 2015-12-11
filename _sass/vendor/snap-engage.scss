@@ -1,0 +1,9 @@
+// Snap Engage override
+
+body .SnapABug_Button {
+  @include transform(translateZ(0));
+
+  @include mobile {
+    display: none !important;
+  }
+}

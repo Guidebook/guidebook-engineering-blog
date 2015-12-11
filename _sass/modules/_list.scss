@@ -1,0 +1,71 @@
+// *************************************
+//
+//   List (ul) with rows inside. Rows can be fully clickable links
+//
+// *************************************
+
+//   Variables
+
+
+
+//   Base
+
+
+@include module (lst) {
+
+  list-style: none;
+
+  //   Modifiers
+
+
+
+  //   Elements
+
+  @include element (row) {
+    display: table;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  @include element (row_content) {
+    display: table-cell;
+    width: 100%;
+    vertical-align: middle;
+    padding: 5px 10px;
+    position: relative;
+
+    &.is-selected {
+      padding-right: 38px;
+      
+      &:after {
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 20px;
+        right: 10px;
+        top: 50%;
+        margin-top: -10px;
+        background: url($asset-url + 'img/sprites/icons/ic_pvr_check.png');
+        @include image-2x($asset-url + 'img/sprites@2x/icons/ic_pvr_check.png', 20px, 20px);
+      }
+    }
+  }
+
+  @include element (divider) {
+    width: 100%;
+    border-bottom: 1px solid color('border');
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+
+
+}
+
+
+
+
+
+
+

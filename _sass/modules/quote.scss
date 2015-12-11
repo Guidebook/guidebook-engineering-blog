@@ -1,0 +1,88 @@
+
+// Avatars
+// ======================================
+
+// Variables
+
+$quote-large-font-size: 16px;
+
+// Base
+
+@include module(quote) {
+  position: relative;
+
+
+  @include submodule (large) {
+    > .quote_text {
+      @include adjust-font-size-to($quote-large-font-size);
+      @include adjust-leading-to(1, $quote-large-font-size);
+
+      @include mobile {
+        @include adjust-font-size-to($base-font-size);
+        @include adjust-leading-to(1, $base-font-size);
+      }
+    }
+  }
+
+
+  @include element(text) {
+    font-style: italic;
+  }
+
+  @include element(avatar) {
+
+    & ~ .quote_text {
+      padding-left: 140px;
+    }
+  }
+  
+  @include element(avatar-300) {
+    margin-top: -150px;
+
+    & ~ .quote_text {
+      padding-left: 240px;
+      
+      @include widescreen {
+        padding-left: 340px;
+      }
+
+      @include desktop {
+        padding-left: 340px;
+      }
+    }
+  }
+
+  @include element(avatar-150) {
+    margin-top: -75px;
+
+    & ~ .quote_text {
+      padding-left: 190px;
+
+      @include tablet {
+        padding-left: 160px;
+      }
+
+      @include mobile {
+        padding-left: 95px;
+      }
+    }
+  }
+
+
+  @include element(byline_author) {
+    font-weight: $base-weight-bold;
+  }
+
+  @include element(avatar) {
+    position: absolute;
+    left:0;
+    top: 50%;
+    margin-top: -50px;
+
+    @include mobile {
+      top: 0;
+      margin-top: 0;
+    }
+  }
+
+}

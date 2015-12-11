@@ -1,0 +1,89 @@
+
+// Hacks
+// ======================================
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+// Basic Styles
+// ======================================
+
+body {
+  background: $base-background;
+}
+
+.layout {
+  position: relative;
+  z-index: 2;
+  background-color: color('white');
+  @include transition(transform .33s cubic-bezier(.694,.0482,.335,1));
+  overflow-x: hidden;
+
+  &.is-open {
+    @include transform( translate3d(-260px,0,0) );
+    overflow: hidden;
+    height: 100%;
+    min-height: 100%;
+  }
+
+  @include non-mobile {
+
+    &.has-fixed-sct {
+      padding-top: 147px; // base height of sct module
+    }
+  }
+}
+
+.gray-link {
+  color: color('steel-gray');
+  
+  &:link, 
+  &:visited,
+  &:link:active, 
+  &:link:focus,
+  &:visited:active, 
+  &:visited:focus, 
+  &:link:hover,
+  &:visited:hover {
+    color: color('steel-gray');
+    font-weight: inherit;
+  }
+}
+
+
+*::-webkit-input-placeholder {
+    color: lighten(color('steel-gray'), 25%);
+    opacity: 1;
+}
+*:-moz-placeholder {
+    /* FF 4-18 */
+    color: lighten(color('steel-gray'), 25%);
+    opacity: 1;
+}
+*::-moz-placeholder {
+    /* FF 19+ */
+    color: lighten(color('steel-gray'), 25%);
+    opacity: 1;
+}
+*:-ms-input-placeholder {
+    /* IE 10+ */
+    color: lighten(color('steel-gray'), 25%);
+}
+
+.placeholder {
+  color: lighten(color('steel-gray'), 25%);
+}
+
+// mobile test element
+// ======================================
+
+.js-mobile-test {
+  visibility: hidden;
+
+  @include tablet-and-mobile {
+    visibility: visible;
+  }
+}

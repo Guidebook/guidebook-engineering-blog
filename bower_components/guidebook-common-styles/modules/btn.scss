@@ -1,0 +1,429 @@
+// *************************************
+//
+//   BUTTON
+//
+//
+// *************************************
+
+
+// Variables
+// ---------------------------------------------------
+
+// ! Note!
+// These colors should be moved into _colors.scss
+
+$btn--default: #d9d9d9; // Flat Color
+$btn--default--a: #eee; // Fill Gradient Start
+$btn--default--b: #ddd; // Fill Gradient End
+$btn--default--border--i: #e0e0e0; // Stroke Gradient Start
+$btn--default--border--ii: #ddd; // Stroke Gradient End
+$btn--default--border--flat: mix($btn--default--border--i, $btn--default--border--ii);
+$btn--default--hover: #F4F6F8;
+$btn--default--active: #EBEDF0;
+
+
+$btn--primary: #46a7e3;
+$btn--primary--a: #4aace9;
+$btn--primary--b: #3d9ad4;
+$btn--primary--border--i: #409fd8;
+$btn--primary--border--ii: #2e76a4;
+$btn--primary--border--flat: mix($btn--primary--border--i, $btn--primary--border--ii);
+$btn--primary--hover: #F5FBFF; // for lined buttons
+$btn--primary--hover--a: #5DC1FF; // for filled buttons
+$btn--primary--hover--b: #4EABE5;
+$btn--primary--hover--border--i: #4DADE8; // for filled buttons
+$btn--primary--hover--border--ii: #42A0DB;
+$btn--primary--hover--border--flat: mix($btn--primary--hover--border--i, $btn--primary--hover--border--ii);
+$btn--primary--active: #E5F0FB;
+$btn--primary--active--a: #40A2DF;
+$btn--primary--active--b: #308EC8;
+$btn--primary--active--border--i: #3D97CF;
+$btn--primary--active--border--ii: #2B80B4;
+$btn--primary--active--border--flat: mix($btn--primary--active--border--i, $btn--primary--active--border--ii);
+
+
+$btn--risky: color("red");
+$btn--risky--a: #ef5858;
+$btn--risky--b: #cc4f4f;
+$btn--risky--border--i:  #EC5050;
+$btn--risky--border--ii: #CA4F4F;
+$btn--risky--border--flat: mix($btn--risky--border--i, $btn--risky--border--ii);
+$btn--risky--hover: #FFF5F5;
+$btn--risky--hover--a: #F55E5E;
+$btn--risky--hover--b: #E45959;
+$btn--risky--hover--border--i: #D85454;
+$btn--risky--hover--border--ii: #D15454;
+$btn--risky--hover--border--flat: mix($btn--risky--hover--border--i, $btn--risky--hover--border--ii);
+$btn--risky--active: #FBE5E5;
+$btn--risky--active--a: #E44E4E;
+$btn--risky--active--b: #BF4545;
+$btn--risky--active--border--i: #A53535;
+$btn--risky--active--border--ii: #C44848;
+$btn--risky--active--border--flat: mix($btn--risky--active--border--i, $btn--risky--active--border--ii);
+
+
+
+// HELPER PLACEHOLDER SELECTOR & MIXIN
+// for the gradient border effect
+// ------------------------------------
+
+%with-gradient-border {
+  &:before, &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
+}
+
+@mixin gradient-border($width, $flat-color, $top-color, $bottom-color) {
+  @extend %with-gradient-border;
+
+  // progressive enhancement of border:
+  // border-image: linear-gradient($btn--primary--border--i, $btn--primary--border--ii) 14% stretch;
+  border-top-color: $top-color;
+  border-bottom-color: $bottom-color;
+  border-left-width: 0;
+  border-right-width: 0;
+
+  position: relative; // start positioning context for generated content
+  overflow: hidden; // clip the rectangles used for the side borders. alt technique is position the rectangle and guestimate start color value
+
+  &:before, &:after {
+    left: 0;
+    width: $width;
+    @include background-with-css2-fallback(linear-gradient($top-color, $bottom-color), $flat-color);
+  }
+  &:after {
+    left: auto; // undo above
+    right: 0;
+  }
+}
+
+
+// BASE
+// ---------------------------------------------------
+
+
+@include module(btn) {
+  $vpad: 7px;
+  $height: 40px;
+
+  display: inline-block;
+  height: $height;
+  box-sizing: border-box;
+  padding: $vpad 20px;
+  font-weight: 600;
+
+  // vertical-align: top, below, fixes the issue where buttons in a row would get pushed down.
+  // It has to do w/ overflow:hidden.
+  // see: http://stackoverflow.com/questions/9273016/why-is-this-inline-block-element-pushed-downward
+  vertical-align: top;
+
+  cursor: pointer;
+  user-select: none; // no text selection gives button a "pushy" feel
+
+  line-height: ($height - ($vpad * 2) - 1);
+  text-align: center;
+  text-decoration: none;
+
+  // The default button has a grey outline
+  border-radius: 4px;
+  background-color: white;
+  background-color: rgba(255,255,255,.8);
+  border: 1px solid $btn--default;
+  color: #515152;
+
+  // outline: none;
+
+  @include transition(box-shadow 100ms ease-in-out 250ms);
+  @include box-shadow(0 0 0 1px transparent, 0 0 0 3px transparent);
+
+  &:hover {
+    background-color: $btn--default--hover;
+    color: #515152;
+    text-decoration: none;
+  }
+
+  &:active,
+  &.is-active {
+    background-color: $btn--default--active;
+    color: #515152;
+    font-weight: 600;
+  }
+
+  &:focus{
+    outline:none;
+    @include box-shadow(0 0 0 1px #FFF, 0 0 0 3px transparentize($btn--default, .6));
+    color: #515152;
+    font-weight: 600;
+  }
+
+
+
+  // APPEARANCE
+  // ---------------------------------------------------
+
+
+  @include submodule(primary) { // blue button with gradient border and white text
+    color: white;
+    @include background-with-css2-fallback(linear-gradient($btn--primary--a, $btn--primary--b), $btn--primary--a);
+    @include gradient-border(1px, $btn--primary--border--flat, $btn--primary--border--i, $btn--primary--border--ii);
+    &:hover {
+      @include background-with-css2-fallback(linear-gradient($btn--primary--hover--a, $btn--primary--hover--b), $btn--primary--hover--a);
+      @include gradient-border(1px, $btn--primary--hover--border--flat, $btn--primary--hover--border--i, $btn--primary--hover--border--ii);
+      color: white;
+    }
+
+    &:active,
+    &.is-active {
+      @include background-with-css2-fallback(linear-gradient($btn--primary--active--a, $btn--primary--active--b), $btn--primary--active--a);
+      @include gradient-border(1px, $btn--primary--active--border--flat, $btn--primary--active--border--i, $btn--primary--active--border--ii);
+      color: white;
+    }
+
+    &:focus{
+      @include box-shadow(0 0 0 1px #FFF, 0 0 0 3px transparentize($btn--primary--a, .6));
+      color: white;
+    }
+  }
+
+  @include submodule(secondary) { // white button with blue border and blue text
+    color: $btn--primary;
+    border: 1px solid $btn--primary;
+
+    &:focus {
+      @include box-shadow(0 0 0 1px #FFF, 0 0 0 3px transparentize($btn--primary, .6));
+      color: $btn--primary;
+    }
+
+    &:hover {
+      background-color: $btn--primary--hover;
+      color: $btn--primary;
+    }
+
+    &:active,
+    &.is-active {
+      background-color: $btn--primary--active;
+      color: $btn--primary;
+    }
+  }
+
+  @include submodule(link) { // // Like a link, but not inline
+    color: $btn--primary;
+    border: 0 solid transparent;
+
+    &:focus {
+      @include box-shadow(0 0 0 1px #FFF, 0 0 0 3px transparentize($btn--primary, .6));
+      color: $btn--primary;
+    }
+
+    &:hover {
+      background-color: $btn--primary--hover;
+      color: $btn--primary;
+    }
+
+    &:active,
+    &.is-active {
+      background-color: $btn--primary--active;
+      color: $btn--primary;
+    }
+  }
+
+  @include submodule(dark) { // white button with blue border and blue text
+    $dark-button-focus: mix(color(text-on-dark), color(dark-bg), 75%);
+    color: color(text-on-dark);
+    border: 1px solid $dark-button-focus;
+
+    &:focus {
+      @include box-shadow(0 0 0 1px color(dark-bg), 0 0 0 3px transparentize($dark-button-focus, .4));
+      color: color(emphasized-text-on-dark);
+    }
+
+    &:hover {
+      background-color: rgba(white, 0.1);
+      color: color(emphasized-text-on-dark);
+    }
+
+    &:active,
+    &.is-active {
+      background-color: rgba(white, 0.15);
+      color: color(emphasized-text-on-dark);
+    }
+  }
+
+  @include submodule(hollow-on-dark) {
+    color: color("white");
+    border: 1px solid color("white");
+    background: transparent;
+
+    &:hover {
+      background: rgba(255,255,255,.1);
+      color: color('white');
+    }
+
+    &:focus {
+      @include box-shadow(0 0 0 1px color('blue'), 0 0 0 3px transparentize(color('white'), .4));
+      background: rgba(255,255,255,.1);
+      color: color('white');
+    }
+
+    &:active,
+    &.is-active {
+      color: color('white');
+      background: rgba(255,255,255,.2);
+    }
+  }
+
+  @include submodule(danger) { // white button with red border and blue text
+      color: $btn--risky; // maybe
+      border: 1px solid $btn--risky;
+      &:hover {
+        color: $btn--risky;
+      }
+      &:focus {
+        @include box-shadow(0 0 0 1px #FFF, 0 0 0 3px transparentize($btn--risky, .6));
+        color: $btn--risky;
+      }
+      &:active,
+      &.is-active {
+        color: $btn--risky;
+      }
+  }
+
+  @include submodule(primary danger) {  // red button with gradient border and white text
+    color: #fff;
+
+    @include gradient-border(1px, $btn--risky--border--flat, $btn--risky--border--i, $btn--risky--border--ii);
+    @include background-with-css2-fallback(linear-gradient($btn--risky--a, $btn--risky--b), $btn--risky--a);
+
+    &:hover {
+      color: #fff;
+      @include background-with-css2-fallback(linear-gradient($btn--risky--hover--a, $btn--risky--hover--b), $btn--risky--hover--a);
+      @include gradient-border(1px, $btn--risky--hover--border--flat, $btn--risky--hover--border--i, $btn--risky--hover--border--ii);
+    }
+
+    &:active,
+    &.is-active {
+      color: #fff;
+      @include background-with-css2-fallback(linear-gradient($btn--risky--active--a, $btn--risky--active--b), $btn--risky--active--a);
+      @include gradient-border(1px, $btn--risky--active--border--flat, $btn--risky--active--border--i, $btn--risky--active--border--ii);
+    }
+
+    &:focus{
+      color: #fff;
+      @include box-shadow(0 0 0 1px #FFF, 0 0 0 3px transparentize($btn--risky--border--flat, .5));
+    }
+  }
+
+  @include submodule(danger) { // white button with red border and red text
+    color: $btn--risky; // maybe
+    border: 1px solid $btn--risky;
+
+    &:hover {
+      color: $btn--risky;
+      background-color: $btn--risky--hover;
+    }
+
+    &:active,
+    &.is-active {
+      color: $btn--risky;
+      background-color: $btn--risky--active;
+    }
+  }
+
+  @include submodule(facebook) { // Facebook colored button
+    color: white;
+    border: 1px solid color('facebook-blue');
+    @include background-with-css2-fallback(linear-gradient(lighten(color('facebook-blue'), 10%), color('facebook-blue')), color('facebook-blue'));
+
+    &:focus {
+      color: white;
+    }
+
+    &:hover {
+      color: white;
+      @include background-with-css2-fallback(linear-gradient(lighten(color('facebook-blue'), 15%), lighten(color('facebook-blue'), 5%)), lighten(color('facebook-blue'), 5%));
+    }
+
+    &:active,
+    &.is-active {
+      color: white;
+      @include background-with-css2-fallback(linear-gradient(lighten(color('facebook-blue'), 10%), color('facebook-blue')), color('facebook-blue'));
+    }
+  }
+
+
+  // SIZES
+  // ---------------------------------------------------
+
+  @include submodule(large) {
+    font-size: 120%;
+    height: 48px;
+    padding: 10px 24px;
+    // todo: line height?
+  }
+
+  @include submodule(small) {
+    font-size: 90%;
+    line-height: 1.5;
+    height: 30px;
+    padding: 5px 10px;
+  }
+
+
+  @include submodule(mini) {
+    font-size: 75%;
+    line-height: 1.5;
+    height: 20px;
+    padding: 1px 5px;
+  }
+
+  @include submodule(full-width) {
+    width: 100%;
+  }
+
+  @include submodule ("wide") {
+    min-width: 200px;
+  }
+
+
+  // STATES (disabled)
+  // ---------------------------------------------------
+
+
+  @include state(disabled) {
+    opacity: 0.3; // Todo: Better disabled state
+    cursor: not-allowed;
+  }
+
+
+
+}
+
+
+// Container for buttons; combines them by removing inner border radii
+.group-btn {
+  @include pie-clearfix;
+  display: block;
+
+  > .btn {
+    float: left;
+  }
+
+
+  > .btn:not(:last-child) {
+    margin-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: transparent
+  }
+
+  > .btn:not(:first-child) {
+    margin-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+}

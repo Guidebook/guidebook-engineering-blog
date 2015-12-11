@@ -1,0 +1,97 @@
+
+// ----- Utility Classes ----- //
+
+// colors
+
+@each $color in ("green", "red", "blue", "teal", "gray", "light-gray") {
+  .#{$color}-color {
+    color: color('#{$color}') !important;
+  }
+}
+
+.img-full-width {
+  width: 100%;
+  position: relative;
+  @include border-radius($base-img-border-radius);
+  overflow: hidden;
+
+  &:before {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border: 1px solid rgba(0,0,0,.15);
+    content: "";
+    @include border-radius($base-img-border-radius);
+  }
+
+  &.no-border {
+
+    &:before {
+      display: none;
+    }
+  }
+
+  > img {
+    width: 100%;
+    display: block;
+  }
+}
+
+// icons
+
+.has-icon {
+  display: inline-block;
+  .icon {
+    float: left;
+    margin-right: 5px;
+  }
+}
+
+// Responsive Button group -- group of a few buttons that collapse nicely
+
+.responsive-button-group {
+  text-align: center;
+  > .btn {
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @include mobile {
+    > .btn {
+      margin-right: 0;
+      margin-bottom: 20px;
+      width: 100%;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+
+// loading spinner
+.spinner {
+  font-family: sans-serif;
+  font-weight: 100;
+}
+
+/* :not(:required) hides this rule from IE9 and below */
+.spinner:not(:required) {
+  @include animation(rotate 1250ms infinite linear);
+  border: 2px solid color('medium-gray');
+  border-right-color: transparent;
+  border-radius: 100%;
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 24px;
+  height: 24px;
+}

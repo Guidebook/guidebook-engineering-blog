@@ -1,0 +1,163 @@
+
+// Video
+// ======================================
+
+// module for a video player and video thumb
+
+
+
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+$video-aspect-ratio: (281/500);
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+@include module (vdo) {
+  position: relative;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em; /* Adjusts for spacing */
+  }
+
+  // -------------------------------------
+  //   Modifiers
+  // -------------------------------------
+
+
+  // -------------------------------------
+  //   Elements
+  // -------------------------------------
+
+
+  @include element (callout) {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  @include element (callout_description) {
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    vertical-align: middle;
+    margin-left: 10px;
+    width: 200px;
+  }
+
+  @include element (thumb) {
+    position: relative;
+    display: block;
+    width: 150px;
+    overflow: hidden;
+    @include border-radius($base-border-radius);
+    cursor: pointer;
+
+    > img {
+      width: 150px;
+      @include border-radius($base-border-radius);
+      display: block;
+      @include transition(transform $anim-ease $anim-speed-fast);
+    }
+
+    &:after {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background: rgba(255,255,255,.2);
+      content: "";
+      border: 1px solid rgba(0,0,0,.22);
+      @include border-radius($base-border-radius);
+      @include transition(background $anim-ease $anim-speed-fast);
+      cursor: pointer;
+    }
+
+    &:hover {
+
+      > img {
+        @include transform(scale(1.06));
+      }
+
+      &:after {
+        background: rgba(255,255,255,.4);
+      }
+    }
+  }
+
+  @include element (thumb-medium) {
+    width: 300px;
+
+    > img {
+      width: 300px;
+    }
+
+    @include mobile {
+      width: 200px;
+
+      > img {
+        width: 200px;
+      }
+    }
+  }
+
+  @include element (thumb_play) {
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    left: 50%;
+    margin-left: -25px;
+    @include transition(all ease-in-out 200ms);
+    z-index: $z-content + 2;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  @include element (thumb_duration) {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background: white;
+    background: rgba(255,255,255,.8);
+    color: color('steel-gray');
+    @include adjust-font-size-to(10px);
+    @include adjust-leading-to(1, 10px);
+    @include border-radius($base-border-radius - 1);
+    z-index: $z-content + 2;
+    padding: 0 3px;
+    border: 1px solid rgba(0,0,0,.18);
+  }
+
+  @include element (video) {
+    width: 1000px;
+    height: 1000px * $video-aspect-ratio;
+
+    @include laptop {
+      width: 800px;
+      height: 800px * $video-aspect-ratio;
+    }
+
+    @include tablet {
+      width: 500px;
+      height: 500px * $video-aspect-ratio;
+    }
+
+    @include mobile {
+      width: 300px;
+      height: 300px * $video-aspect-ratio;
+    }
+  }
+
+
+}
+

@@ -1,0 +1,59 @@
+---
+layout: default
+custom_css: blog
+translate: false
+---
+
+
+<main class="l-content post post-details">
+  <section class="section tac">
+    <p><span class="l-pipes"><a href="{{ site.baseurl }}" class="js-pjax"><span class="l-hidden-mobile">Guidebook </span>Engineering Blog</a>  </span><span class="post_date l-pipes">{{ page.date | date: '%b %d, %Y' }}</span></p>
+    <h2 class="post_title">{{ page.title }}</h2>
+    <div class="post_meta">
+      <div class="post_authors {% if page.authors.size == 1 %}l-hidden-desktop l-hidden-widescreen{% endif %}">
+        {% for author in page.authors %}
+          <span class="avatar avatar-30 vam"><img src="http://guidebook.com/img/team/{{ author.slug }}.png" class="avatar_image" /></span>
+        {% endfor %}
+        <div class="post_authors_names">
+          {% for author in page.authors %}<span class="post_authors_names_name">{% if author.twitter %}<a href="http://twitter.com/{{author.twitter}}" class="gray-link">{% endif %}{{ author.name }}{% if author.twitter %}</a>{% endif %}</span>{% if forloop.last == false %}, {% endif %}{% endfor %}
+        </div>
+      </div>
+
+      {% if page.tags %}
+      <div class="post_tags">
+        {% for tag in page.tags %}
+        <a class="post_tags_tag js-pjax" href="{{ site.baseurl }}/category/{{tag}}/">
+          <span class="post_tags_tag_hash">#</span>{{tag}}
+        </a>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+
+
+    </div>
+  </section>
+
+  <div class="section-divider"><hr /></div>
+
+  <section class="section">
+    <div class="post_body">
+      {% if page.authors.size == 1 %}
+      <div class="post_author tac l-hidden-laptop">
+        <div class="avatar">
+          <img src="http://guidebook.com/img/team/{{ page.authors[0].slug }}.png" class="avatar_image" />
+        </div>
+        <h3 class="post_author_name">{% if page.authors[0].twitter %}<a href="http://twitter.com/{{page.authors[0].twitter}}/" class="gray-link">{% endif %}{{ page.authors[0].name }}{% if page.authors[0].twitter %}</a>{% endif %}</h3>
+        <span class="post_author_title">{{ page.authors[0].title }}</span>
+      </div>
+      {% endif %}
+
+      {{ content }}
+
+    </div>
+
+    <div class="post_actions">
+      <a class="btn btn-secondary" href="http://twitter.com/share?text={{ page.title }}&url=http://guidebook.com{{site.baseurl}}{{ page.url }}">Share on Twitter</a>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,64 @@
+// *************************************
+//
+//   Case Study block
+//
+// *************************************
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+
+@include module (sdy) {
+
+  position: relative;
+  @include pie-clearfix();
+
+
+  // -------------------------------------
+  //   Modifiers
+  // -------------------------------------
+
+
+  // -------------------------------------
+  //   Elements
+  // -------------------------------------
+
+
+  @include element (figures) {
+    @extend .l-half;
+
+    > figure {
+      margin: 0;
+    }
+  }
+
+  @include element (content) {
+    @extend .l-half;
+  }
+
+  @include element (title) {
+    font-weight: $base-weight-bold;
+    text-transform: uppercase;
+    color: color('blue');
+    font-family: $gotham;
+
+    @include tablet-and-mobile {
+      margin-top: 0;
+    }
+  }
+
+  @include element (text) {
+  }
+
+  @include element (list) {
+  }
+
+
+}

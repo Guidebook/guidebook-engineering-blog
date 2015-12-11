@@ -1,0 +1,35 @@
+// Start building mini-section
+
+.l-start-building {
+
+  > .btn {
+    width: 300px;
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @include tablet {
+
+    > .btn {
+      width: auto;
+    }
+  }
+
+  @include mobile {
+
+    .btn {
+      width: auto;
+      display: block;
+      margin-bottom: rhythm(1);
+      margin-right: 0; 
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+}

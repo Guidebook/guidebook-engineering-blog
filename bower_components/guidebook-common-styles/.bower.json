@@ -1,0 +1,29 @@
+{
+  "name": "guidebook-common-styles",
+  "version": "1.1.3",
+  "authors": [
+    "plada@guidebook.com"
+  ],
+  "description": "Sass lib of common styles in use across guidebook projects.",
+  "main": "_base.sass",
+  "license": "Private",
+  "homepage": "http://sass.guidebook.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "1.1.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.1.3",
+    "commit": "d9a822e5efa27987f7d2fbb5dd3ec25bca506ba0"
+  },
+  "_source": "git@github.guidebook.com:Guidebook/common-styles.git",
+  "_target": "v1.x.x",
+  "_originalSource": "git@github.guidebook.com:Guidebook/common-styles.git",
+  "_direct": true
+}

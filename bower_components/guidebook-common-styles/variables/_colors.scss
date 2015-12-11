@@ -1,0 +1,178 @@
+// This file exports colors as a MAP to the global namespace ($colors).
+// Note also that it can export these colors as JSON for convenient use
+// in e.g. the styleguide.
+
+
+// Conventions:
+// "-bg" for background
+// "-text" for text color (not "color" despite this being the CSS property)
+// "-border" for border colors
+// "-hover", "-focus", "-active" as needed. (Very last part of the variable name)
+// "-bg-top" and "-bg-bottom" for simple bg gradients
+// "light-" for slightly lighter than the plain color
+// "dark-" for slighly darker than the plain color
+// "tint-" for mixed with white (very light, lighter than "light-")
+// "shade-" for mixed with dark (very dark, darker than "dark-")
+// "gray" because it is the more american spelling, and the one already in use at guidebook
+
+
+
+// Use this function to retrieve colors.
+@function color($name) {
+  @if map-has-key($colors, $name) {
+    @return  map-get($colors, $name);
+  } @else {
+    @error "No color is defined with name <#{$name}> for this project.";
+  }
+}
+
+
+// Initializer
+@function guidebook-colors() {
+
+  // PRIVATE variable colors (these do not become global)
+  // -------
+
+  $white: #fff;
+
+  // GUIDEBOOK BLUE & derivatives
+  $blue: #439fd8;
+  $light-blue: #d5e0ef;
+  $dark-blue: darken($blue, 10%);
+
+  // Official grays
+  $dark-gray: #48565e; // from https://guidebook.com/promo/
+  $medium-gray: #8f9fa9; // https://guidebook.com/promo/
+  $gray: $medium-gray;
+  $light-gray: #dce5eb; // https://guidebook.com/promo/
+
+  // Unofficial grays
+  $shade-gray: #2c3139;
+  $steel-gray: #515152;
+  $pebble-gray: #dadde1;
+  $slate-gray: mix($blue, $gray, 27%);
+  $dark-slate-gray: darken($slate-gray, 15%);
+  $tint-gray: mix($light-gray, white);
+  $shadow-gray: rgba($pebble-gray, 0.5);
+  // $smoke-gray: rgba($light-gray, 0.5);
+
+  // Reds
+  $red: #ea5f5f;
+  $tint-red: mix($red, white, 20%);
+  $shade-red: mix($red, $shade-gray, 20%);
+  $dark-red: mix($red, $shade-gray, 60%);
+  $black-red: mix($red, black, 30%);
+
+  // Yellows
+  $yellow: #eeee44;
+  $tint-yellow: mix($yellow, white, 20%);
+  $shade-yellow: mix($yellow, $shade-gray, 20%);
+  $dark-yellow: mix($yellow, $shade-gray, 60%);
+  $black-yellow: mix($yellow, black, 30%);
+
+  // Green
+  $green: #93cea0;
+  $teal: #71C6C4;
+
+
+  // 3rd party colors
+
+  $facebook-blue: #3B5998;
+
+  // EXPORT colors as a map
+  // ------
+
+
+  $colors-by-value: (
+
+    // First, COLORS BY VALUE
+    // ----------------------
+
+    "white": $white,
+
+    // Official grays
+    "dark-gray": $dark-gray,
+    "medium-gray": $medium-gray,
+    "gray": $gray,
+    "light-gray": $light-gray,
+    "tint-gray": $tint-gray,
+
+    // Unofficial grays
+    "shade-gray": $shade-gray,
+    "steel-gray": $steel-gray,
+    "pebble-gray": $pebble-gray,
+    "slate-gray": $slate-gray,
+    "dark-slate-gray": $dark-slate-gray,
+    "shadow-gray": $shadow-gray,
+    // "smoke-gray": $smoke-gray,
+
+    // GUIDEBOOK BLUE & derivatives
+    "blue": $blue,
+    "light-blue": $light-blue,
+    "dark-blue": $dark-blue,
+
+    // Reds
+    "red": $red,
+    "tint-red": $tint-red,
+    "shade-red": $shade-red,
+    "dark-red": $dark-red,
+    "black-red": $black-red,
+
+    // Yellows
+    "yellow": $yellow,
+    "tint-yellow": $tint-yellow,
+    "shade-yellow": $shade-yellow,
+    "dark-yellow": $dark-yellow,
+    "black-yellow": $black-yellow,
+
+    // Green
+
+    "green": $green,
+    "teal": $teal,
+
+    // 3rd party colors
+    "facebook-blue": $facebook-blue
+  );
+
+  $colors-by-function: (
+    // Now, COLORS BY FUNCTION
+    // -----------------------
+
+    // STANDARD SCHEME
+    "bg": $white,
+    "text": $steel-gray,
+    "link": $blue,
+    "link-hover": $dark-blue,
+    "border": $pebble-gray,
+    "shadow": $shadow-gray,
+
+    // "overlay": $smoke-gray,
+
+    // DARK
+    "dark-bg": $dark-gray,
+    "text-on-dark": $light-gray, // was #848c9c, standardized to light-gray
+    "emphasized-text-on-dark": $tint-gray,
+
+    // CODE
+    "code-text": $dark-slate-gray,
+
+    // BLUE THINGS
+    "blue-border": $light-blue,
+
+    // RED THINGS
+    "red-text": $shade-red,
+    "red-border": $dark-red,
+    "red-link": $black-red,
+
+    // YELLOW THINGS
+    "yellow-text": $shade-yellow,
+    "yellow-border": $dark-yellow,
+    "yellow-link": $black-yellow,
+
+  );
+
+  @return map-merge($colors-by-value, $colors-by-function);
+}
+
+// Export to global
+$colors: guidebook-colors();

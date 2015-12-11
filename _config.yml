@@ -1,0 +1,23 @@
+# Site settings
+title: Guidebook Engineering
+email: engineering@domain.com
+description: Guidebook's engineering blog
+baseurl: "/guidebook-engineering-blog"
+url: "http://engineering.guidebook.com" # the base hostname & protocol for your site
+twitter_username: guidebook
+github_username:  guidebook
+excerpt_separator: <!--end-->
+
+# Build settings
+markdown: kramdown
+
+#dev blog
+permalink: pretty
+tag_page_layout: category
+tag_page_dir: category
+
+#mini bundler
+minibundle:
+  minifier_commands:
+    css: ./node_modules/.bin/uglifycss
+    js: ./node_modules/.bin/uglifyjs

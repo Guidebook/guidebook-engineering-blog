@@ -1,0 +1,82 @@
+$debug: false !default
+$env: production !default
+
+@mixin debug
+  @if $debug
+    @content
+
+@mixin development
+  @if $env == development
+    @content
+
+@mixin illegal
+  @include development
+    &, & *
+      background: red !important
+      color: white !important
+      border: 9px double white !important
+      box-shadow: none !important
+
+
+// Mixins to show layout
+// ---------------------
+
+// necessary because calc(100% - 0) is considered invalid by browsers as of August 14, 2014
+@function pxIfUnitless($value)
+  @if unitless($value)
+    @return unquote("#{$value}px")
+  @else 
+    @return $value
+
+@mixin show-layout ($options)
+  $defaults: ( margin: 0, padding: 0, border-width: 0, position: relative, generated-content: before, padding-color: rgba(0, 128, 255, 0.3), margin-color: rgba(255, 20, 0, 0.3), )
+  $config: map-merge($defaults, $options)
+
+  $_margin: map-get($config, margin)
+  $_padding: map-get($config, padding)
+  $_border: map-get($config, border-width)
+
+
+  $margin-top: nth($_margin, 1)
+  $margin-right: if(length($_margin) > 1, nth($_margin, 2), $margin-top)
+  $margin-bottom: if(length($_margin) > 2, nth($_margin, 3), $margin-top)
+  $margin-left: if(length($_margin) > 3, nth($_margin, 4), $margin-right)
+  
+  $padding-top: nth($_padding, 1)
+  $padding-right: if(length($_padding) > 1, nth($_padding, 2), $padding-top)
+  $padding-bottom: if(length($_padding) > 2, nth($_padding, 3), $padding-top)
+  $padding-left: if(length($_padding) > 3, nth($_padding, 4), $padding-right)
+  
+  $border-top: nth($_border, 1)
+  $border-right: if(length($_border) > 1, nth($_border, 2), $border-top)
+  $border-bottom: if(length($_border) > 2, nth($_border, 3), $border-top)
+  $border-left: if(length($_border) > 3, nth($_border, 4), $border-right)
+
+  $padding-color: map-get($config, padding-color)
+
+  position: map-get($config, position)
+
+  &:#{map-get($config, generated-content)}
+    content: ''
+    display: block
+    box-sizing: content-box
+
+    pointer-events: none
+
+    position: absolute
+    top: -1 * ($margin-top + $border-top)
+    left: -1 * ($margin-left + $border-left)
+    width: calc(100% + #{pxIfUnitless($border-left)} + #{pxIfUnitless($border-right)})
+    height: calc(100% + #{pxIfUnitless($border-top)} + #{pxIfUnitless($border-bottom)})
+
+    border-color: map-get($config, margin-color)
+    border-style: solid
+    border-width: $margin-top $margin-right $margin-bottom $margin-left
+
+    $bg-top: linear-gradient($padding-color, $padding-color) calc(#{pxIfUnitless($border-left)} + #{pxIfUnitless($padding-left)}) $border-top / calc(100% - #{pxIfUnitless($border-left)} - #{pxIfUnitless($padding-left)} - #{pxIfUnitless($padding-right)} - #{pxIfUnitless($border-right)}) $padding-top no-repeat
+    $bg-bottom: linear-gradient($padding-color, $padding-color) calc(#{pxIfUnitless($border-left)} + #{pxIfUnitless($padding-left)}) calc(100% - #{pxIfUnitless($border-top)}) / calc(100% - #{pxIfUnitless($border-left)} - #{pxIfUnitless($padding-left)} - #{pxIfUnitless($padding-right)} - #{pxIfUnitless($border-right)}) $padding-bottom no-repeat
+    $bg-left: linear-gradient($padding-color, $padding-color) $border-left $border-top / #{pxIfUnitless($padding-left)} calc(100% - #{pxIfUnitless($border-top)} - #{pxIfUnitless($border-bottom)}) no-repeat
+    $bg-right: linear-gradient($padding-color, $padding-color) calc(100% - #{pxIfUnitless($border-right)}) calc(100% - #{pxIfUnitless($border-bottom)}) / $padding-right calc(100% - #{pxIfUnitless($border-top)} - #{pxIfUnitless($border-bottom)}) no-repeat
+
+    background: unquote("#{$bg-top}, #{$bg-right}, #{$bg-bottom}, #{$bg-left}") 
+

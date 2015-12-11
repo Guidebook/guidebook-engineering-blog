@@ -1,0 +1,89 @@
+
+// Avatars
+// ======================================
+
+// Variables
+
+
+
+// Base
+
+@include module(avatar) {
+
+  width: 100px;
+  height: 100px;
+  @include border-radius($base-avatar-border-radius);
+  background: color('border');
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    @include border-radius($base-avatar-border-radius);
+    border: 1px solid rgba(0,0,0,.2);
+    content: "";
+    z-index: 3;
+  }
+
+  @include submodule (300) {
+    width: 300px;
+    height: 300px;
+    max-width: 300px;
+    max-height: 300px;
+
+    @include laptop {
+      width: 200px;
+      height: 200px;
+    }
+
+    @include tablet {
+      width: 200px;
+      height: 200px;
+    }
+
+    @include mobile {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  @include submodule (150) {
+    width: 150px;
+    height: 150px;
+    max-width: 150px;
+    max-height: 150px;
+
+    @include tablet {
+      width: 120px;
+      height: 120px;
+    }
+
+    @include mobile {
+      width: 75px;
+      height: 75px;
+    }
+  }
+
+  @include submodule (30) {
+    width: 30px;
+    height: 30px;
+    max-width: 30px;
+    max-height: 30px;
+  }
+
+  @include element (image) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    @include border-radius($base-avatar-border-radius);
+    width: 100%;
+    z-index: 1;
+  }
+}
+

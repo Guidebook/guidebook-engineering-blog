@@ -1,0 +1,53 @@
+// *************************************
+//
+//   Form elements 
+//
+// *************************************
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+@include module (error) {
+  padding-bottom: rhythm(1);
+
+  // -------------------------------------
+  //   Modifiers
+  // -------------------------------------
+
+
+
+  // -------------------------------------
+  //   Elements
+  // -------------------------------------
+
+  @include element (item) {
+    padding: 0;
+    font-size: 0;
+    display: none;
+
+    &.filled {
+      @extend p;
+      color: color('red');
+      display: inline-block;
+      padding: 0;
+
+      a {
+        color: color('red');
+      }
+    }
+  }
+
+  @include element( item_text ) {
+    display: inline-block;
+    padding-right: 10px;
+  }
+}
+
+
+

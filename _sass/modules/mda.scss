@@ -1,0 +1,91 @@
+
+// Media Article
+// ======================================
+
+// This is for content that has a media item (usually an image) pulled to the left or right with text to the side. 
+
+
+
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+@include module( mda ) {
+  @include pie-clearfix();
+  position: relative;
+  display: block;
+
+  &:first-child {
+    padding-right: 40px;
+  }
+
+  @include tablet-and-mobile {
+    margin-bottom: 60px;
+
+    &:first-child {
+      padding-right: 0;
+    }
+  }
+
+  // -------------------------------------
+  //   Modifiers
+  // -------------------------------------
+
+
+
+  // -------------------------------------
+  //   Elements
+  // -------------------------------------
+
+  @include element( media ) {
+    float: left;
+    width: 150px;
+    text-align: center;
+  }
+
+  @include element( article ) {
+    margin-left: 150px;
+    margin-right: $gutter;
+
+    @include widescreen {
+      max-width: 250px;
+    }
+
+    @include tablet-and-mobile {
+      margin-right: $gutter-mobile;
+    }
+
+    > p {
+      padding: 0;
+    }
+  }
+}
+
+.mda-group {
+  @include pie-clearfix();
+  clear: both;
+  margin-bottom: 80px;
+
+  &:last-child {
+    margin-bottom: 0;
+
+    @include tablet-and-mobile {
+    
+      .mda:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include tablet-and-mobile {
+    margin-bottom: 0;
+  }
+
+}

@@ -1,0 +1,409 @@
+
+// General layout classes
+// ----------------------
+
+.l-clearfix
+  @include pie-clearfix
+
+.l-overflow-hidden
+  overflow: hidden
+
+.l-fl
+  float: left
+.l-fr
+  float: right
+
+.l-min-cube
+  min-width: 160px
+  min-height: 160px
+
+.l-hidden
+  display: none !important
+
+.l-block
+  display: block !important
+
+.l-inline-block
+  display: inline-block !important
+
+// Positioning
+
+.l-abs
+  position: absolute !important
+
+.l-rel
+  position: relative !important
+
+.l-fix
+  position: fixed !important
+
+.l-abs-full
+  @extend .l-abs
+  left: 0
+  top: 0
+  bottom: 0
+  right: 0
+
+// Mixins to support showing layout margins on the styleguide.
+// Based on Alan's show-layout project
+// ----------------------------------------------------------
+
+@mixin set-layout($properties)
+  @if map-has-key($properties, border-width)
+    border-width: map-get($properties, border-width)
+  @if map-has-key($properties, margin)
+    margin: map-get($properties, margin)
+  @if map-has-key($properties, padding)
+    padding: map-get($properties, padding)
+
+@mixin sg-set-and-show($properties)
+  @include set-layout($properties)
+
+  // avoid outputting this code to production
+  @include development
+    // When in styleguide. (Not a good pattern in general, but appropriate here)
+    .sg-section-layouts
+      @include show-layout($properties)
+
+@mixin sg-show-on-hover($properties)
+  // avoid outputting this code to production
+  @include development
+    // When in styleguide. (Not a good pattern in general, but appropriate here)
+    .sg-section-layouts &:hover
+      @include show-layout($properties)
+
+@mixin sg-set-and-show-on-hover($properties)
+  @include set-layout($properties)
+  @include sg-show-on-hover($properties)
+
+
+
+// The idea of a canvas is that it is something
+// you can fill with content. To make it easy to get
+// the top and bottom inner spacing just right,
+// the top & bottom "padding" here is implemented
+// with margins on generated content, so that
+// margin collapsing is possible.
+// https://developer.mozilla.org/en-US/docs/Web/CSS/margin_collapsing
+// It also includes a clearfix.
+.l-canvas,
+.l-v-canvas
+  &:before,
+  &:after
+    content: ''
+    display: table
+    height: 0
+    width: 100%
+
+  &:before
+    margin-bottom: $base-margin
+
+  &:after
+    margin-top: $base-margin
+    clear: both
+
+  // Do not combine .l-canvas and .l-clearfix; they are redundant and incompatible
+  &.l-clearfix
+    @include illegal
+
+.l-canvas
+  // side padding too, unlike .l-v-canvas
+  padding: 0 $base-margin
+
+  // Do not output to production
+  @include development
+    // When in styleguide. (Not a good pattern in general, but appropriate here)
+    .sg-section-layouts &:hover
+      @include box-shadow(0 0 0 $base-margin rgba(0, 128, 255, 0.3) inset)
+
+.l-canvas-tight
+  padding: 0 $base-padding
+
+  &:before
+    margin-bottom: $base-padding
+
+  &:after
+    margin-top: $base-padding
+
+
+// Features the same inner padding as .l-canvas, but without the margin collapsing.
+// It also does not include a clearfix implementation.
+.l-padded-canvas
+  @include sg-set-and-show-on-hover((padding: $base-margin))
+
+// Padding the size of a container's, but just on the sides
+.l-h-canvas
+  padding-left: $base-margin
+  padding-right: $base-margin
+  @include sg-show-on-hover((padding: 0 $base-margin))
+
+// Padding the size of a container's, but just on the top & bottom.
+// No margin-collapsing.
+.l-v-padded-canvas
+  padding-top: $base-margin
+  padding-bottom: $base-margin
+  @include sg-show-on-hover((padding: $base-margin 0))
+
+// A drumhead is stretched to fit its frame. (Negative margins equal to padding in canvas)
+.l-h-drumhead
+  margin-left: -1 * $base-margin
+  margin-right: -1 * $base-margin
+
+
+.l-v-spaced
+  @include sg-set-and-show-on-hover((margin: $base-padding 0))
+
+.l-v-half-spaced
+  @include sg-set-and-show-on-hover((margin: ($base-padding / 2) 0))
+
+.l-h-spaced
+  @include sg-set-and-show-on-hover((margin: 0 $base-padding))
+
+.l-h-half-spaced
+  @include sg-set-and-show-on-hover((margin: 0 ($base-padding / 2)))
+
+.l-spaced
+  @include sg-set-and-show-on-hover((margin: $base-padding))
+
+.l-half-spaced
+  @include sg-set-and-show-on-hover((margin: ($base-padding / 2)))
+
+.l-h-left-spaced
+  margin-left: $base-padding
+
+.l-h-left-half-spaced
+  margin-left: $base-padding/2
+
+.l-h-right-spaced
+  margin-right: $base-padding
+
+.l-h-right-half-spaced
+  margin-right: $base-padding/2
+
+.l-v-top-spaced
+  margin-top: $base-padding
+
+.l-v-top-giant-spaced
+  margin-top: $base-padding * 4
+
+.l-v-bottom-giant-spaced
+  margin-bottom: $base-padding * 4
+
+.l-v-top-half-spaced
+  margin-top: $base-padding/2
+
+.l-v-bottom-spaced
+  margin-bottom: $base-padding
+
+.l-v-bottom-half-spaced
+  margin-bottom: $base-padding/2
+
+.l-bordered
+  border: solid 1px rgba(0,0,0,.1)
+
+.l-padded
+  padding: $base-padding
+  @include sg-show-on-hover((padding: $base-padding))
+
+.l-half-padded
+  padding: $base-padding / 2
+  @include sg-show-on-hover((padding: ($base-padding / 2)))
+
+.l-h-padded
+  padding-left: $base-padding
+  padding-right: $base-padding
+  @include sg-show-on-hover((padding: 0 $base-padding))
+
+.l-h-half-padded
+  padding-left: $base-padding / 2
+  padding-right: $base-padding / 2
+  @include sg-show-on-hover((padding: 0 ($base-padding / 2)))
+
+.l-v-padded
+  padding-top: $base-padding
+  padding-bottom: $base-padding
+  @include sg-show-on-hover((padding: $base-padding 0))
+
+.l-v-half-padded
+  padding-top: $base-padding / 2
+  padding-bottom: $base-padding / 2
+  @include sg-show-on-hover((padding: ($base-padding / 2) 0))
+
+.l-h-left-padded
+  padding-left: $base-padding
+
+.l-h-right-padded
+  padding-right: $base-padding
+
+.l-h-left-half-padded
+  padding-left: $base-padding / 2
+
+.l-h-right-half-padded
+  padding-right: $base-padding / 2
+
+.l-v-top-padded
+  padding-top: $base-padding
+
+.l-v-bottom-padded
+  padding-bottom: $base-padding
+
+// Tables and alignment
+// --------------------
+.l-table
+  display: table !important
+
+.l-table-cell
+  display: table-cell !important
+
+.l-table-row
+  display: table-row !important
+
+.l-table-column
+  display: table-column !important
+
+.l-v-align-bottom
+  vertical-align: bottom !important
+
+.l-v-align-middle
+  vertical-align: middle !important
+
+.l-v-align-top
+  vertical-align: top !important
+
+.l-h-center
+  margin-left: auto
+  margin-right: auto
+
+// Flex box stuff
+
+%l-flex-row
+  @include display-flex
+  @include flex-direction(row)
+
+%l-flex-grow-1
+  @include flex(1)
+
+%l-flex-grow-2
+  @include flex(2)
+
+%l-flex-column
+  @include display-flex
+  @include flex-direction(column)
+
+%l-flex-wrap
+  @include flex-wrap(wrap)
+
+.l-flex-basis-one-fourth
+  @include flex-basis(25%)
+
+.l-flex-basis-one-third
+  @include flex-basis(33.3333333%)
+
+.l-flex-basis-one-half
+  @include flex-basis(50%)
+
+.l-flex-row
+  @extend %l-flex-row
+
+.l-flex-column
+  @extend %l-flex-column
+
+.l-flex-grow-1
+  @extend %l-flex-grow-1
+
+.l-flex-grow-2
+  @extend %l-flex-grow-2
+
+.l-flex-wrap
+  @extend %l-flex-wrap
+
+.l-flex-v-align-center
+  align-items: center
+
+.l-flex-justify-center
+  justify-content: center
+
+
+// vertically center children
+// to use this, you must have only a single child inside this element you wish to center. that child must
+// also be vertically aligned to the middle. apply this class to the parent.
+
+%l-v-center-single-child
+  &:before
+    content: ''
+    width: 1px
+    height: 100%
+    display: inline-block
+    vertical-align: middle
+    margin-left: -1px
+
+.l-v-center-single-child
+  @extend %l-v-center-single-child
+
+
+// Text Direction
+// -----------------
+
+.l-text-align-right
+  text-align: right !important
+
+.l-text-align-left
+  text-align: left !important
+
+.l-text-align-center
+  text-align: center !important
+
+
+// Sizing
+// --------------------
+
+.l-full-height
+  height: 100% !important
+
+.l-full-width
+  width: 100% !important
+  max-width: 100% !important
+
+.l-max-width-wide
+  max-width: 900px
+
+.l-max-width
+  max-width: 500px
+
+.l-max-width-thin
+  max-width: 300px
+
+// Pipes
+
+.l-pipes
+  & + &
+    display: inline-block
+    margin-left: 10px
+    border-left: 1px solid color("border")
+    padding-left: 10px
+
+
+
+
+// Just for development, allow showing boundary
+@include development
+  .l-dev-outline
+    outline: 1px solid rgba(0,0,0, 0.5)
+    &:hover
+      background: rgba(40, 220, 30, 0.12)
+
+// Columns
+.l-half
+  width: 50% !important
+
+.l-one-third
+  width: 33.33333333333% !important
+
+.l-two-thirds
+  width: 66.6666666666% !important
+
+.l-one-quarter
+  width: 25% !important
+
+.l-three-quarters
+  width: 75% !important

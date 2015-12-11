@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+
+<main class="l-content">
+
+  <section class="section tac">
+    <h2><div class="img-gear vam mr10"></div> <span class="vam">Engineering Blog</span></h2>
+  </section>
+
+
+  <section class="section">
+
+
+
+    {% for post in site.posts %}
+      <div class="section-divider"><hr /></div>
+      {% include post-body.html %}
+    {% endfor %}
+
+
+  </section>
+</main>

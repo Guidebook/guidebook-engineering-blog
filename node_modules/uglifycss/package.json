@@ -1,0 +1,52 @@
+{
+  "author": {
+    "name": "Franck Marcia",
+    "email": "franck.marcia@gmail.com",
+    "url": "https://github.com/fmarcia"
+  },
+  "name": "uglifycss",
+  "description": "Port of YUI CSS Compressor to NodeJS",
+  "version": "0.0.19",
+  "keywords": [
+    "css",
+    "stylesheet",
+    "uglify",
+    "minify"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/fmarcia/UglifyCSS",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fmarcia/UglifyCSS.git"
+  },
+  "main": "./index.js",
+  "bin": {
+    "uglifycss": "./uglifycss"
+  },
+  "gitHead": "96808cbbf27e889715b6952f73ab456bcd0a0c93",
+  "bugs": {
+    "url": "https://github.com/fmarcia/UglifyCSS/issues"
+  },
+  "_id": "uglifycss@0.0.19",
+  "scripts": {},
+  "_shasum": "e703a03582464f0ab5f14d8291d22bd973fcb103",
+  "_from": "uglifycss@*",
+  "_npmVersion": "3.5.0",
+  "_nodeVersion": "5.1.0",
+  "_npmUser": {
+    "name": "fmarcia",
+    "email": "franck.marcia@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "fmarcia",
+      "email": "franck.marcia@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "e703a03582464f0ab5f14d8291d22bd973fcb103",
+    "tarball": "http://registry.npmjs.org/uglifycss/-/uglifycss-0.0.19.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/uglifycss/-/uglifycss-0.0.19.tgz"
+}

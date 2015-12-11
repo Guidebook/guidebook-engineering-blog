@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+
+<main class="l-content">
+
+  <section class="section tac">
+    <p><span class="l-hidden-mobile"><a href="{{ site.baseurl }}" class="js-pjax">Guidebook Engineering Blog</a></p>
+    <h2><code>#{{ page.tag }}</code></h2>
+  </section>
+
+
+  <section class="section">
+
+
+
+    {% for post in page.posts %}
+    <div class="section-divider"><hr /></div>
+    {% include post-body.html %}
+
+    {% endfor %}
+
+
+  </section>
+</main>

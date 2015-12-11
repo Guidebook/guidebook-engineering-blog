@@ -1,0 +1,27 @@
+<div class="post post-brief">
+
+  <p class="post_tags">{% for tag in post.tags %}<span class="post_tags_tag"><span class="post_tags_tag_hash">#</span><a href="{{ site.baseurl }}/category/{{tag}}">{{tag}}</a> </span>{% endfor %}</p>
+  <h3 class="post_title"><a href="{{site.baseurl}}{{ post.url }}" class="gray-link js-pjax">{{ post.title }}</a></h3>
+
+  <div class="post_meta">
+
+    <div class="post_authors {% if page.authors.size == 1 %}l-hidden-desktop l-hidden-widescreen{% endif %}">
+      {% for author in post.authors %}
+      <span class="avatar avatar-30 vam"><img src="http://guidebook.com/img/team/{{ author.slug }}.png" class="avatar_image" /></span>
+      {% endfor %}
+      <div class="post_authors_names">
+      {% for author in post.authors %}<span class="post_authors_names_name">{% if author.twitter %}<a href="http://twitter.com/{{author.twitter}}" class="gray-link">{% endif %}{{author.name}}{% if author.twitter %}</a>{% endif %}</span>{% if forloop.last == false %}, {% endif %}{% endfor %} on {{ post.date | date: '%b %d, %Y' }}
+      </div>
+    </div>
+  </div>
+
+  <div class="post_body">
+    {{ post.excerpt }}
+  </div>
+
+  <div class="post_actions">
+    <a class="btn btn-primary js-pjax" href="{{ site.baseurl }}{{ post.url }}">Continue reading</a>
+  </div>
+
+
+</div>

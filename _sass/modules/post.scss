@@ -1,0 +1,350 @@
+
+// Post
+// ======================================
+
+// This is a module describing a post, mainly used for the development blog
+
+
+
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+$post-width: 750px;
+$post-width-laptop: 600px;
+$post-width-desktop: 675px;
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+@include module (post) {
+
+  width: $post-width;
+  padding-left: 100px;
+  padding-right: 100px;
+  position: relative;
+  margin: 0 auto;
+
+  @include laptop {
+    width: $post-width-laptop;
+  }
+
+  @include tablet-and-mobile {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+
+
+  // -------------------------------------
+  //   Modifiers
+  // -------------------------------------
+
+  @include submodule (details) {
+
+    padding-left: 0;
+    padding-right: 0;
+
+    .post_body {
+      width: $post-width;
+      margin: 0 auto;
+      position: relative;
+
+      @include laptop {
+        width: $post-width-laptop;
+      }
+
+      @include desktop {
+        width: $post-width-desktop;
+      }
+
+      @include tablet-and-mobile {
+        width: 100%;
+      }
+    }
+
+    .post_actions {
+      width: $post-width;
+      margin-left: auto;
+      margin-right: auto;
+
+      @include laptop {
+        width: $post-width-laptop;
+      }
+
+      @include desktop {
+        width: $post-width-desktop;
+      }
+
+      @include tablet-and-mobile {
+        width: 100%;
+      }
+    }
+
+    .post_author {
+      top: -130px;
+      left: -180px;
+
+      @include desktop {
+        left: -150px;
+      }
+    }
+
+    .post_tags {
+      margin-bottom: 0;
+    }
+  }
+
+  @include submodule (brief) {
+
+    .post_tags_tag {
+      margin-right: 7px;
+      padding: 0;
+      border: none;
+      margin-bottom: 0;
+      line-height: 1;
+      height: auto;
+      background: transparent !important;
+    }
+
+    .post_meta {
+      margin-bottom: rhythm(3);
+      text-align: center;
+    }
+
+  }
+
+  // -------------------------------------
+  //   Elements
+  // -------------------------------------
+
+
+  @include element (meta) {
+  }
+
+  @include element (meta_divider) {
+    width: 0;
+    border-left: 1px solid color('border');
+    height: 32px;
+    margin: 0 20px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  @include element (authors) {
+    vertical-align: top;
+    margin-bottom: rhythm(1);
+
+    > .avatar {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      max-width: 32px;
+      max-height: 32px;
+      margin-right: 6px;
+
+      @include mobile {
+        width: 25px;
+        height: 25px;
+        max-width: 25px;
+        max-height: 25px;
+      }
+    }
+  }
+
+  @include element (authors_names) {
+    display: inline-block;
+    vertical-align: top;
+    height: 32px;
+    line-height: 32px;
+  }
+
+  @include element (title) {
+    padding-bottom: rhythm(1);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  @include element (body) {
+
+    p, ul {
+      @include adjust-font-size-to(16px);
+      @include adjust-leading-to(1, 16px);
+
+      color: color('dark-gray');
+
+      @include mobile {
+        @include adjust-font-size-to($base-font-size);
+        @include adjust-leading-to(1, $base-font-size);
+      }
+    }
+
+    > h3 {
+      @include adjust-font-size-to(16px);
+      @include adjust-leading-to(1, 16px);
+      font-weight: $base-weight-bold;
+      padding-bottom: rhythm(1);
+
+      @include mobile {
+        @include adjust-font-size-to($base-font-size);
+        @include adjust-leading-to(1, $base-font-size);
+      }
+    }
+
+    > h4 {
+      @include adjust-font-size-to(15px);
+      @include adjust-leading-to(1, 15px);
+      color: color('dark-gray');
+      opacity: .7;
+      padding-bottom: rhythm(1);
+
+      @include mobile {
+        @include adjust-font-size-to($base-font-size);
+        @include adjust-leading-to(1, $base-font-size);
+        font-weight: $base-weight;
+      }
+    }
+  }
+
+  @include element (date) {
+    color: color('blue');
+    text-align: center;
+  }
+
+  @include element (tags) {
+    vertical-align: top;
+    text-align: center;
+  }
+
+  @include element (tags_tag) {
+    display: inline-block;
+    color: color('blue');
+    padding: 0 18px;
+    @include border-radius(50em);
+    border: 1px solid color('blue');
+    @include adjust-font-size-to(11px);
+    line-height: 1;
+    font-weight: 500;
+    margin-right: 10px;
+    height: 32px;
+    line-height: 32px;
+    margin-bottom: rhythm(1);
+
+    &:hover {
+      background: transparentize(color('blue'), .9);
+      text-decoration: none;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include mobile {
+      padding: 0;
+      border: none;
+      margin-bottom: 0;
+
+      &:hover {
+        text-decoration: underline;
+        background: transparent;
+      }
+    }
+  }
+
+  @include element (tags_tag_hash) {
+    opacity: .5;
+  }
+
+  @include element (author) {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 120px;
+
+    > .avatar {
+      display: inline-block;
+      margin-bottom: rhythm(1);
+    }
+
+    &.post_author-inline {
+      position: relative;
+      left: auto;
+      top: auto;
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+
+      > .avatar {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+
+  @include element (byline) {
+    display: inline-block;
+  }
+
+  @include element (author_name) {
+    padding-bottom: 0;
+    @include adjust-font-size-to(16px);
+    @include adjust-leading-to(1, 16px);
+  }
+
+  @include element (author_title) {
+    @include adjust-font-size-to(12px);
+    @include adjust-leading-to(1, 12px);
+    font-style: italic;
+    color: color('dark-gray');
+    opacity: .8;
+  }
+
+  @include element (actions) {
+    margin-top: rhythm(2);
+  }
+
+  @include element (image) {
+    position: relative;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    @include border-radius($base-border-radius);
+    overflow: hidden;
+    margin-bottom: rhythm(1);
+
+    &:before {
+      position: absolute;
+      content: "";
+      left:0;
+      right:0;
+      top:0;
+      bottom:0;
+      border: 1px solid rgba(0,0,0,.1);
+      @include border-radius($base-border-radius);
+    }
+
+    > img {
+      max-width: 100%;
+      display: block;
+      @include border-radius($base-border-radius);
+    }
+  }
+
+  @include element (caption) {
+    margin-bottom: rhythm(1);
+
+    > p {
+      @include adjust-font-size-to(12px);
+      color: color('medium-gray');
+      text-align: center;
+    }
+  }
+
+
+}

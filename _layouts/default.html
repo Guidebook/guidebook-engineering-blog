@@ -1,0 +1,52 @@
+<!doctype html>
+<html class="no-js mobile-menu-hidden" lang="en-US">
+
+{% include head.html %}
+
+<body>
+
+  <div class="layout">
+
+  {% include nav.html %}
+
+  <div class="content">
+
+  {{ content }}
+
+  </div>
+
+  {% include footer.html %}
+
+  </div>
+
+  {% include mobile-nav.html %}
+
+
+  {% if site.env == 'prod' %} <!-- only run tracking code if on prod -->
+
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-21411821-1']);
+        _gaq.push(['_setDomainName', 'guidebook.com']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+  </script>
+  <!-- End -->
+
+
+  {% endif %}
+
+
+  <!-- test for mobile browser size -->
+  <div class="js-mobile-test"></div>
+
+</body>
+
+
+</html>

@@ -1,0 +1,85 @@
+@include module("asset") {
+  position: relative;
+  border-radius: $base-border-radius;
+  display: block;
+  @include box-shadow(0 2px 2px rgba(0,0,0,.05));
+  text-decoration: none !important;
+  overflow: hidden;
+
+  &:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    content: "";
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: $base-border-radius;
+  }
+
+  &:hover {
+    &:after {
+      border-color: rgba(0,0,0,.3);
+    }
+    @include element("label", nested) {
+      color: color('text');
+    }
+
+    @include element("type", nested) {
+      background: darken(color('border'), 5%);
+    }
+  }
+
+  @include element("label") {
+    @include box-shadow(0 -1px 0 0 rgba(0,0,0,.2));
+    padding: 5px 8px;
+    display: block;
+    position: relative;
+    color: lighten(color('text'), 10%);
+    text-decoration: none !important;
+    font-weight: 500;
+  }
+
+  @include element("img") {
+
+    > img {
+      display: block;
+    }
+  }
+
+  @include element("color") {
+    display: block;
+    min-width: 200px;
+    min-height: 100px;
+    position: relative;
+
+    @each $color in ("blue", "gray", "dark-gray") {
+      &.#{$color}{
+        background-color: color("#{$color}");
+      }
+    }
+
+    @include element("color_hex", child) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 5px 8px;
+      color: rgba(255,255,255,.8);
+      font-weight: 500;
+      z-index: $z-content;
+    }
+  }
+
+  @include element("type") {
+    text-transform: uppercase;
+    display: inline-block;
+    line-height: 1.1;
+    float: right;
+    background: color('border');
+    border-radius: 3px;
+    @extend %small-font;
+    padding: 5px 6px;
+    font-family: $gotham;
+    vertical-align: middle;
+  }
+}

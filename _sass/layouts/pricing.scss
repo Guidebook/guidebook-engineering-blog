@@ -1,0 +1,54 @@
+// About page specific layouts
+
+
+.prc_sub_img,
+.prc_sub_img_multi {
+  width: 200px;
+  height: 200px;
+  background: url($asset-url + 'img/img_pricing_phone_single.png');
+  @include image-2x($asset-url + 'img/2x/img_pricing_phone_single@2x.png', 200px, 200px);
+
+  @include mobile {
+    width: 134px;
+    height: 134px;
+    background-size: 134px 134px;
+    @include image-2x($asset-url + 'img/2x/img_pricing_phone_single@2x.png', 134px, 134px);
+  }
+}
+
+.prc_sub_img_multi {
+  background: url($asset-url + 'img/img_pricing_phone_multi.png');
+  @include image-2x($asset-url + 'img/2x/img_pricing_phone_multi@2x.png', 200px, 200px);
+
+  @include mobile {
+    width: 134px;
+    height: 134px;
+    background-size: 134px 134px;
+    @include image-2x($asset-url + 'img/2x/img_pricing_phone_multi@2x.png', 134px, 134px);
+  }
+}
+
+.prc_guide_count {
+  color: color('blue');
+  display: block;
+  font-weight: $base-weight-bold;
+}
+
+.prc_table {
+  
+  .table_cell {
+    width: 25%;
+  }
+
+  .btn {
+    width: 60%;
+  }
+}
+
+.prc_price {
+  @extend h4;
+}
+
+
+
+

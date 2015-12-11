@@ -1,0 +1,20 @@
+/* line 1, ../../_sass/modules/focal.scss */
+.js-focuspoint {
+  overflow: hidden;
+}
+
+/* line 4, ../../_sass/modules/focal.scss */
+.js-focuspoint > img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  display: block;
+  /* fill and maintain aspect ratio */
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  max-height: none;
+  max-width: none;
+}

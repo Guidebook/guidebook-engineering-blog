@@ -1,0 +1,52 @@
+// CSS Animations
+
+@import "compass/css3/animation";
+
+@include keyframes (pulse) {
+  0% {
+    opacity: .2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .15;
+  }
+}
+
+@include keyframes (rotate) {
+  0% {
+    @include transform(rotate(0deg));
+  }
+
+  100% {
+    @include transform(rotate(360deg));
+  }
+}
+
+@include keyframes (grow-shrink-slight) {
+  0% {
+    @include transform(scale(1) translateZ(0));
+    opacity: 1;
+  }
+
+  25% {
+    @include transform(scale(.98) translateZ(0));
+    opacity: .6;
+  }
+
+  50% {
+    @include transform(scale(1) translateZ(0));
+    opacity: 1;
+  }
+
+  75% {
+    @include transform(scale(1.02) translateZ(0));
+    opacity: .6;
+  }
+
+  100% {
+    @include transform(scale(1) translateZ(0));
+    opacity: 1;
+  }
+}

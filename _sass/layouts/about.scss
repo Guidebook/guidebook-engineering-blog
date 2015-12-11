@@ -1,0 +1,122 @@
+// About page specific layouts
+
+
+
+.abt_person {
+  @extend .l-fifth;
+  min-height: 250px;
+  margin-bottom: rhythm(1);
+
+  @include laptop {
+    width: 25%;
+  }
+
+  @include tablet {
+    width: 33%;
+    margin-bottom: 0;
+  }
+
+  @include mobile {
+    width: 33%;
+    min-height: 150px;
+    margin-bottom: 0;
+  }
+
+  .avatar_image {
+    @include transition(opacity 200ms ease-in-out);
+    z-index: 2;
+  }
+
+  .avatar_alt {
+    z-index: 1;
+  }
+
+  &:hover,
+  &.show-alt {
+
+    .avatar{
+      @include box-shadow(0 0 0 4px #FFF, 0 0 0 5px transparentize(color('blue'), .6));
+    }
+
+    .avatar_image:first-child {
+      opacity: 0;
+    }
+  }
+}
+
+.abt_person_name {
+  @extend h5;
+}
+
+.abt_founder {
+  
+  .avatar_image {
+    @include transition(opacity 200ms ease-in-out);
+    z-index: 2;
+  }
+
+  .avatar_alt {
+    z-index: 1;
+  }
+
+  &:hover,
+  &.show-alt {
+
+    .avatar{
+      @include box-shadow(0 0 0 4px #FFF, 0 0 0 5px transparentize(color('blue'), .6));
+    }
+
+    .avatar_image:first-child {
+      opacity: 0;
+    }
+  }
+}
+
+
+
+.abt_benefit {
+  margin-bottom: rhythm(2);
+
+  &:nth-child(3n+2) {
+    clear: left;
+  }
+
+  @include non-mobile {
+    &:nth-last-child(1),
+    &:nth-last-child(2),
+    &:nth-last-child(3) {
+      margin-bottom: 0;
+    }
+  }
+
+  @include tablet-and-mobile {
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .abt_benefit_title {
+    @extend h5;
+  }
+
+}
+
+.abt_benefit-icon {
+  height: 140px;
+
+  // vertically aligns icons
+  &:before{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+
+  > * {
+    vertical-align: middle;
+  }
+}
+
+
+

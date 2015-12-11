@@ -1,0 +1,29 @@
+// Request a demo page
+
+.demo-form {
+
+  .frm {
+    @include pie-clearfix();
+  }
+
+  .frm_textfield {
+    float: left;
+  }
+
+  .frm_field {
+    @include non-mobile {
+      padding-right: 20px;
+    }
+
+    .frm_textfield {
+      width: 100%;
+      min-width: 100%;
+    }
+
+    // remove padding from the right-most field so it aligns to the right.
+    &:nth-child(3),
+    &:nth-child(6) {
+      padding-right: 0;
+    }
+  }
+}

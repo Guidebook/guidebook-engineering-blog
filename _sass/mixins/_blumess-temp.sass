@@ -1,0 +1,50 @@
+// Setting this as a global variable.
+// This lets us assign it when entering a "module" mixin,
+// which effectively creates a global "state" we can use
+// within the submodule, element, and state mixins
+// to "know" the current module we are in!
+$_module_class: _unknown_
+
+@mixin module($module_class)
+  @debug "In module mixin; $module_class is '#{$module_class}'"
+
+  $_module_class: $module_class
+  .#{$module_class}
+    @content
+
+
+@mixin submodule($submodule_name, $second_submodule_name: null)
+  @if not variable-exists(_module_class)
+    @warn "Submodule mixin ('#{$submodule_name}') used outside of the context of a mixin."
+
+  // Generate just one class name...
+  $_submodule_class_name: ".#{$_module_class}-#{$submodule_name}"
+  // (Unless we are doubling up submodules...)
+  @if $second_submodule_name != null
+    $_submodule_class_name: "#{$_submodule_class_name}.#{$_module_class}-#{$second_submodule_name}"
+  // ... with no ancestor selector
+  @at-root
+    #{$_submodule_class_name}
+      @content
+
+
+@mixin element($element_name)
+  @if not variable-exists(_module_class)
+    @warn "Element mixin ('#{$element_name}') used outside of the context of a mixin."
+
+  // Generate just one class name...
+  $_element_class_name: ".#{$_module_class}_#{$element_name}"
+  // ... with no ancestor selector.
+  // Todo: allow nesting within submodule mixin
+  @at-root
+    #{$_element_class_name}
+      @content
+
+
+@mixin state($state_name)
+  @if not variable-exists(_module_class)
+    @warn "Submodule mixin ('#{$state_name}') used outside of the context of a mixin."    
+
+  // Generate selector like .mod.is-off (for $state_name: 'off' within context of module 'mod')
+  &.is-#{$state_name}
+    @content

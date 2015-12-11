@@ -1,0 +1,21 @@
+// Contact Page
+
+.l-signup {
+
+  .ltf, .group_ltf-vertical {
+    @include tablet-and-mobile {
+      margin-right:0 !important;
+      margin-left:0 !important;
+    }
+  }
+
+  button {
+    width: 200px;
+
+    @include tablet-and-mobile {
+      display: block;
+      width: 100%;
+    }
+  }
+
+}

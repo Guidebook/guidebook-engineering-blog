@@ -1,0 +1,82 @@
+// *************************************
+//
+//   Footer 
+//
+// *************************************
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+
+@include module (footer) {
+  display: block;
+  padding-bottom: 80px;
+
+  @include mobile {
+    padding-bottom: 20px;
+  }
+
+  @include tablet {
+    padding-bottom: 40px;
+  }
+
+  // -------------------------------------
+  //   Modifiers
+  // -------------------------------------
+
+
+
+  // -------------------------------------
+  //   Elements
+  // -------------------------------------
+
+  @include element (title) {
+    font-weight: bold;
+  }
+
+  @include element (list) {
+    list-style: none;
+    margin-bottom: rhythm(1);
+  }
+  
+  @include element (link) {
+    color: color('steel-gray');
+
+    &:hover {
+      color: color('steel-gray');
+    }
+  }
+
+  @include element (language-picker) {
+
+    .pvr_menu {
+      margin-bottom: 10px;
+    }
+
+    .picker_label {
+      
+      > span {
+        position: relative;
+        top: -1px;
+      }
+    }
+  }
+
+  @include element (blurb) {
+    color: $base-secondary;
+    @include adjust-font-size-to(11px);
+  }
+
+}
+
+
+
+
+
+

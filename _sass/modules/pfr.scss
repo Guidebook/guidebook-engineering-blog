@@ -1,0 +1,233 @@
+// *************************************
+//
+//   Phone Feature picker (pfr). This is the module that allows for a phone graphic on the right, with features on the left. Hovering over a feature changes the phone graphic to illustrate the feature. 
+//
+// *************************************
+
+//   Variables
+
+
+$pfr-height: image-height('img_iphone6_flat.png');
+$pfr-height-nexus: image-height('img_nexus5_chrome.png');
+$pfr-padding: 20px;
+
+
+//   Base
+
+
+@include module (pfr) {
+
+  position: relative;
+  min-height: $pfr-height;
+
+  @include mobile {
+    min-height: 0;
+  }
+
+  //   Modifiers
+
+  @include submodule (phone-left) {
+
+  }
+
+  @include submodule (nexus) {
+    min-height: $pfr-height-nexus;
+  }
+
+  //   Elements
+
+
+  @include element (features) {
+    margin-right: image-width('img_iphone6_flat.png') + $pfr-padding*2;
+
+    @include tablet {
+      margin-right: image-width('img_iphone6_flat.png') + $pfr-padding*2 - 70;
+    }
+
+    .pfr-nexus & {
+      margin-right: image-width('img_nexus5_chrome.png') + $pfr-padding*2;
+
+      @include tablet {
+        margin-right: image-width('img_nexus5_chrome.png') + $pfr-padding*2 - 70;
+      }
+    }
+
+    @include mobile {
+      margin-right: 0 !important;
+      margin-left: 0 !important;
+    }
+
+    .pfr-phone-left & {
+      margin-right: 0;
+      margin-left: image-width('img_iphone6_flat.png') + $pfr-padding*2;
+
+      @include tablet {
+        margin-left: image-width('img_iphone6_flat.png') + $pfr-padding*2 - 70;
+      }
+    }
+
+    .pfr-phone-left.pfr-nexus & {
+      margin-left: image-width('img_nexus5_chrome.png') + $pfr-padding*2;
+
+      @include tablet {
+        margin-left: image-width('img_nexus5_chrome.png') + $pfr-padding*2 - 70;
+      }
+    }
+
+  }
+
+  @include element (feature) {
+    position: relative;
+    @include border-radius($base-border-radius);
+    overflow: hidden;
+
+    &.is-selected {
+      background: #F4F9FC;
+      position: relative;
+
+      &:before { // This and the :after pseudo elements construct the arrow (which is really a skewed square) on the left/right side of the selected feature
+        content: "";
+        background: #F4F9FC;
+        right: -8px;
+        height: 200px;
+        top: 50%;
+        margin-top: -100px;
+        width: 200px;
+        position: absolute;
+        @include transform(rotate(45deg) skew(20deg, 20deg));
+        @include border-radius($base-border-radius);
+        z-index: $z-content + 1;
+      }
+
+      &:after {
+        content: "";
+        right: 0;
+        width: 100px;
+        background: white;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        z-index: $z-content;
+      }
+
+      .pfr-phone-left & {
+
+        &:before {
+          left: -8px;
+          right: auto;
+        }
+
+        &:after {
+          right: auto;
+          width: 100px;
+        }
+      }
+    }
+
+    @include mobile {
+      margin-bottom: rhythm(1);
+      border: none !important;
+
+      &:before,
+      &:after {
+        display: none;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &.is-selected {
+        background-color: transparent;
+      }
+    }
+  }
+
+  @include element (feature_image) {
+    display: table-cell;
+    vertical-align: middle;
+    padding: $pfr-padding;
+    padding-right: 0;
+    width: 100px;
+    text-align: center;
+    z-index: $z-content + 2;
+    position: relative;
+
+    .pfr-phone-left & {
+      padding-left: $pfr-padding + 20;
+    }
+
+    @include mobile {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  @include element (feature_title) {
+    @extend h4;
+  }
+
+  @include element (feature_text) {
+    display: table-cell;
+    vertical-align: middle;
+    padding: $pfr-padding;
+    padding-right: $pfr-padding + 20;
+    z-index: $z-content + 2;
+    position: relative;
+
+    .pfr-phone-left & {
+      padding-right: $pfr-padding;
+    }
+
+    @include mobile {
+      padding: 0 $pfr-padding;
+    }
+  }
+
+  @include element (feature_description) {
+    @extend p;
+  }
+
+  @include element (phone) {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    @include mobile {
+      display: none;
+    }
+
+    @include tablet {
+      right: -70px;
+    }
+
+    .pfr-phone-left & {
+      right: auto;
+      left: 0;
+
+      @include tablet {
+        left: -70px;
+      }
+    }
+
+  }
+
+  @include element (screen) {
+    visibility: hidden;
+    opacity: 0;
+    @include transition(all $anim-ease $anim-speed-normal);
+  
+    &.is-visible {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+}
+
+
+
+
+
+
+

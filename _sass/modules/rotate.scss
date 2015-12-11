@@ -1,0 +1,112 @@
+
+// Content rotate w/ pagination
+// ======================================
+
+// Variables
+
+$pagination-height: 24px;
+
+// Base
+
+@include module(rot) {
+  position: relative;
+  min-height: 500px + $pagination-height;
+
+  @include element (item) {
+    opacity: 0;
+    @include transition(all ease-in-out 200ms);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    visibility: hidden;
+
+    &.is-visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @include element (pagination) {
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: $pagination-height;
+    z-index: $z-content + 2;
+  }
+
+  @include element (pagination_item) {
+    text-indent: -9999em;
+    background: transparent;
+    display: inline-block;
+    vertical-align: middle;
+    width: 12px;
+    height: 12px;
+    @include border-radius(100%);
+    margin-right: 5px;
+    @include transition-property(opacity, border-width);
+    @include transition-timing-function($anim-ease);
+    @include transition-duration($anim-speed-slow);
+    border: 1px solid color('gray');
+    cursor: pointer;
+    opacity: .6;
+
+    &:hover {
+      cursor: pointer;
+      background: color('border');
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.is-selected {
+      background: transparent;
+      border-width:6px;
+      opacity: 1;
+    }
+  }
+
+  @include element (flipper) {
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 50%;
+    margin-top: -(image-height('sprites/icons/ic_flipper.png')/2) - $pagination-height;
+    z-index: $z-content + 1;
+    opacity: .7;
+    padding: 20px 15px;
+    @include border-radius(5px);
+    
+    > .rot_flipper_icon {
+      @include transform(rotate(180deg)); 
+      display: block;
+    }
+
+    &:hover {
+      opacity: 1;
+      background: rgba(255,255,255,.7);
+    }
+
+    @include laptop {
+      display: none;
+    }
+
+    @include tablet-and-mobile {
+      display: none;
+    }
+
+  }
+
+  @include element (flipper-right) {
+    left: auto;
+    right: 0;
+
+    > .rot_flipper_icon {
+      @include transform(rotate(0deg)); 
+    }
+  }
+ 
+}

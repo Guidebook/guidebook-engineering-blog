@@ -1,0 +1,56 @@
+@include module("section") {
+
+  @include submodule("flex-feature-large") {
+
+    @include element("content", nested) {
+      @extend %l-flex-row;
+    }
+
+    @include element("feature", nested) {
+      @extend %l-flex-grow-1;
+    }
+
+    @include element("spacer", nested) {
+      width: 50px;
+    }
+
+    @include element("aside", nested) {
+      width: 25%;
+    }
+
+    @include tablet-and-mobile {
+
+      @include element("feature", nested) {
+        text-align: center;
+      }
+
+      @include element("figure", nested) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      @include element("content", nested) {
+        display: block;
+      }
+
+      @include element("spacer", nested) {
+        display: none;
+      }
+
+      @include element("aside", nested) {
+        width: 100%;
+        text-align: center;
+        margin: $base-margin 0;
+        padding: 0 $base-margin;
+      }
+    }
+
+    @include laptop {
+      @include element("aside", nested) {
+        width: 20%;
+      }
+    }
+
+  }
+
+}

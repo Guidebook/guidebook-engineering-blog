@@ -1,0 +1,86 @@
+
+//   Table
+// =====================================
+
+//   Variables
+
+$callout-height: 30px;
+
+//   Base
+
+@include module (table) {
+  display: table;
+  border: 1px solid color('border');
+  border-collapse: collapse;
+
+
+  @include submodule (full-width) {
+    width: 100%;
+  }
+
+  @include element (row) {
+    border: 1px solid color('border');
+    display: table-row;
+
+    > .table_cell {
+      border-right: 1px solid color('border');
+    }
+  }
+
+  @include element (row-borderless) {
+    border: none;
+  }
+
+  @include element (cell) {
+    display: table-cell;
+    padding: 20px;
+    padding-top: rhythm(1);
+    padding-bottom: rhythm(1);
+    vertical-align: top;
+    position: relative;
+
+    &.is-highlighted {
+      background: #F0F8FF;
+    }
+
+    &.is-in-error {
+      background: #FFF0F0;
+    }
+  }
+
+  @include element (cell-thin) {
+    padding-top: rhythm(.5);
+    padding-bottom: rhythm(.5);
+  }
+
+  @include element (cell-padded) {
+    padding-top: rhythm(2);
+    padding-bottom: rhythm(2);
+  }
+
+  @include element (callout) {
+    position: absolute;
+    background: #93CEA0;
+    text-align: center;
+    top: -$callout-height;
+    left: -1px;
+    right: -1px;
+    @include border-radius($base-border-radius $base-border-radius 0 0);
+
+    > p {
+      color: white;
+      font-weight: $base-weight-bold;
+      height: $callout-height;
+      line-height: $callout-height;
+    }
+
+    @include tablet-and-mobile {
+      top: 0;
+      position: relative;
+      margin-bottom: rhythm(1);
+      @include border-radius($base-border-radius);
+      margin-top: -1 * rhythm(1);
+    }
+  }
+}
+

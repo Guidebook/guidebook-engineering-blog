@@ -1,0 +1,287 @@
+
+//   Section Menu (SCT)
+// =====================================
+
+//   Variables
+
+$sct-background: #F4F9FC;
+
+//   Base
+
+@include module (sct) {
+  display: block;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  background-color: $sct-background;
+  border-bottom: 1px solid $base-stroke;
+  border-top: 1px solid $base-stroke;
+  height: auto;
+  font-size: 0;
+  line-height: 0;
+  z-index: $z-fixed;
+  @include transform(translateZ(0));
+
+
+  a:link,
+  a:visited,
+  a:hover {
+    text-decoration: none;
+  }
+
+  // hide the top border if it follows a flush hero (the hero will have a bottom border)
+  .hero-with-phone ~ &{
+    border-top-color: transparent;
+  }
+
+  // the sub nav on mobile -- we remove icons (hide them) and allow the navigational elements to overflow horizontally. the user can then scroll horizontally to access
+  // the various navigation items.
+  @include mobile {
+    height: auto;
+    border-bottom: 0;
+    overflow:hidden;
+    white-space: nowrap;
+
+    // when we're on mobile, we need to hide the Y overflow, so the selected border state no longer appears (it is hidden). In that case, we'll instead create an inner border with
+    // a generated element, and hide the native border. This way the selected state border doesnt actually overflow the container; it simply lies over the generated border.
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      width: 100%;
+      background: $base-stroke;
+      z-index: $z-content;
+    }
+  }
+
+  //   Elements
+
+  @include element(wrapper) {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0;
+    left: 0;
+    padding: 0;
+    position: relative;
+    @include transition(left $anim-ease $anim-speed-fast);
+
+    @include mobile {
+      overflow-y: hidden;
+      overflow-x: scroll;
+      position: relative;
+      z-index: $z-content + 1;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  @include element(item) {
+    display: inline-block;
+    width: 20%;
+    position: relative;
+    margin-bottom: -1px;
+    border-bottom: 1px solid transparent;
+    font-size: 0;
+    @include transition(border $anim-ease $anim-speed-normal);
+
+    a {
+      display: block;
+      @include adjust-font-size-to(13px);
+      padding: 20px;
+
+      &:active {
+
+        .pjax-enabled & {
+          .sct_icon {
+            @include transform(scale(.89));
+          }
+        }
+      }
+
+      @include mobile {
+        margin-top: 0;
+      }
+    }
+
+    // Is Selected
+
+    &.is-selected {
+      border-bottom-color: $base-ink !important;
+
+      .sct_title {
+        color: color("steel-gray");
+      }
+    }
+
+    &:hover {
+      border-bottom-color: transparentize($base-ink, .8);
+
+      .sct_title {
+        color: color("steel-gray");
+      }
+    }
+
+    @include mobile {
+      width: auto;
+      height: auto;
+      top: 0;
+
+      &:hover {
+        border-bottom-color: transparent;
+      }
+    }
+
+    .pjax-enabled & {
+      border-bottom: none; // if pjax is enabled we can display the bottom border which slides around, so a bottom border is not needed (its a fallback)
+    }
+  }
+
+  @include element ("button") {
+    position: absolute;
+    right: -180px;
+    bottom: 0;
+    line-height: 54px;
+    opacity: 0;
+    visibility: hidden;
+    @include transition(opacity $anim-ease $anim-speed-fast, visibility $anim-ease $anim-speed-fast);
+
+    > .btn {
+      display: inline-block;
+      line-height: 40px;
+      min-width: 150px;
+      padding-top: 0;
+      padding-bottom: 0;
+      height: 40px;
+      vertical-align: middle;
+      font-family: $gotham;
+      font-weight: $base-weight-bold;
+      text-transform: uppercase;
+    }
+  }
+
+  // Is Fixed
+
+  .has-fixed-sct &{
+
+    @include non-mobile {
+      @include box-shadow(0 1px 10px rgba(0,0,0,.06));
+      border-bottom: 1px solid darken($base-stroke, 10%);
+      position: fixed;
+      top: 0;
+      height: auto;
+
+      .sct_item {
+        height: auto;
+      }
+
+      .sct_icon-container {
+        display: none;
+      }
+    }
+
+    @include desktop-up {
+
+      &.sct-has-button {
+        .sct_wrapper {
+          left: -(180px/2);
+        }
+
+        .sct_button {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+    }
+
+  }
+
+
+  @include element (line) {
+    position: absolute;
+    visibility: hidden;
+    height: 1px;
+    bottom: -1px;
+    left: 0;
+    width: 20%;
+    background: $base-ink;
+
+    .pjax-enabled & {
+      visibility: visible;
+    }
+
+    &.animations-enabled {
+      @include transition-property(left, width);
+      @include transition-timing-function($anim-ease);
+      @include transition-duration($anim-speed-normal);
+    }
+  }
+
+  @include element (icon-container) {
+    display: block;
+    height: 73px;
+    margin-bottom: 20px;
+
+    // The below generated content vertically centers the icons within the container. Lots of articles about this trick, but here is one for reference: http://thephuse.com/development/the-best-way-to-vertically-align-in-css/
+    &:before{
+      content: "";
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+
+    @include mobile {
+      display: none !important;
+    }
+  }
+
+  @include element(icon) {
+    width:100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+    @include transition(transform $anim-slight-bounce $anim-speed-normal);
+
+    @include mobile {
+      display: none !important;
+    }
+  }
+
+
+  @include element(icon-overview) {
+    background-image: url($asset-url + "img/img_overview.png")
+  }
+
+  @include element(icon-events) {
+    background-image: url($asset-url + "img/img_events.png")
+  }
+
+  @include element(icon-campuses) {
+    background-image: url($asset-url + "img/img_campuses.png")
+  }
+
+  @include element(icon-places) {
+    background-image: url($asset-url + "img/img_places.png")
+  }
+
+  @include element(icon-enterprise) {
+    background-image: url($asset-url + "img/img_enterprise.png")
+  }
+
+  @include element(title) {
+    @include transition(color $anim-ease $anim-speed-normal);
+    display: block;
+    width:100%;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: $gotham;
+    letter-spacing: 1px;
+    color: color("medium-gray");
+    font-weight: $base-weight-bold;
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,28 @@
+// Contact Page
+
+.feedback {
+
+  .frm {
+    @include pie-clearfix();
+  }
+
+  .frm_textfield {
+    float: left;
+  }
+
+  .frm_field {
+    @include non-mobile {
+      padding-right: 20px;
+    }
+
+    .frm_textfield {
+      width: 100%;
+      min-width: 100%;
+    }
+
+    // remove padding from the right-most field so it aligns to the right.
+    &:nth-child(even) {
+      padding-right: 0;
+    }
+  }
+}

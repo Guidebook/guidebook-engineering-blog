@@ -1,0 +1,127 @@
+
+// Featured Content 
+// ======================================
+
+// This is for content that has a media item (usually an image) pulled to the left or right with text to the side. 
+
+
+
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+$fct-gutter: 40px;
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+@include module( fct ) {
+  text-align: center;
+  padding-right: $fct-gutter;
+
+  &:last-child {
+    padding-right: 0;
+  }
+
+  @include tablet-and-mobile {
+    padding-right: 0;
+    margin-bottom: rhythm(2);
+
+    &:first-child {
+      margin-top: rhythm(1);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // -------------------------------------
+  //   Modifiers
+  // -------------------------------------
+
+
+
+  // -------------------------------------
+  //   Elements
+  // -------------------------------------
+
+
+  @include element( image ) {
+    height: 250px;
+    text-align: center;
+    white-space: nowrap;
+    margin-bottom: rhythm(1);
+    display: block;
+
+    &:before{
+      content: "";
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+
+    > .fct_image_img,
+    > img {
+      display: inline-block;
+      vertical-align: middle;
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    > img {
+      height: auto;
+      width: auto;
+    }
+
+    @include desktop {
+      height: 250px;
+    }
+
+    @include laptop {
+      height: 200px;
+    }
+
+    @include mobile {
+      height: 150px;
+      margin-bottom: rhythm(1);
+    }
+
+    &.no-min-height {
+      height: auto;
+      margin-bottom: rhythm(1);
+    }
+
+  }
+
+  @include element (text) {
+    @include adjust-font-size-to(16px);
+    @include adjust-leading-to(1, 16px);
+    color: color('dark-gray');
+    opacity: .8;
+
+    @include widescreen {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    @include desktop {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    @include laptop {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    @include mobile {
+      @include adjust-font-size-to($base-font-size);
+      @include adjust-leading-to(1, $base-font-size);
+    }
+  }
+
+}
+

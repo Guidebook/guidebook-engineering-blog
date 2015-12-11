@@ -1,0 +1,65 @@
+// *************************************
+//
+//   Tabs
+//
+// *************************************
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+
+@include module (tab) {
+  @include pie-clearfix();
+  display: block;
+  white-space: nowrap;
+  padding: 0px;
+  text-align: left;
+  border-bottom: 1px solid color(border);
+  position: relative;
+  margin: 0px;
+  background: rgba(255,255,255,0.90); // fallback
+  @include background(linear-gradient(rgba(255,255,255, 0.90 ), rgba(255,255,255,1)));
+
+
+  // -------------------------------------
+  //   Modifiers
+  // -------------------------------------
+
+
+
+  // -------------------------------------
+  //   Elements
+  // -------------------------------------
+
+  @include element( item ) {
+    display: inline-block;
+    list-style: none;
+    @include adjust-font-size-to(16px);
+    position: relative;
+    text-align: center;
+
+    > a {
+      display: inline-block;
+      padding: $base-padding $base-margin;
+      text-decoration: none;
+      color: color(link);
+      position: relative;
+      bottom:-1px;
+
+      &:hover{
+          color: color(link-hover)
+      }
+
+      &.is-active {
+        color: color(text);
+        border-bottom: 1px solid #000;
+      }
+    }
+  }
+}

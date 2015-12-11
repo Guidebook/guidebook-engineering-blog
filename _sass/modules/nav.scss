@@ -1,0 +1,253 @@
+// *************************************
+//
+//   Navigation
+//
+// *************************************
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+$navbar-height: 70px;
+$navbar-height-mobile: 60px;
+$navbar-roof-height: 30px;
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+
+@include module (nav) {
+  @include pie-clearfix();
+  @include font-size(12px);
+  display: block;
+  white-space: nowrap;
+  padding: 0;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  text-align: left;
+  position: relative;
+  margin: 0;
+  height: $navbar-height;
+  line-height: $navbar-height;
+  z-index: $z-content-over;
+
+  @include mobile {
+    height: $navbar-height-mobile;
+    line-height: $navbar-height-mobile;
+    padding: 0 20px;
+  }
+
+  @include tablet {
+    height: $navbar-height-mobile;
+    line-height: $navbar-height-mobile;
+    padding: 0 20px;
+  }
+
+  // -------------------------------------
+  //   Modifiers
+  // -------------------------------------
+
+
+
+  // -------------------------------------
+  //   Elements
+  // -------------------------------------
+
+  @include element( section ) {
+    display: table;
+    padding: 0;
+    @include pie-clearfix();
+
+    &.nav_section-left{
+      float: left;
+    }
+
+    &.nav_section-right{
+      float: right;
+    }
+
+    &.nav_section-links{
+
+      @include respond-to (mobile) {
+        display: none;
+      }
+
+      @include respond-to (tablet) {
+        display: none;
+      }
+    }
+  }
+
+  @include element( section-menu ) {
+    display: none;
+
+    .shp-list {
+
+      &:hover,
+      .is-open & {
+
+        .shp-list_line {
+          background-color: color('steel-gray');
+        }
+      }
+    }
+
+    @include tablet-and-mobile {
+      display: table;
+    }
+  }
+
+  @include element( item ) {
+    display: table-cell;
+    padding:0 20px;
+    height: $navbar-height;
+    vertical-align: middle;
+    position: relative;
+
+    @include tablet-and-mobile {
+      height: $navbar-height-mobile;
+    }
+
+    &.flush {
+      padding: 0;
+    }
+
+    > .logo {
+      display: block;
+      height: $navbar-height;
+      width: 145px;
+      @include background(image-url($guidebook-image-url + "img_nav_logo.png") center no-repeat);
+      @include image-2x($guidebook-image-url + "img_nav_logo@2x.png", 145px, 31px);
+
+      @include tablet-and-mobile {
+        height: $navbar-height-mobile;
+      }
+
+      &:hover {
+        opacity: .7;
+      }
+
+      @include mobile {
+        width: 109px;
+        height: 23px;
+        background-size: 109px 23px;
+        position: relative;
+        top: 2px;
+        @include image-2x($asset-url + "img/img_nav_logo@2x.png", 109px, 23px);
+      }
+
+      > h1 {
+        display: none;
+      }
+    }
+  }
+
+  @include element (dropdown) {
+    margin-top: -15px;
+
+    a {
+      @extend .gray-link;
+    }
+  }
+
+  @include element ( link ) {
+    @extend .gray-link;
+    text-transform: uppercase;
+    font-family: $gotham;
+    letter-spacing: 1px;
+    position: relative;
+    border-bottom: 0 solid transparent;
+    text-decoration: none;
+
+    &.is-selected {
+      color: color('medium-gray') !important;
+      border-color: transparent;
+
+      &:hover {
+        border-color: transparent;
+      }
+    }
+
+    &:hover {
+      padding-bottom: 1px;
+      border-color: color(steel-gray);
+      border-width: 1px;
+      color: color(steel-gray);
+      text-decoration: none;
+    }
+  }
+
+  @include element (link-icon) {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    margin-top: -7px;
+    visibility: hidden;
+
+    .nav_link:hover ~ & {
+      visibility: visible;
+    }
+  }
+
+  @include element ( btn ) {
+    text-transform: uppercase;
+    font-family: $gotham;
+    letter-spacing: 1px;
+    vertical-align: middle;
+    margin-top: -3px;
+
+    &.btn:not(.btn-primary) {
+      background: rgba(255, 255, 255, .3);
+
+      &:hover{
+        background: rgba(255, 255, 255, .5);
+      }
+
+      &:active {
+        font-weight: 600;
+      }
+    }
+  }
+
+  @include element (roof) {
+    height: $navbar-roof-height;
+    line-height: $navbar-roof-height;
+    z-index: $z-content-over;
+    position: relative;
+    border-bottom: 1px solid rgba(0,0,0,.05);
+    background-color: rgba(255, 255, 255, .4);
+    text-align: right;
+
+    @include tablet-and-mobile {
+      display: none;
+    }
+
+    &:hover {
+
+      .nav_roof_item {
+        opacity: 1;
+      }
+    }
+  }
+
+  @include element (roof_item) {
+    display: inline-block;
+    padding: 0 10px;
+    @include transition(opacity ease 200ms);
+
+    &:last-child {
+      padding-right: 5px;
+    }
+
+    > p {
+      @include adjust-font-size-to(11px);
+      line-height: $navbar-roof-height;
+    }
+
+    a {
+      @extend .gray-link;
+    }
+  }
+
+}

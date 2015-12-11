@@ -1,0 +1,104 @@
+@include module("browser") {
+  position: relative;
+  @include transition(transform $anim-slight-resistance 1s, opacity $anim-ease 1s, visibility $anim-ease 1s);
+
+  @include element("screen") {
+    width: 574px;
+    height: 432px;
+    top: 39px;
+    left: 21px;
+    overflow: hidden;
+    position: absolute;
+    background: color('light-gray');
+
+    @include tablet-and-mobile {
+      width: auto;
+      height: auto;
+      position: relative;
+      top: 0;
+      left: 0;
+      overflow: visible;
+      border: 1px solid color('border');
+    }
+
+    @include mobile {
+      margin-left: -$base-margin;
+      margin-right: -$base-margin;
+      border-left: 0;
+      border-right: 0;
+    }
+  }
+
+  @include element("video") {
+    width: 574px;
+    height: 432px;
+    opacity: 0;
+    @include transition(all ease-out 200ms);
+    @include transition-delay(600ms);
+
+    @include tablet-and-mobile {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  @include submodule("will-animate") {
+    opacity: .5;
+    visibility: visible !important;
+
+    @include element("video", nested) {
+      opacity: 0;
+      @include transform(scale(.9) translateZ(0));
+    }
+  }
+
+  @include state('visible') {
+    opacity: 1;
+    visibility: visible;
+
+    @include element("video", nested) {
+      opacity: 1;
+      @include transform(scale(1) translateZ(0));
+    }
+  }
+
+  @include submodule("tilt-left") {
+    @include transform(perspective(500px) scale(.96) rotateY(0deg) translateX(100px) translateZ(0));
+
+    @include state('visible') {
+      @include transform(perspective(500px) scale(1) rotateY(-1.8deg) translateX(0) translateZ(0));
+      opacity: 1;
+    }
+
+    @include tablet-and-mobile {
+      @include transform(none !important);
+    }
+  }
+
+  @include submodule("tilt-right") {
+    @include transform(perspective(500px) rotateY(0deg) translateX(-100px) translateZ(0));
+
+    @include state('visible') {
+      @include transform(perspective(500px) rotateY(1.8deg) translateX(0) translateZ(0));
+      opacity: 1;
+    }
+
+    @include tablet-and-mobile {
+      @include transform(none !important);
+    }
+  }
+
+  &:hover {
+    @include transform(perspective(500px) rotateY(0deg) translateZ(0));
+    @include transform(perspective(500px) rotateY(0deg) translateZ(0) scale(1.1));
+  }
+
+  @include tablet-and-mobile {
+    width: 100% !important;
+    height: auto !important;
+    max-width: image-width('img/img_browser_shell.png');
+    background-image: none !important;
+  }
+
+}

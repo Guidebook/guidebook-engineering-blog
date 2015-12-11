@@ -1,0 +1,183 @@
+// *************************************
+//
+//   Guide Search specific layouts
+//
+// *************************************
+
+$search-input-height: 50px;
+$search-input-height-mobile: 30px;
+
+
+.gds_form {
+  height: $search-input-height;
+
+  @include tablet-and-mobile {
+    height: $search-input-height-mobile;
+  }
+}
+
+.gds_input {
+  width: 100%;
+  min-width: 0;
+  position: relative;
+  top: -$search-input-height;
+  text-align: center;
+  opacity: 0;
+  
+  .is-focused &,
+  .has-value & {
+    opacity: 1;
+  }
+
+  @include tablet-and-mobile {
+    top: -$search-input-height-mobile;
+  }
+}
+
+.gds_search {
+  position:relative;
+}
+
+.gds_guide {
+  float: left;
+  width: 20%;
+  margin-bottom: rhythm(2);
+
+  @include tablet {
+    width: 25%;
+  }
+
+  @include mobile {
+    width: (100%/3);
+    margin-bottom: rhythm(1);
+  }
+
+  @include widescreen {
+    width: (100%/7);
+  }
+
+  > .gdc {
+    margin: 0 auto;
+  }
+}
+
+.gds_search-container {
+  @include transition(all ease-in-out 200ms);
+  width: 100%;
+  position: relative;
+  height: $search-input-height;
+
+  @include tablet-and-mobile {
+    height: $search-input-height-mobile;
+  }
+}
+
+.gds_placeholder {
+  width: auto;
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+  height: $search-input-height;
+  position: relative;
+
+  @include tablet-and-mobile {
+    height: $search-input-height-mobile;
+  }
+}
+
+.gds_placeholder-text {
+  @extend .frm_textfield-large;
+  display: inline-block;
+  height: $search-input-height;
+  vertical-align: top;
+  @include adjust-font-size-to(40px);
+  line-height: $search-input-height;
+  @include transition(opacity ease-in-out 200ms);
+  color: color('medium-gray');
+  opacity: .8;
+
+  .is-focused & {
+    opacity: 0;
+  }
+
+  .has-value & {
+    opacity: 0;
+  }
+
+  @include tablet-and-mobile {
+    @include adjust-font-size-to(20px);
+    height: $search-input-height-mobile !important;
+    line-height: $search-input-height-mobile;
+  }
+}
+
+.gds_results{}
+
+.gds_container {
+  position: relative;
+  min-height: 300px;
+  @include transition(all ease-in-out 200ms);
+
+  @include mobile {
+    min-height: 0;
+  }
+}
+
+.gds_mask {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: color('bg');
+  background: transparentize(color('bg'), .4);
+  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  @include transition(all ease-in-out 200ms);
+  
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.gds_hint {
+  text-align: center;
+}
+
+.frm_cursor {
+  display: inline-block;
+  content: "";
+  height: 100%;
+  width: 3px;
+  @include transition(left ease-in-out 200ms, opacity ease-in-out 250ms);
+  opacity: 1;
+  position: absolute;
+  left: 0;
+  margin-left: -2px;
+
+  &:before {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    content: "";
+    background: color('blue');
+    @include animation(pulse 1500ms infinite);
+    @include border-radius(5px);
+  }
+
+  .has-value & {
+    opacity: 0 !important;
+  }
+
+  .is-focused &,
+  .has-value & {
+    left: 50%;
+    opacity: 0;
+  }
+
+
+}

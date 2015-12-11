@@ -1,0 +1,122 @@
+
+// Tooltip
+// ======================================
+
+// This is for a generic tooltip module
+
+
+
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+$arrow-height: 10px;
+$tooltip-width: 140px;
+$tooltip-margin: 5px;
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+@include module (tooltip) {
+  background: white;
+  position: absolute;
+  padding: 5px 10px;
+  width: $tooltip-width;
+  @include border-radius($base-border-radius);
+  border: 1px solid #ccc;
+  border-color: rgba(0,0,0,0);
+  @include box-shadow(0 0 0 1px rgba(0,0,0,.2), 0 2px 4px rgba(0,0,0,.1));
+  left: 50%;
+  margin-left: -($tooltip-width/2);
+  visibility: hidden;
+  opacity: 0;
+  bottom: 100%;
+  margin-bottom: $tooltip-margin;
+  @include transition-property(opacity, visibility, transform);
+  @include transition-timing-function($anim-slight-bounce);
+  @include transition-duration($anim-speed-normal);
+  @include transform(translateY(10px) scale(.965));
+  z-index: $z-level-2;
+
+  @include tablet-and-mobile {
+    display: none;
+  }
+
+  &:before {
+    position: absolute;
+    content: "";
+    left: 50%;
+    width: $arrow-height;
+    height: $arrow-height;
+    margin-left: -$arrow-height;
+    border-left: $arrow-height solid transparent;
+    border-right: $arrow-height solid transparent;
+    border-top: $arrow-height solid white;
+    bottom: -$arrow-height;
+    z-index: 3;
+  }
+
+  &:after {
+    position: absolute;
+    content: "";
+    left: 50%;
+    width: $arrow-height + 1;
+    height: $arrow-height + 1;
+    margin-left: -($arrow-height + 1);
+    border-left: ($arrow-height + 1) solid transparent;
+    border-right: ($arrow-height + 1) solid transparent;
+    border-top: ($arrow-height + 1) solid rgba(0,0,0,.2);
+    bottom: -($arrow-height + 2);
+    z-index: 2;
+  }
+
+
+  // -------------------------------------
+  //   Modifiers
+  // -------------------------------------
+
+  @include submodule (below) {
+    top: 100%;
+    bottom: auto;
+    margin-bottom: 0;
+    margin-top: $tooltip-margin;
+    @include transform(translateY(-10px) scale(.965));
+
+    &:before {
+      border-top: none;
+      border-bottom: $arrow-height solid white;
+      bottom: auto;
+      top: -$arrow-height;
+    }
+
+    &:after {
+      border-top: none;
+      border-bottom: ($arrow-height + 1) solid rgba(0,0,0,.15);
+      bottom: auto;
+      top: -($arrow-height + 2);
+    }
+  }
+
+  // -------------------------------------
+  //   Elements
+  // -------------------------------------
+
+
+  @include element (target) {
+    position: relative;
+
+    &:hover {
+
+      .tooltip {
+        visibility: visible;
+        opacity: 1;
+        @include transform(translateY(0) scale(1));
+      }
+    }
+  }
+
+
+}
+

@@ -1,0 +1,78 @@
+
+// Logo bar
+// ======================================
+
+// Used to display a row of logos across the screen
+
+
+
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+@include module( lgb ) {
+  text-align: center;
+  display: table;
+
+  @include tablet-and-mobile {
+    width: 100%;
+    display: block;
+  }
+
+  // -------------------------------------
+  //   Modifiers
+  // -------------------------------------
+
+
+
+  // -------------------------------------
+  //   Elements
+  // -------------------------------------
+
+
+  @include element (logo) {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 20px;
+
+    > img {
+      vertical-align: middle;
+    }
+
+    @include tablet-and-mobile {
+      display: inline-block;
+      margin: 10px 0;
+    }
+
+    @include mobile {
+      height: 20px;
+
+      > img {
+        height: 100%;
+        max-height: 100%;
+        max-width: 100%;
+        width: auto;
+      }
+    }
+
+    @include non-mobile {
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+
+}
+

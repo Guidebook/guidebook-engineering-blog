@@ -1,0 +1,109 @@
+
+// Sprites
+// ======================================
+
+//
+
+
+@include retina-sprite-add(sprites, "sprites/*.png", "sprites@2x/*.png");
+@include retina-sprite-add(sct, "sprites/sct/*.png", "sprites@2x/sct/*.png");
+@include retina-sprite-add(icons, "sprites/icons/*.png", "sprites@2x/icons/*.png");
+
+
+//general sprites
+@each $icon in ( "gear", "arch", "bookphone", "box", "bubble",  "calendar", "central", "clock",  "crown", "diamond", "feet", "finger", "graph", "hash", "heart",  "lightning", "lock", "map", "map_small", "offices",  "paint", "phone", "plane",   "photos", "pocket", "pride", "ribbon", "rocket", "speech", "sizes",  "tree",  "type",    "zen",   ) {
+  .img-#{$icon} {
+    @include retina-sprite(img_#{$icon}, sprites);
+  }
+}
+
+// smaller imgs
+
+@each $icon in ( "phones_small", "map_small", "feedback_small", "my-schedule_small", "face_small", "photos_small", "graph_small", "twitter_small", "networking_small", "notification_small", "dollar_small", "people_small", "schedule_small", "registration_small", "clock_small", "handphone_small") {
+  .img-#{$icon} {
+    @include retina-sprite(img_#{$icon}, sprites);
+  }
+}
+
+// sct
+@each $icon in ("overview", "events", "campuses", "enterprise", "places", "company", "culture", "jobs", "team") {
+  .img-sct-#{$icon} {
+    @include retina-sprite(img_sct_#{$icon}, sct);
+  }
+}
+
+//icons
+
+@each $icon in ("twitter_tiny", "eye", "flipper", "location", "link_out", "pvr_check", "flag-de", "flag-usa", "flag-uk", "flag-kr", "flag-jp", "redeem_key", "list_check", "list_check_blue", "nav_roof_phone", "nav_roof_chat", "video_play") {
+  .ic-#{$icon} {
+    @include retina-sprite(ic_#{$icon}, icons);
+  }
+}
+
+
+
+
+// Various retina images
+
+.frm_img_submit_success {
+  width: image-width('img/img_form_success.png');
+  height: image-height('img/img_form_success.png');
+  background: url($asset-url + 'img/img_form_success.png');
+  @include image-2x($asset-url + 'img/2x/img_form_success@2x.png', 268px, 268px);
+
+  @include mobile {
+    width: 134px;
+    height: 134px;
+    background-size: 134px 134px;
+    @include image-2x($asset-url + 'img/2x/img_form_success@2x.png', 134px, 134px);
+  }
+}
+
+.img_browser_shell {
+  width: image-width('img/img_browser_shell.png');
+  height: image-height('img/img_browser_shell.png');
+  background: url($asset-url + 'img/img_browser_shell.png');
+  @include image-2x($asset-url + 'img/2x/img_browser_shell@2x.png', image-width('img/img_browser_shell.png'), image-height('img/img_browser_shell.png'));
+}
+
+.img_builder_footer {
+  width: image-width('img/builder/img_builder_footer.png');
+  height: image-height('img/builder/img_builder_footer.png');
+  background: url($asset-url + 'img/builder/img_builder_footer.png');
+  @include image-2x($asset-url + 'img/builder/img_builder_footer@2x.png', image-width('img/builder/img_builder_footer.png'), image-height('img/builder/img_builder_footer.png'));
+}
+
+.img_signup_success {
+  width: 268px;
+  height: 268px;
+  background: url($asset-url + 'img/img_signup_success.png');
+  @include image-2x($asset-url + 'img/2x/img_signup_success@2x.png', 268px, 268px);
+
+  @include mobile {
+    width: 134px;
+    height: 134px;
+    background-size: 134px 134px;
+    @include image-2x($asset-url + 'img/2x/img_signup_success@2x.png', 134px, 134px);
+  }
+}
+
+.img_platform_ios {
+  width: 138px;
+  height: 150px;
+  background: url($asset-url + 'img/img_platform_ios.png');
+  @include image-2x($asset-url + 'img/2x/img_platform_ios@2x.png', 138px, 150px);
+}
+
+.img_platform_android {
+  width: 138px;
+  height: 158px;
+  background: url($asset-url + 'img/img_platform_android.png');
+  @include image-2x($asset-url + 'img/2x/img_platform_android@2x.png', 138px, 158px);
+}
+
+.img_platform_web {
+  width: 246px;
+  height: 158px;
+  background: url($asset-url + 'img/img_platform_web.png');
+  @include image-2x($asset-url + 'img/2x/img_platform_web@2x.png', 246px, 158px);
+}

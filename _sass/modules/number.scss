@@ -1,0 +1,38 @@
+
+$numWidth: 49px;
+
+@include module("num") {
+
+  display: inline-block;
+  width: $numWidth;
+  height: $numWidth;
+  line-height: $numWidth;
+  border: 1px solid color('green');
+  border-radius: 50%;
+  font-size: 0;
+
+  @include element("number") {
+    width: $numWidth;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    @extend %xlarge-font;
+    height: $numWidth;
+    line-height: $numWidth;
+    font-weight: $base-font-weight + 200;
+    position: relative;
+    left: -1px;
+  }
+
+  @each $color in ("red", "blue", "teal", "green") {
+    @include submodule("#{$color}") {
+      border-color: color("#{$color}");
+      background: transparentize(color("#{$color}"), .94);
+
+      @include element("number", child) {
+        color: darken(color("#{$color}"), 5%);
+      }
+    }
+  }
+
+}

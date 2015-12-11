@@ -1,0 +1,167 @@
+// *************************************
+//
+//   Testimonial grid
+//
+// *************************************
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+$tsg-width: 900px;
+$tsg-width-desktop: 800px;
+$tsg-width-laptop: 100%;
+$tsg-border-color: lighten(color('border'), 5%);
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+
+@include module (tsg) {
+  width: $tsg-width;
+  margin: 0 auto;
+  border: 1px solid $tsg-border-color;
+  display: table;
+  @include border-radius(3px);
+
+  @include tablet-and-mobile {
+    width: auto;
+  }
+
+  @include desktop {
+    width: $tsg-width-desktop;
+  }
+
+  @include laptop {
+    width: $tsg-width-laptop;
+  }
+
+
+
+  // -------------------------------------
+  //   Modifiers
+  // -------------------------------------
+
+
+
+
+  // -------------------------------------
+  //   Elements
+  // -------------------------------------
+
+  
+  @include element (row) {
+    @include pie-clearfix();
+    display: table;
+    width: 100%;
+
+    > .tsg_item:last-child {
+      border-right: none;
+    }
+
+    &:last-child {
+
+      > .tsg_item {
+        border-bottom: none;
+      }
+    }
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  @include element (item) {
+    height: $tsg-width/4;
+    display: table-cell;
+    border-right: 1px solid $tsg-border-color;
+    border-bottom: 1px solid $tsg-border-color;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+
+    @include tablet-and-mobile {
+      height: auto;
+    }
+
+    @include mobile {
+      width: 100% !important;
+      display: block;
+      border-right: none;
+    }
+  }
+
+  @include element (item-one) {
+    width: 25%;
+  }
+
+  @include element (item-two) {
+    width: 50%;
+  }
+
+  @include element (item-four) {
+    width: 100%;
+  }
+
+  @include element (item-three) {
+    width: 75%;
+  }
+
+  @include element (content) {
+    width: 100%;
+    padding: 40px;
+    z-index: $z-content + 1;
+    position: relative;
+  }
+
+  @include element (bgd-img) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 1px;
+    overflow: hidden;
+    background-size: cover;
+    z-index: $z-content;
+
+    &:before {
+      position: absolute;
+      left:0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      content: "";
+      background: white; // fallback
+      background: rgba(255,255,255,.95);
+    }
+  }
+
+  @include element (item-video) {
+
+    .tsg_bgd-img {
+
+      &:before{
+        display: none;
+      }
+    } 
+  }
+
+  @include element (video_play) {
+    opacity: .7;
+    @include transition(all ease-in-out 200ms);
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+}
+
+
+
+
+
+
+

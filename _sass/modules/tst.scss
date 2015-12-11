@@ -1,0 +1,213 @@
+// *************************************
+//
+//   Testimonial Block 
+//
+// *************************************
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+$testimonial-height: 650px;
+$testimonial-height-mobile: 0;
+$testimonial-height-tablet: 350px;
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+
+@include module (tst) {
+  display: block;
+  width: 100%;
+  min-height: $testimonial-height;
+  position: relative;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  overflow: hidden;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgba(0, 0, 0, .2);
+    z-index: $z-content + 3;
+  }
+   
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 1px;
+    z-index: 2;
+    background: rgba(0, 0, 0, .2);
+    z-index: $z-content + 3;
+  }
+
+  @include mobile {
+    min-height: $testimonial-height-mobile;
+    margin-bottom: rhythm(1);
+
+    &:before, &:after {
+      display: none;
+    }
+  }
+
+  @include tablet {
+    min-height: $testimonial-height-tablet;
+    margin-bottom: rhythm(1);
+
+    &:before, &:after {
+      display: none;
+    }
+  }
+
+  // -------------------------------------
+  //   Modifiers
+  // -------------------------------------
+
+  @include submodule(first) {
+
+    &:after {
+      display: none;
+    }
+  }
+
+  @include submodule(last) {
+
+    &:before {
+      display: none;
+    }
+  }
+
+  // -------------------------------------
+  //   Elements
+  // -------------------------------------
+
+  @include element(image) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    @include transition-property(opacity, visibility);
+    @include transition-timing-function(ease-in-out);
+    @include transition-duration(200ms);
+    opacity: 0;
+    visibility: hidden;
+
+    &.image-loaded {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    > img {
+      display: none;
+    }
+  }
+
+  @include element (mask) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: .7;
+    background: white;
+    z-index: $z-content + 1;
+  }
+
+  @include element (content) {
+    @include pie-clearfix();
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 40px;
+    min-height: 380px;
+    background: rgba(255, 255, 255, .95);
+    @include box-shadow(0 -1px 0 rgba(0, 0, 0, .2));
+    z-index: $z-content + 2;
+
+    @include mobile {
+      top: 0;
+      position: relative;
+      min-height: 0;
+      padding: rhythm(1) 20px;
+    }
+
+    @include tablet {
+      min-height: 0;
+    }
+  }
+
+  @include element (quote) {
+    @include adjust-font-size-to(16px);
+    @include adjust-leading-to(1, 16px);
+    margin: 0 0 0 ($gdc-width + 40px);
+    font-style: italic;
+
+    @include mobile {
+      @include adjust-font-size-to(14px);
+      @include adjust-leading-to(1, 14px);
+      margin-left: ($gdc-width-mobile + 20px);
+    }
+  }
+
+  @include element (byline) {
+    padding: 0;
+    margin-left: ($gdc-width + 40px);
+    color: $base-secondary;
+    @include adjust-font-size-to(13px);
+    @include adjust-leading-to(1, 13px);
+
+    @include mobile {
+      @include adjust-font-size-to(14px);
+      @include adjust-leading-to(1, 14px);
+      margin-bottom: 0;
+      margin-left: ($gdc-width-mobile + 20px);
+    }
+
+    @include tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  @include element (byline_author) {
+      display:block;
+      font-weight: $base-weight-bold;
+  }
+
+  @include element (card) {
+    position: absolute;
+    left: 40px;
+    top: 40px;
+
+    @include mobile {
+      position: relative;
+      left: auto;
+      bottom: auto;
+      top: auto;
+      float: left;
+    }
+
+    @include tablet {
+      top: auto;
+      bottom: 40px;
+    }
+  }
+}
+
+
+
+
+
+
+

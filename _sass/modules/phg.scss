@@ -1,0 +1,126 @@
+
+// Photo Grid
+// ======================================
+
+// Variables
+
+$margin: rhythm(1);
+$mobile-margin: 10px;
+$desktop-height: 450px;
+$tablet-height: 300px;
+$mobile-height: 200px;
+
+// Base
+
+@include module(phg) {
+  position: relative;
+
+  // Modifiers
+
+  @include submodule (hero) {
+    
+    > .phg_bgd {
+      left: 0;
+      bottom: 0;
+      @include border-radius(0);
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+
+  // Elements
+
+  @include element(photo) {
+    float: left;
+    position: relative;
+    height: $desktop-height;
+    width: 100%;
+    background: color('white');
+
+    &.phg_photo-small {
+      width: 33.333333333%;
+
+      @include mobile {
+        width: 50%;
+      }
+    }
+
+    &.phg_photo-med {
+      width: 66.666666666%;
+
+      @include mobile {
+        width: 50%;
+      }
+    }
+
+    &.phg_photo-half {
+      width: 50%;
+    }
+
+    @include tablet {
+      height: $tablet-height;
+    }
+
+    @include mobile {
+      height: $mobile-height;
+    }
+
+  }
+
+  @include element(bgd) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: $margin;
+    background-color: color('border');
+    background-size: cover;
+    @include border-radius($base-img-border-radius);
+    overflow: hidden;
+
+    @include mobile {
+      bottom: $mobile-margin;
+    }
+
+    &:before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      content: "";
+      border: 1px solid rgba(0,0,0,.15);
+      @include border-radius($base-img-border-radius);
+      z-index: $z-content + 1;
+    }
+
+    > img {
+      z-index: $z-content;
+      @include border-radius($base-img-border-radius);
+    }
+  }
+
+}
+
+.phg_photo-small + .phg_photo-med {
+  .phg_bgd {
+    left: $margin;
+
+    @include mobile {
+      left: $mobile-margin;
+    }
+  }
+}
+
+.phg_photo-half + .phg_photo-half {
+  .phg_bgd {
+    left: $margin;
+
+    @include mobile {
+      left: $mobile-margin;
+    }
+  }
+}

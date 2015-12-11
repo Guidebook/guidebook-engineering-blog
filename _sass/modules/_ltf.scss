@@ -1,0 +1,101 @@
+
+// Labeled Text Field (LTF)
+// ======================================
+
+// Variables
+
+
+
+// Base
+
+@include module(ltf) {
+
+  position: relative;
+  height: $labeled-input-height;
+  padding: 0;
+  padding-top: $labeled-input-height - $input-height;
+  display: block;
+
+  @include element (label) {
+    position: absolute;
+    top: $input-padding;
+    left: $input-padding + 1;
+    right: $input-padding;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    @include font-size(11px);
+    z-index: 5;
+    font-weight: 600;
+    cursor: text;
+    pointer-events: none;
+  }
+
+  @include element (textfield) {
+    @extend .frm_textfield;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: $labeled-input-height; 
+    padding-top: $labeled-input-height - $input-height;
+  }
+
+  > :focus ~ .ltf_label {
+    color: color('blue');
+  }
+
+}
+
+.group_ltf {
+
+  > .ltf {
+    margin-top: -1px;
+
+    &:first-child {
+
+      > .ltf_textfield {
+        @include border-radius(5px 5px 0 0);
+      }
+    }
+
+    &:last-child {
+
+      > .ltf_textfield {
+        @include border-radius(0 0 5px 5px);
+      }
+    }
+  }
+}
+
+.group_ltf-vertical {
+
+  @include pie-clearfix();
+
+  > .ltf {
+    margin-left: -1px;
+    margin-top: 0;
+    float:left;
+    width: 50%;
+
+    > .ltf_textfield {
+      min-width: 0;
+    }
+
+    &:first-child {
+
+      > .ltf_textfield {
+        @include border-radius(5px 0 0 5px);
+      }
+    }
+
+    &:last-child {
+
+      > .ltf_textfield {
+        @include border-radius(0 5px 5px 0);
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,80 @@
+// Setting this as a global variable.
+// This lets us assign it when entering a "module" mixin,
+// which effectively creates a global "state" we can use
+// within the submodule, element, and state mixins
+// to "know" the current module we are in!
+$_module_class: _unknown_
+
+@function element-selector($element_name)
+  @return ".#{$_module_class}_#{$element_name}"
+
+@function submodule-selector($submodule_name)
+  @return ".#{$_module_class}-#{$submodule_name}"
+
+@mixin module($module_class)
+  // @debug "In module mixin; $module_class is '#{$module_class}'"
+
+  $_module_class: $module_class !global
+  .#{$module_class}
+    @content
+
+
+@mixin submodule($submodule_names, $scope: 'at-root')
+  $selector: submodule-selector(nth($submodule_names, 1))
+
+  @if length($submodule_names) > 1
+    @for $i from 2 through length($submodule_names)
+      $selector: selector-unify($selector, submodule-selector(nth($submodule_names, $i)))
+
+  @if $scope == 'at-root'
+    // ... with no ancestor selector. Default. Clean & SMACSS-y
+    @at-root
+      #{$selector}
+        @content
+
+  @else if $scope == 'current'
+    #{selector-unify(&, $selector)}
+      @content
+
+  @else
+    @error "Unknown scope #{$scope}. If you meant to pass multiple names, that is supported without commas: @include submodule(primary danger)"
+
+
+@mixin element($element_names, $scope: 'at-root')
+  $selector: element-selector(nth($element_names, 1))
+
+  @if length($element_names) > 1
+    @for $i from 2 through length($element_names)
+      $selector: selector-unify($selector, element-selector(nth($element_names, $i)))
+
+  @if $scope == 'nested'
+    // For e.g. an element within a submodule or a module with a certain state
+    #{$selector}
+      @content
+
+  @else if $scope == 'at-root'
+    // ... with no ancestor selector. Default. Clean & SMACSS-y
+    @at-root
+      #{$selector}
+        @content
+
+  @else if $scope == 'child'
+    // More efficient than the ancestor selector, if you know this will
+    // always be a direct child of the current context's selector.
+    > #{$selector}
+      @content
+
+  @else if $scope == 'current'
+    // Works by further restricting the current selector.
+    // This will rarely be what you want.
+    #{selector-unify(&, $selector)}
+      @content
+
+  @else
+    @error "Unknown scope #{$scope}. If you meant to pass multiple names, that is supported without commas: @include element(section first, 'child')"
+
+// The state mixin can be used on a module or for an element, with no $scope needed.
+@mixin state($state_name)
+  // Generate selector like .mod.is-off (for $state_name: 'off' within context of module 'mod')
+  &.is-#{$state_name}
+    @content

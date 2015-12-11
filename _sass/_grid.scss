@@ -1,0 +1,93 @@
+
+/* Grid Settings
+  ========================================================================== */
+  $column-count : 24;
+  $gutter : $base-padding * 2;
+  $gutter-mobile: 20px;
+
+
+/* Breakpoints
+  ========================================================================== */
+  $widescreen : 1300px;
+  $desktop : 1240px;
+  $laptop : 1020px;
+  $tablet : 800px;
+  $mobile : 400px;
+
+@mixin respond-to($type){
+  @if $type == mobile{
+    @media only screen and (max-width: $mobile) { @content; }
+  }
+  @elseif $type == tablet{
+    @media only screen and (min-width: $mobile + 1) and (max-width: $tablet) { @content; }
+  }
+  @elseif $type == laptop {
+    @media only screen and (min-width: $tablet + 1) and (max-width: $laptop) { @content; }
+  }
+  @elseif $type == desktop {
+    @media only screen and (min-width: $laptop + 1) and (max-width: $desktop) { @content; }
+  }
+  @elseif $type == widescreen {
+    @media only screen and (min-width: $desktop + 1) { @content; }
+  }
+}
+
+
+/* Grid Generator
+  ========================================================================== */
+
+  @function generateCols ($n){
+    @return ($n * 100% / $column-count);
+  }
+
+
+  @mixin col($n){
+
+    width : generateCols($n);
+    float : left;
+    display : inline;
+
+    @include respond-to(mobile) {
+      width: 100% !important;
+    }
+
+    @include respond-to(tablet) {
+      width: 100% !important;
+    }
+  }
+
+/* Gutter class
+  ========================================================================== */
+
+  .gutter-wrapper {
+    margin: $gutter;
+  }
+
+
+/* #Clearing - by Dave Gamache
+  ========================================================================== */
+
+  .container:after { content: "\0020"; display: block; height: 0; clear: both; visibility:hidden;}
+
+  .clearfix:before,
+  .clearfix:after {
+    content: '\0020';
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0; }
+  .clearfix:after {
+    clear: both; }
+  .clearfix {
+    zoom: 1; }
+
+  /* You can also use a <br class="clear" /> to clear columns */
+  .clear {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }

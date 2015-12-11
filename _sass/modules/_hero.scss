@@ -1,0 +1,377 @@
+// *************************************
+//
+//   Hero
+//
+// *************************************
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+
+$hero-min-height: 370px;
+$hero-max-height: 740px;
+$hero-max-height-mobile: 630px;
+$hero-max-height-tablet: 700px;
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+
+@include module (hero) {
+  display: block;
+  width: 100%;
+  height: $hero-max-height;
+  min-height: $hero-min-height;
+  position: relative;
+  z-index: $z-content;
+
+  @include mobile {
+    height: auto;
+    max-height: $hero-max-height-mobile;
+  }
+
+  @include tablet {
+    height: auto;
+    max-height: $hero-max-height-tablet;
+  }
+
+  &:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: $navbar-height * 4;
+    content: "";
+    z-index: $z-content; // added so this is above the hero bgd
+    @include background(linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.6)));
+  }
+
+  @include element("spinner") {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -12px;
+    margin-top: -12px;
+    opacity: 0;
+    visibility: hidden;
+    @include transition-property(opacity, visibility);
+    @include transition-duration($anim-speed-normal);
+    @include transition-timing-function($anim-ease);
+  }
+
+  @include submodule ( flush ) {
+    margin-top:-($navbar-height) - $navbar-roof-height + 1; // fixes issues with zooming in/out in chromium, probably a rounding bug
+    z-index: $z-content;
+    padding-top: $navbar-height + $navbar-roof-height;
+
+    @include mobile {
+      margin-top: -$navbar-height-mobile;
+      padding-top: $navbar-height-mobile;
+    }
+
+    @include tablet {
+      margin-top: -$navbar-height-mobile;
+      padding-top: $navbar-height-mobile;
+    }
+  }
+
+  @include submodule (has-figure) {
+
+    @include mobile {
+      height: $hero-max-height-mobile;
+    }
+
+    @include tablet {
+      height: $hero-max-height-tablet;
+    }
+  }
+
+  @include submodule (inverse) {
+
+    .hero_text,
+    .hero_title {
+      color: color('white');
+      text-shadow: 0 1px 4px rgba(0,0,0,.3), 0 0 50px rgba(0,0,0,.5);
+    }
+
+    &:after {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      content: "";
+      @include background(linear-gradient(to top, transparentize(color('shade-gray'), .5), transparentize(color('shade-gray'), .8)));
+    }
+  }
+
+  @include submodule(loading) {
+
+    @include element("spinner", child) {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  // -------------------------------------
+  //   Elements
+  // -------------------------------------
+
+  @include element (keyline) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: rgba(0, 0, 0, .15);
+    z-index: $z-content + 2;
+  }
+
+  @include element (bgd) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover !important;  //see if you can solve this one
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    @include transition-property(opacity, visibility);
+    @include transition-duration($anim-speed-v-slow);
+    @include transition-timing-function($anim-ease);
+
+    .hero-loaded & {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    > img {
+      z-index: $z-content;
+    }
+  }
+
+
+  @include element (bgd-overview) {
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: "";
+      z-index: $z-content + 1;
+      @include background(
+        linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, .7))
+      );
+    }
+  }
+
+  @include element (bgd-events) {
+
+  }
+
+  @include element (bgd-edu) {
+    @include background(
+      linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, .7)),
+      url($asset-url + "img/hero/img_hero_overview_blurred.jpg")
+    );
+  }
+
+  @include element (bgd-places) {
+
+  }
+
+  @include element (bgd-enterprise) {
+
+  }
+
+  @include element (bgd-about) {
+    @include background(
+      linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, .7)),
+      url($asset-url + "img/hero/img_hero_tacos.jpg")
+    );
+  }
+
+  @include element (bgd-culture) {
+    @include background(
+      linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, .7)),
+      url($asset-url + "img/hero/img_hero_culture.jpg")
+    );
+  }
+
+  @include element (bgd-team) {
+    @include background(
+      linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, .7)),
+      url($asset-url + "img/hero/img_hero_team.jpg")
+    );
+  }
+
+  @include element (bgd-careers) {
+    @include background(
+      linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, .7)),
+      url($asset-url + "img/hero/img_hero_company.jpg")
+    );
+  }
+
+  @include element (content) {
+    height: 100%;
+    position: relative;
+    z-index: $z-content + 2;
+    overflow: hidden;
+  }
+
+  // content inner is required to vertically clip content, but not horizontally, while still maintaining a ~1000px width container.
+  @include element (content-inner) {
+    margin: 0 auto;
+    height: 100%;
+    position: relative;
+    padding-left: 4px;
+    z-index: $z-content + 2;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+      margin-right: -0.25em; /* Adjusts for spacing */
+    }
+
+    @include mobile {
+      padding: 60px 20px;
+      overflow: hidden;
+
+      &:before {
+        display: none;
+      }
+    }
+
+    @include tablet {
+      padding: 60px 20px;
+      overflow: hidden;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  @include element (cta) {
+    position: relative;
+    z-index: $z-content + 1;
+    width: 50%;
+    display: inline-block;
+    opacity: 0;
+    visibility: hidden;
+    vertical-align: middle;
+    @include transition-property(opacity, visibility);
+    @include transition-duration($anim-speed-v-slow);
+    @include transition-timing-function($anim-ease);
+
+    &.has-loaded {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    @include state (centered) {
+      margin-left: 0;
+      margin-top: 3em;
+    }
+
+    @include tablet-and-mobile {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  @include element (figure) {
+    position: absolute;
+    right: 100px;
+    top: 0;
+    bottom: 0;
+    z-index: $z-content + 1;
+    margin-top: 1em;
+    opacity: 0;
+    visibility: hidden;
+    @include transition-property(transform, opacity, visibility);
+    @include transition-delay(0.2s);
+    @include transition-duration($anim-speed-v-slow);
+    @include transition-timing-function($anim-slight-bounce);
+    @include transform(translate3d(0, 3em, 0));
+
+    &.has-loaded {
+      @include transform(translate3d(0, 0, 0));
+      opacity: 1;
+      visibility: visible;
+    }
+
+    @include tablet-and-mobile {
+      position: relative;
+      margin: 10px auto 0 auto;
+    }
+
+    @include laptop {
+      right: 0;
+    }
+
+    @include desktop {
+      right: 0;
+    }
+  }
+
+  @include element (figure_image) {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  @include element (title) {
+    font-weight: 300;
+  }
+
+  @include element (text) {
+    @extend h3;
+
+    @include adjust-font-size-to(18px);
+    @include adjust-leading-to(1, 18px);
+
+    @include mobile {
+      @include adjust-font-size-to(13px);
+      @include adjust-leading-to(1, 13px);
+    }
+  }
+
+  @include element (btn) {
+    @include adjust-font-size-to(15px);
+    font-weight: 600;
+    width: 250px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0;
+    margin-bottom: 20px;
+    margin-right: 10px;
+
+    &.btn:not(.btn-primary) {
+      margin-right: 10px;
+      background-color: rgba(255, 255, 255, .5);
+      border-color: rgba(0, 0, 0, .18);
+      color: color('dark-gray');
+
+      &:hover{
+        background-color: rgba(255, 255, 255, .5);
+        border-color: rgba(0, 0, 0, .3);
+      }
+    }
+
+    &:active {
+      font-weight: 600;
+    }
+
+    @include mobile {
+      @include adjust-font-size-to(13px);
+      line-height: 50px;
+    }
+  }
+}

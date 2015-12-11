@@ -1,0 +1,66 @@
+/*
+Error: Undefined mixin 'retina-sprite-add'.
+        on line 1 of /Volumes/Locker/dev-blog/_sass/sprites.scss, in `retina-sprite-add'
+        from line 1 of /Volumes/Locker/dev-blog/_sass/sprites.scss
+
+1: @include retina-sprite-add(sprites, "sprites/*.png", "sprites@2x/*.png");
+2: 
+3: //general sprites
+4: @each $icon in ("gear") {
+5:   .img-#{$icon} {
+6:     @include retina-sprite(img_#{$icon}, sprites);
+
+Backtrace:
+/Volumes/Locker/dev-blog/_sass/sprites.scss:1:in `retina-sprite-add'
+/Volumes/Locker/dev-blog/_sass/sprites.scss:1
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:349:in `block in visit_mixin'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/stack.rb:98:in `block in with_mixin'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/stack.rb:115:in `with_frame'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/stack.rb:98:in `with_mixin'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:347:in `visit_mixin'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/stack.rb:79:in `block in with_base'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/stack.rb:115:in `with_frame'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/stack.rb:79:in `with_base'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/tree/visitors/base.rb:52:in `map'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/tree/root_node.rb:20:in `render'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/engine.rb:278:in `render'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:17:in `block in render'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:29:in `with_import_scope'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:16:in `render'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/plugin/compiler.rb:209:in `each'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/sass-3.4.20/lib/sass/plugin/compiler.rb:293:in `watch'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/compass-1.0.1/lib/compass/sass_compiler.rb:46:in `watch!'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/compass-1.0.1/lib/compass/commands/watch_project.rb:41:in `perform'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/compass-1.0.1/lib/compass/commands/base.rb:18:in `execute'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/compass-1.0.1/lib/compass/commands/project_base.rb:19:in `execute'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/compass-1.0.1/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/compass-1.0.1/lib/compass/exec/sub_command_ui.rb:15:in `run!'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/compass-1.0.1/bin/compass:30:in `block in <top (required)>'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/compass-1.0.1/bin/compass:44:in `call'
+/Users/Peter/.rvm/gems/ruby-2.2.1/gems/compass-1.0.1/bin/compass:44:in `<top (required)>'
+/Users/Peter/.rvm/gems/ruby-2.2.1/bin/compass:23:in `load'
+/Users/Peter/.rvm/gems/ruby-2.2.1/bin/compass:23:in `<main>'
+/Users/Peter/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
+/Users/Peter/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined mixin 'retina-sprite-add'.\A         on line 1 of /Volumes/Locker/dev-blog/_sass/sprites.scss, in `retina-sprite-add'\A         from line 1 of /Volumes/Locker/dev-blog/_sass/sprites.scss\A \A 1: @include retina-sprite-add(sprites, \"sprites/*.png\", \"sprites@2x/*.png\");\A 2: \A 3: //general sprites\A 4: @each $icon in (\"gear\") {\A 5:   .img-#{$icon} {\A 6:     @include retina-sprite(img_#{$icon}, sprites);"; }

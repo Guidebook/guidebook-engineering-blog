@@ -1,0 +1,48 @@
+// Apply a natural box layout model to all elements.
+*, *:before, *:after
+  -moz-box-sizing: border-box
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+  -webkit-font-smoothing: antialiased
+
+html
+  font-family: $base-font-family
+  font-size: $base-font-size
+  color: color(text)
+  font-weight: $base-font-weight
+  height: 100%
+
+@include establish-baseline($base-font-size)
+
+
+body
+  @include pie-clearfix()
+  font-size: 100%
+  height: 100%
+  margin: 0
+  padding: 0
+
+textarea,
+input,
+button
+  font-family: inherit
+  font-size: inherit
+
+\:link, 
+\:visited,
+\:link:active, 
+\:link:focus,
+\:visited:active, 
+\:visited:focus 
+  color: color(link)
+  font-weight: $base-font-weight + 200
+  text-decoration: none
+
+\:link:hover,
+\:visited:hover
+  color: darken(color(link), 10%)  
+
+// Reset. Override with specific modules
+ol, ul, li
+  padding: 0
+  margin: 0
