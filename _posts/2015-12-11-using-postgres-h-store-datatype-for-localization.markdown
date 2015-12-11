@@ -16,7 +16,7 @@ tags:
 ---
 ### The Challenge
 
-An increasing number of guides created through the [Guidebook Content Management System](https://gears.guidebook.com) have been targeted at an international client base and multi-language support is a must. Previously, support for multiple languages was added by ducplicating a guide and updating the clones with translated content. Needless to say, this was not a scalalble solution--we needed to elevate localization to a "first level feature" to support an evergrowing international client base.
+An increasing number of guides created through the [Guidebook Content Management System](https://gears.guidebook.com) have been targeted at an international client base and multi-language support is a must. Previously, support for multiple languages was added by duplicating a guide and updating the clones with translated content. Needless to say, this was not a scalalble solution--we needed to elevate localization to a "first level feature" to support an evergrowing international client base.
 
 
 ### Proposed Solutions
