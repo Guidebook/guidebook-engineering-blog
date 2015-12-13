@@ -39,7 +39,7 @@ We noticed huge CPU spikes accompanying the `ReadTimeouts` from Elasticsearch.  
 
 Briefly, ^ we were running our strings through the standard tokenizer, lower casing them, and then ngram tokenizing the strings (e.g. "guidebook" becomes "gui", "guid", "guide", "guideb" etc.).  This ngram strategy allows for nice partial matching (for example, a user searching for "guidebook" could just enter "gui" and see results). Unfortunately, the ngram tokenizing became troublesome when users submitted Base64 encoded image files as part of an html document:
 
-{% highlight json %}
+{% highlight html %}
 <img alt="Embedded Image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIA..." />
 {% endhighlight %}
 
