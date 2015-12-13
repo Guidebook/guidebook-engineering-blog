@@ -2,4 +2,7 @@ _site
 .sass-cache
 note_modules
 bower_components
+_css
 .DS_Store
+*.DS_Store
+*/.DS_Store

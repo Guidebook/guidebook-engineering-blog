@@ -7,7 +7,7 @@ translate: false
 
 <main class="l-content post post-details">
   <section class="section tac">
-    <p><span class="l-pipes"><a href="{{ site.baseurl }}" class="js-pjax"><span class="l-hidden-mobile">Guidebook </span>Engineering Blog</a>  </span><span class="post_date l-pipes">{{ page.date | date: '%b %d, %Y' }}</span></p>
+    <p><span class="l-pipes"><a href="{{ site.baseurl }}" class="js-pjax"><span class="img-gear_small l-v-align-middle l-h-half-spaced l-hidden-mobile"></span><span class="l-hidden-mobile">Guidebook </span>Engineering Blog</a>  </span><span class="post_date l-pipes">{{ page.date | date: '%b %d, %Y' }}</span></p>
     <h2 class="post_title">{{ page.title }}</h2>
     <div class="post_meta">
       <div class="post_authors {% if page.authors.size == 1 %}l-hidden-desktop l-hidden-widescreen{% endif %}">
@@ -22,9 +22,9 @@ translate: false
       {% if page.tags %}
       <div class="post_tags">
         {% for tag in page.tags %}
-        <a class="post_tags_tag js-pjax" href="{{ site.baseurl }}/category/{{tag}}/">
-          <span class="post_tags_tag_hash">#</span>{{tag}}
-        </a>
+        <span class="post_tags_tag js-pjax">
+          <span class="post_tags_tag_hash">#</span>{{tag | downcase | replace: ' ', '-'}}
+        </span>
         {% endfor %}
       </div>
       {% endif %}
@@ -53,7 +53,7 @@ translate: false
     </div>
 
     <div class="post_actions">
-      <a class="btn btn-secondary" href="http://twitter.com/share?text={{ page.title }}&url=http://guidebook.com{{site.baseurl}}{{ page.url }}">Share on Twitter</a>
+      <a class="btn btn-secondary" href="http://twitter.com/share?text={{ page.title }}&url=http://engineering.guidebook.com{{ page.url }}">Share on Twitter</a>
     </div>
   </section>
 </main>

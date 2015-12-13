@@ -1,11 +1,11 @@
 
 <div class="nav_roof">
   <div class="l-content">
-    <div class="nav_roof_item l-hidden-widescreen l-hidden-desktop">
-      <p><a href="{{ site.guidebookbaseurl }}/careers/" class="js-pjax">Come work with us!</a></p>
-    </div>
     <div class="nav_roof_item">
       <p><a href="{{ site.baseurl }}">Blog home</a></p>
+    </div>
+    <div class="nav_roof_item l-hidden-widescreen l-hidden-desktop">
+      <p><a href="{{ site.guidebookbaseurl }}/careers/" class="js-pjax">Careers</a></p>
     </div>
     <div class="nav_roof_item">
       <p><span class="ic-nav_roof_chat vam mr5"></span><a href="{{ site.guidebookbaseurl }}/contact/">Contact</a></p>
@@ -28,7 +28,7 @@
       <a href="{{ site.guidebookbaseurl }}/careers/" class="nav_link js-pjax">Come build with us!</a>
     </li>
 
-    <li class="nav_item">
+    <li class="nav_item l-hidden-laptop">
       <a href="{{ site.guidebookbaseurl }}/guides/" class="nav_link js-pjax {% if page.selected == 'guides' %}is-selected{% endif %}">Find a guide</a>
     </li>
 

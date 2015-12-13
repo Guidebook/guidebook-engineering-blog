@@ -1,8 +1,11 @@
 @include retina-sprite-add(sprites, "sprites/*.png", "sprites@2x/*.png");
 
 //general sprites
-@each $icon in ("gear") {
+@each $icon in (
+  "gear",
+  "gear_small"
+) {
   .img-#{$icon} {
-    @include retina-sprite(img_#{$icon}, sprites);
+    @include retina-sprite(ic_#{$icon}, sprites);
   }
 }
