@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Django SQL shell"
+title:  "Super Django SQL shell"
 date:   2015-11-19
 has_excerpt: true
 authors:
