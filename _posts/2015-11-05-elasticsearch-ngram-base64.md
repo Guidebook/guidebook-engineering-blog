@@ -7,6 +7,8 @@ authors:
   - slug: dmuller
     name: David Muller
     title: Developer
+    #uncomment the below to have a twitter account linked to your post (omit @)
+    #twitter: dmuller
 
 tags:
   - Elasticsearch
