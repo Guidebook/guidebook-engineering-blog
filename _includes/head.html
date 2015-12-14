@@ -12,7 +12,7 @@
     <meta name="google-site-verification" content="fuwPJZJgfjuODVEBIRsgX0W302JaRLE1JL8XndKvcyA" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="analytics_page_name" content="{{ page.analytics_page_name }}">
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' }}">
+    <link rel="canonical" href="{{site.baseurl}}{{ page.url | replace:'index.html','' }}">
 
     {% if page.id %}
     <meta name="description" content="{{ page.content | strip_html | truncate: 200 }}" />
@@ -33,7 +33,7 @@
     <!-- fb open grah -->
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="{{ site.title }}" />
-    <meta property="og:url" content="{{ page.url | replace:'index.html','' }}" />
+    <meta property="og:url" content="{{site.baseurl}}{{ page.url | replace:'index.html','' }}" />
 
     <!-- twitter meta -->
     <meta name="twitter:card" content="summary" />
