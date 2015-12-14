@@ -7,7 +7,21 @@ translate: false
 
 <main class="l-content post post-details">
   <section class="section tac">
-    <p><span class="l-pipes"><a href="{{ site.baseurl }}" class="js-pjax"><span class="img-gear_small l-v-align-middle l-h-half-spaced l-hidden-mobile"></span><span class="l-hidden-mobile">Guidebook </span>Engineering Blog</a>  </span><span class="post_date l-pipes">{{ page.date | date: '%b %d, %Y' }}</span></p>
+    <p>
+      <span class="l-pipes">
+        <a href="{{ site.baseurl }}" class="js-pjax">
+          <span class="img-gear_small l-v-align-middle l-hidden-mobile"></span>
+          <span class="l-hidden-mobile">&nbsp;Guidebook </span>Engineering Blog
+        </a>
+      </span>
+      <span class="post_date l-pipes">{{ page.date | date: '%b %d, %Y' }}</span>
+      <span class="post_date l-pipes">
+        {% capture words %}
+          {{ page.content | number_of_words }}
+        {% endcapture %}
+        {{ words | divided_by: 180 | append: " minute read" }}
+      </span>
+    </p>
     <h2 class="post_title">{{ page.title }}</h2>
     <div class="post_meta">
       <div class="post_authors {% if page.authors.size == 1 %}l-hidden-desktop l-hidden-widescreen{% endif %}">
@@ -53,7 +67,7 @@ translate: false
     </div>
 
     <div class="post_actions">
-      <a class="btn btn-secondary" href="http://twitter.com/share?text={{ page.title }}&url=http://engineering.guidebook.com{{ page.url }}">Share on Twitter</a>
+      <a class="btn btn-secondary btn-large" href="http://twitter.com/share?text={{ page.title }}&url=http://engineering.guidebook.com{{ page.url }}">Share on Twitter</a>
     </div>
   </section>
 </main>

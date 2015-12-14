@@ -4154,7 +4154,7 @@ p > code, ul > code, ol > code {
 /* line 8, ../_sass/_sprites.scss */
 .img-gear {
   display: inline-block;
-  background-image: url('../images/sprites-se375350b43.png');
+  background-image: url('../images/sprites-sd5e16a61f2.png');
   background-position: 0 0;
   background-repeat: no-repeat;
   height: 60px;
@@ -4163,7 +4163,7 @@ p > code, ul > code, ol > code {
 @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
   /* line 8, ../_sass/_sprites.scss */
   .img-gear {
-    background-image: url('../images/sprites@2x-sdd9afc24b0.png');
+    background-image: url('../images/sprites@2x-s375a1edcdd.png');
     -webkit-background-size: 60px auto;
     background-size: 60px auto;
     background-position: 0 0;
@@ -4173,16 +4173,16 @@ p > code, ul > code, ol > code {
 /* line 8, ../_sass/_sprites.scss */
 .img-gear_small {
   display: inline-block;
-  background-image: url('../images/sprites-se375350b43.png');
+  background-image: url('../images/sprites-sd5e16a61f2.png');
   background-position: 0 -62px;
   background-repeat: no-repeat;
-  height: 26px;
-  width: 26px;
+  height: 18px;
+  width: 18px;
 }
 @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
   /* line 8, ../_sass/_sprites.scss */
   .img-gear_small {
-    background-image: url('../images/sprites@2x-sdd9afc24b0.png');
+    background-image: url('../images/sprites@2x-s375a1edcdd.png');
     -webkit-background-size: 60px auto;
     background-size: 60px auto;
     background-position: 0 -62px;

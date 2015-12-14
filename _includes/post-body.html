@@ -9,9 +9,15 @@
       {% for author in post.authors %}
       <span class="avatar avatar-30 vam"><img src="http://guidebook.com/img/team/{{ author.slug }}.png" class="avatar_image" /></span>
       {% endfor %}
-      <div class="post_authors_names">
+      <div class="post_authors_names l-pipes">
       {% for author in post.authors %}<span class="post_authors_names_name">{% if author.twitter %}<a href="http://twitter.com/{{author.twitter}}" class="gray-link">{% endif %}{{author.name}}{% if author.twitter %}</a>{% endif %}</span>{% if forloop.last == false %}, {% endif %}{% endfor %} on {{ post.date | date: '%b %d, %Y' }}
       </div>
+      <span class="l-pipes">
+        {% capture words %}
+          {{ post.content | number_of_words }}
+        {% endcapture %}
+        {{ words | divided_by: 180 | append: " minute read" }}
+      </span>
     </div>
   </div>
 
