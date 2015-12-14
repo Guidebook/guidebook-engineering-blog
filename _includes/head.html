@@ -9,9 +9,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="google-site-verification" content="fuwPJZJgfjuODVEBIRsgX0W302JaRLE1JL8XndKvcyA" />
-    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="analytics_page_name" content="{{ page.analytics_page_name }}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' }}">
@@ -47,9 +45,9 @@
     <meta property="og:image" content="{{ page.img }}" />
     <meta name="twitter:image" content="{{ page.img }}" />
     {% else %}
-    <link rel="image_src" href="http://guidebook.com/img/img_guidebook_engineering.png" />
-    <meta property="og:image" content="http://guidebook.com/img/img_guidebook_engineering.png" />
-    <meta name="twitter:image" content="http://guidebook.com/img/img_guidebook_engineering.png" />
+    <link rel="image_src" href="https://guidebook.com/img/img_guidebook_engineering.png" />
+    <meta property="og:image" content="https://guidebook.com/img/img_guidebook_engineering.png" />
+    <meta name="twitter:image" content="https://guidebook.com/img/img_guidebook_engineering.png" />
     {% endif %}
 
     <!-- typography css, necessary for whitney and gotham -->
