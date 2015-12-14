@@ -113,6 +113,10 @@ $post-width-desktop: 675px;
     .post_meta {
       margin-bottom: rhythm(3);
       text-align: center;
+
+      @include mobile {
+        margin-bottom: rhythm(2);
+      }
     }
 
   }
@@ -131,11 +135,11 @@ $post-width-desktop: 675px;
     height: 32px;
     margin: 0 20px;
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
   }
 
   @include element (authors) {
-    vertical-align: top;
+    vertical-align: middle;
     margin-bottom: rhythm(1);
 
     > .avatar {
@@ -157,7 +161,7 @@ $post-width-desktop: 675px;
 
   @include element (authors_names) {
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
     height: 32px;
     line-height: 32px;
   }
@@ -167,6 +171,12 @@ $post-width-desktop: 675px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+  }
+
+  @include element (read-time) {
+    @include mobile {
+      display: none !important;
+    }
   }
 
   @include element (body) {
@@ -306,6 +316,18 @@ $post-width-desktop: 675px;
 
   @include element (actions) {
     margin-top: rhythm(2);
+
+    @include mobile {
+      .btn {
+        display: block;
+        margin-left: 0;
+        margin-right: 0;
+
+        + .btn {
+          margin-top: 10px;
+        }
+      }
+    }
   }
 
   @include element (image) {

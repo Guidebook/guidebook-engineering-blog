@@ -4302,6 +4302,12 @@ p > code, ul > code, ol > code {
   margin-bottom: 5.4rem;
   text-align: center;
 }
+@media only screen and (max-width: 600px) {
+  /* line 113, ../_sass/modules/_post.scss */
+  .post-brief .post_meta {
+    margin-bottom: 3.6rem;
+  }
+}
 /* line 58, ../bower_components/guidebook-common-styles/mixins/_blumess-support.sass */
 .post_meta_divider {
   width: 0;
@@ -4309,14 +4315,14 @@ p > code, ul > code, ol > code {
   height: 32px;
   margin: 0 20px;
   display: inline-block;
-  vertical-align: top;
+  vertical-align: middle;
 }
 /* line 58, ../bower_components/guidebook-common-styles/mixins/_blumess-support.sass */
 .post_authors {
-  vertical-align: top;
+  vertical-align: middle;
   margin-bottom: 1.8rem;
 }
-/* line 141, ../_sass/modules/_post.scss */
+/* line 145, ../_sass/modules/_post.scss */
 .post_authors > .avatar {
   display: inline-block;
   width: 32px;
@@ -4326,7 +4332,7 @@ p > code, ul > code, ol > code {
   margin-right: 6px;
 }
 @media only screen and (max-width: 600px) {
-  /* line 141, ../_sass/modules/_post.scss */
+  /* line 145, ../_sass/modules/_post.scss */
   .post_authors > .avatar {
     width: 25px;
     height: 25px;
@@ -4337,7 +4343,7 @@ p > code, ul > code, ol > code {
 /* line 58, ../bower_components/guidebook-common-styles/mixins/_blumess-support.sass */
 .post_authors_names {
   display: inline-block;
-  vertical-align: top;
+  vertical-align: middle;
   height: 32px;
   line-height: 32px;
 }
@@ -4348,7 +4354,13 @@ p > code, ul > code, ol > code {
   margin-right: auto;
   text-align: center;
 }
-/* line 174, ../_sass/modules/_post.scss */
+@media only screen and (max-width: 600px) {
+  /* line 58, ../bower_components/guidebook-common-styles/mixins/_blumess-support.sass */
+  .post_read-time {
+    display: none !important;
+  }
+}
+/* line 184, ../_sass/modules/_post.scss */
 .post_body p, .post_body ul, .post_body ol, .post_body ul {
   font-size: 16px;
   font-size: 1.23077rem;
@@ -4359,7 +4371,7 @@ p > code, ul > code, ol > code {
   color: #48565e;
 }
 @media only screen and (max-width: 600px) {
-  /* line 174, ../_sass/modules/_post.scss */
+  /* line 184, ../_sass/modules/_post.scss */
   .post_body p, .post_body ul, .post_body ol, .post_body ul {
     font-size: 13px;
     font-size: 1rem;
@@ -4369,7 +4381,7 @@ p > code, ul > code, ol > code {
     line-height: 1.8rem;
   }
 }
-/* line 186, ../_sass/modules/_post.scss */
+/* line 196, ../_sass/modules/_post.scss */
 .post_body > h3 {
   font-size: 16px;
   font-size: 1.23077rem;
@@ -4381,7 +4393,7 @@ p > code, ul > code, ol > code {
   padding-bottom: 1.8rem;
 }
 @media only screen and (max-width: 600px) {
-  /* line 186, ../_sass/modules/_post.scss */
+  /* line 196, ../_sass/modules/_post.scss */
   .post_body > h3 {
     font-size: 13px;
     font-size: 1rem;
@@ -4391,7 +4403,7 @@ p > code, ul > code, ol > code {
     line-height: 1.8rem;
   }
 }
-/* line 198, ../_sass/modules/_post.scss */
+/* line 208, ../_sass/modules/_post.scss */
 .post_body > h4 {
   font-size: 15px;
   font-size: 1.15385rem;
@@ -4404,7 +4416,7 @@ p > code, ul > code, ol > code {
   padding-bottom: 1.8rem;
 }
 @media only screen and (max-width: 600px) {
-  /* line 198, ../_sass/modules/_post.scss */
+  /* line 208, ../_sass/modules/_post.scss */
   .post_body > h4 {
     font-size: 13px;
     font-size: 1rem;
@@ -4443,12 +4455,12 @@ p > code, ul > code, ol > code {
   line-height: 32px;
   margin-bottom: 1.8rem;
 }
-/* line 237, ../_sass/modules/_post.scss */
+/* line 247, ../_sass/modules/_post.scss */
 .post_tags_tag:hover {
   background: rgba(67, 159, 216, 0.1);
   text-decoration: none;
 }
-/* line 242, ../_sass/modules/_post.scss */
+/* line 252, ../_sass/modules/_post.scss */
 .post_tags_tag:last-child {
   margin-right: 0;
 }
@@ -4459,7 +4471,7 @@ p > code, ul > code, ol > code {
     border: none;
     margin-bottom: 0;
   }
-  /* line 251, ../_sass/modules/_post.scss */
+  /* line 261, ../_sass/modules/_post.scss */
   .post_tags_tag:hover {
     text-decoration: underline;
     background: transparent;
@@ -4476,12 +4488,12 @@ p > code, ul > code, ol > code {
   top: 5px;
   width: 120px;
 }
-/* line 268, ../_sass/modules/_post.scss */
+/* line 278, ../_sass/modules/_post.scss */
 .post_author > .avatar {
   display: inline-block;
   margin-bottom: 1.8rem;
 }
-/* line 273, ../_sass/modules/_post.scss */
+/* line 283, ../_sass/modules/_post.scss */
 .post_author.post_author-inline {
   position: relative;
   left: auto;
@@ -4491,7 +4503,7 @@ p > code, ul > code, ol > code {
   height: 50px;
   margin-right: 10px;
 }
-/* line 282, ../_sass/modules/_post.scss */
+/* line 292, ../_sass/modules/_post.scss */
 .post_author.post_author-inline > .avatar {
   width: 50px;
   height: 50px;
@@ -4526,6 +4538,18 @@ p > code, ul > code, ol > code {
 .post_actions {
   margin-top: 3.6rem;
 }
+@media only screen and (max-width: 600px) {
+  /* line 321, ../_sass/modules/_post.scss */
+  .post_actions .btn {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  /* line 326, ../_sass/modules/_post.scss */
+  .post_actions .btn + .btn {
+    margin-top: 10px;
+  }
+}
 /* line 58, ../bower_components/guidebook-common-styles/mixins/_blumess-support.sass */
 .post_image {
   position: relative;
@@ -4537,7 +4561,7 @@ p > code, ul > code, ol > code {
   overflow: hidden;
   margin-bottom: 1.8rem;
 }
-/* line 321, ../_sass/modules/_post.scss */
+/* line 343, ../_sass/modules/_post.scss */
 .post_image:before {
   position: absolute;
   content: "";
@@ -4548,7 +4572,7 @@ p > code, ul > code, ol > code {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 3px;
 }
-/* line 332, ../_sass/modules/_post.scss */
+/* line 354, ../_sass/modules/_post.scss */
 .post_image > img {
   max-width: 100%;
   display: block;
@@ -4558,7 +4582,7 @@ p > code, ul > code, ol > code {
 .post_caption {
   margin-bottom: 1.8rem;
 }
-/* line 342, ../_sass/modules/_post.scss */
+/* line 364, ../_sass/modules/_post.scss */
 .post_caption > p, .post_caption > ul, .post_caption > ol {
   font-size: 12px;
   font-size: 0.92308rem;
