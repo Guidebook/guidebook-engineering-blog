@@ -10,7 +10,21 @@
       <span class="avatar avatar-30 vam"><img src="http://guidebook.com/img/team/{{ author.slug }}.png" class="avatar_image" /></span>
       {% endfor %}
       <div class="post_authors_names l-pipes">
-      {% for author in post.authors %}<span class="post_authors_names_name">{% if author.twitter %}<a href="http://twitter.com/{{author.twitter}}" class="gray-link">{% endif %}{{author.name}}{% if author.twitter %}</a>{% endif %}</span>{% if forloop.last == false %}, {% endif %}{% endfor %} on {{ post.date | date: '%b %d, %Y' }}
+      {% assign twitterNames = '' %}
+      {% for author in post.authors %}
+        <span class="post_authors_names_name">
+          {% if author.twitter %}
+            <a href="http://twitter.com/{{author.twitter}}" class="gray-link">
+            {% capture twitterNames %}{{ twitterNames | append: " @" | append: author.twitter }}{% endcapture %}
+          {% endif %}
+          {{author.name}}
+          {% if author.twitter %}
+            </a>
+          {% endif %}
+        </span>
+        {% if forloop.last == false %}, {% endif %}
+      {% endfor %}
+      on {{ post.date | date: '%b %d, %Y' }}
       </div>
       <span class="l-pipes post_read-time">
         {% capture words %}
@@ -27,7 +41,7 @@
 
   <div class="post_actions">
     <a class="btn btn-primary js-pjax" href="{{ site.baseurl }}{{ post.url }}">Continue reading</a>
-    <a class="btn btn-secondary l-h-half-spaced js-pjax" href="http://twitter.com/share?text={{ post.title }}&url=http://engineering.guidebook.com{{ post.url }}&via=guidebook">Share on Twitter</a>
+    <a target="_blank" class="btn btn-secondary l-h-half-spaced js-pjax" href="http://twitter.com/share?text=Guidebook Engineering - {{ post.title }}{% if twitterNames != ''%} by{{twitterNames}}{% endif %}&url=http://engineering.guidebook.com{{ post.url }}&via=guidebook">Share on Twitter</a>
   </div>
 
 

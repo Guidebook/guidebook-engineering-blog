@@ -30,7 +30,20 @@ translate: false
           <span class="avatar avatar-30 vam"><img src="http://guidebook.com/img/team/{{ author.slug }}.png" class="avatar_image" /></span>
         {% endfor %}
         <div class="post_authors_names">
-          {% for author in page.authors %}<span class="post_authors_names_name">{% if author.twitter %}<a href="http://twitter.com/{{author.twitter}}" class="gray-link">{% endif %}{{ author.name }}{% if author.twitter %}</a>{% endif %}</span>{% if forloop.last == false %}, {% endif %}{% endfor %}
+          {% assign twitterNames = '' %}
+          {% for author in page.authors %}
+            <span class="post_authors_names_name">
+              {% if author.twitter %}
+                <a href="http://twitter.com/{{author.twitter}}" class="gray-link">
+                {% capture twitterNames %}{{ twitterNames | append: " @" | append: author.twitter }}{% endcapture %}
+              {% endif %}
+              {{ author.name }}
+              {% if author.twitter %}
+                </a>
+              {% endif %}
+            </span>
+            {% if forloop.last == false %}, {% endif %}
+          {% endfor %}
         </div>
       </div>
 
@@ -68,7 +81,7 @@ translate: false
     </div>
 
     <div class="post_actions">
-      <a class="btn btn-secondary btn-large" href="http://twitter.com/share?text={{ page.title }}&url=http://engineering.guidebook.com{{ page.url }}&via=guidebook">Share on Twitter</a>
+      <a target="_blank" class="btn btn-secondary btn-large" href="http://twitter.com/share?text=Guidebook Engineering - {{ page.title }}{% if twitterNames != ''%} by{{twitterNames}}{% endif %}&url=http://engineering.guidebook.com{{ page.url }}&via=guidebook">Share on Twitter</a>
     </div>
   </section>
 </main>
