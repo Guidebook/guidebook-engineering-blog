@@ -51,4 +51,4 @@ pip install django-debug-toolbar==1.4
 pip install django_extensions==1.5.9
 {% endhighlight %}
 
-I've used explicit version numbers becauase the above command is not part of the public APIs of `django-debug-toolbar` and `django-extensions` -- the code is subject to change as the respective packages evolve.
+I've used explicit version numbers because the above command is not part of the public APIs of `django-debug-toolbar` and `django-extensions` -- the code is subject to change as the respective packages evolve.
