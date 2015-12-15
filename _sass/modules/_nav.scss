@@ -229,6 +229,10 @@ $navbar-roof-height: 30px;
         opacity: 1;
       }
     }
+
+    &.nav_roof-inverse {
+      background-color: transparent;
+    }
   }
 
   @include element (roof_item) {
@@ -247,6 +251,57 @@ $navbar-roof-height: 30px;
 
     a {
       @extend .gray-link;
+    }
+
+    .nav_roof-inverse & {
+      p {
+        color: color('white');
+      }
+
+      a {
+        color: color('white');
+
+        &:hover {
+          color: transparentize(color('white'), .2);
+        }
+      }
+    }
+  }
+
+  @include submodule ("inverse") {
+    @include element ("link", nested) {
+      color: color('white');
+
+      &:hover {
+        color: transparentize(color('white'), .2);
+        border-color: transparentize(color('white'), .2);
+      }
+    }
+
+    @include element ("btn", nested) {
+      color: color('white') !important;
+    }
+
+    @include element ("item", nested) {
+
+      > .logo {
+        @include background(image-url("img_nav_logo_light.png") center no-repeat);
+        @include image-2x("../img/2x/img_nav_logo_light@2x.png", 145px, 31px);
+
+        @include mobile {
+          @include image-2x("../img/2x/img_nav_logo_light@2x.png", 109px, 23px);
+        }
+      }
+    }
+
+    @include element( section-menu, nested ) {
+
+      .shp-hamburger {
+
+        .shp-hamburger_line {
+          background-color: color('white');
+        }
+      }
     }
   }
 
