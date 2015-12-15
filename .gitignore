@@ -2,6 +2,7 @@ _site
 .sass-cache
 node_modules
 bower_components
+gen
 .DS_Store
 *.DS_Store
 */.DS_Store
