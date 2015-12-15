@@ -5,11 +5,11 @@ add_import_path "bower_components/"
 
 # Set this to the root of your project when deployed:
 http_path = ""
-css_dir = "css"
+css_dir = "gen/css"
 sass_dir = "_sass"
-images_dir = "images"
+images_dir = "gen/img"
 javascripts_dir = "javascripts"
-generated_images_path = "images"
+generated_images_dir = "gen/img"
 relative_assets = true
 
 # You can select your preferred output style here (can be overridden via the command line):
