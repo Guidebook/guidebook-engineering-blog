@@ -9,6 +9,8 @@ github_username:  guidebook
 excerpt_separator: <!--end-->
 guidebookbaseurl: "http://guidebook.com"
 
+exclude: [bower_components, node_modules, _sass, _js, .git, .sass-cache, Gemfile, Gemfile.lock, gulpfile.js, compass-config.rb]
+
 # Build settings
 markdown: kramdown
 

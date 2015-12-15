@@ -1,0 +1,126 @@
+
+//   SETUP
+// ----------
+
+// Include gulp
+var gulp = require('gulp'),
+
+// Include plugins
+    sass = require('gulp-ruby-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
+    minifycss = require('gulp-minify-css'),
+    jshint = require('gulp-jshint'),
+    uglify = require('gulp-uglify'),
+    imagemin = require('gulp-imagemin'),
+    rename = require('gulp-rename'),
+    concat = require('gulp-concat'),
+    notify = require('gulp-notify'),
+    cache = require('gulp-cache'),
+    livereload = require('gulp-livereload')
+    shell = require('gulp-shell'),
+    del = require('del'),
+    compass = require('gulp-compass'),
+    newer = require('gulp-newer'),
+    coffee = require('gulp-coffee'),
+    gulpif = require('gulp-if'),
+    source = require('vinyl-source-stream'),
+    browserify = require('gulp-browserify'),
+    bfy = require('browserify');
+
+//   TASKS
+// ----------
+
+function swallowError (error) {
+  //If you want details of the error in the console
+  console.log(error.toString());
+  this.emit('end');
+}
+
+gulp.task('clear', function (done) {
+  return cache.clearAll(done);
+});
+
+// Styles
+gulp.task('styles', function(cb) {
+  gulp.src('_sass/main.scss')
+    .pipe(compass({
+      config_file: './compass-config.rb',
+      css: 'gen/css/',
+      sass: '_sass/',
+      sourcemap: 'inline',
+      comments: false
+    }))
+    .on('error', swallowError)
+    .pipe(notify({ message: 'Styles task complete' }));
+
+  cb();
+});
+
+
+// Scripts
+gulp.task('scripts', function(cb) {
+  gulp.src(['_js/*.js'])
+    .pipe(concat('main.js'))
+    .pipe(browserify())
+    .pipe(gulp.dest('gen/js'))
+    .on('error', swallowError)
+    .pipe(notify({ message: 'Scripts task complete' }));
+
+  cb();
+});
+
+// Vendor Scripts
+gulp.task('vendor-scripts', function(cb) {
+  gulp.src('_js/vendor/*.js')
+    .pipe(concat('vendor.js'))
+    .pipe(gulp.dest('gen/js/'))
+    .pipe(notify({ message: 'Vendor scripts task complete' }));
+
+  cb();
+});
+
+// Images
+gulp.task('images', function() {
+  return gulp.src('_images/**/*')
+    .pipe(newer('gen/img'))
+    .pipe(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true }))
+    .pipe(gulp.dest('gen/img'))
+    .pipe(notify({ message: 'Images task complete' }));
+});
+
+// Jekyll
+
+gulp.task('jekyll', shell.task([
+  // Without --watch, we will be missing files from other tasks as they stream in
+  'bundle exec jekyll serve --watch',
+]));
+
+// Cleanup
+gulp.task('clean', function(cb) {
+    del(['gen/css', 'gen/js/**/*'], cb());
+});
+
+
+
+//   DEFAULT & WATCH
+// --------------------
+
+
+// Watch files for changes
+gulp.task('watch', function() {
+  // Watch .scss, .js, image files
+  gulp.watch('_sass/**/*', ['styles']);
+  gulp.watch(['js/*.js'], ['scripts']);
+  gulp.watch('images/**/*', ['images']);
+  gulp.watch('js/vendor/*.js', ['vendor-scripts']);
+});
+
+
+gulp.task('default', ['clean'], function(){
+  gulp.start('doit');
+})
+
+// Default Gulp task
+gulp.task('doit', ['styles', 'scripts', 'vendor-scripts'], function() {
+    gulp.start('images', 'jekyll', 'watch');
+});
