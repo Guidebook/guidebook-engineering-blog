@@ -110,9 +110,9 @@ gulp.task('clean', function(cb) {
 gulp.task('watch', function() {
   // Watch .scss, .js, image files
   gulp.watch('_sass/**/*', ['styles']);
-  gulp.watch(['js/*.js'], ['scripts']);
-  gulp.watch('images/**/*', ['images']);
-  gulp.watch('js/vendor/*.js', ['vendor-scripts']);
+  gulp.watch(['_js/*.js'], ['scripts']);
+  gulp.watch('_images/**/*', ['images']);
+  gulp.watch('_js/vendor/*.js', ['vendor-scripts']);
 });
 
 

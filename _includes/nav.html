@@ -1,5 +1,5 @@
 
-<div class="nav_roof">
+<div class="nav_roof {% if page.hero == 'inverse' %}nav_roof-inverse{% endif %}">
   <div class="l-content">
     <div class="nav_roof_item">
       <p><a href="{{ site.url }}">Blog home</a></p>
@@ -16,7 +16,7 @@
   </div>
 </div>
 
-<nav class="nav l-content">
+<nav class="nav {% if page.hero == 'inverse' %}nav-inverse{% endif %} l-content">
   <div class="nav_section nav_section-left">
     <div class="nav_item flush">
       <a class="logo js-pjax" href="{{ site.guidebookbaseurl }}/"><h1>Guidebook</h1></a>

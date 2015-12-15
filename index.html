@@ -1,21 +1,32 @@
 ---
 layout: default
+hero: inverse
 ---
-
+{% if post.id %}
+<section class="hero">
+  <div class="hero_content">
+    <div class="hero_content-inner l-content tac title">
+      <h2 class="l-inline-block phero_title hero_title"><div class="img-gear vam mr10 title-gear"></div> <span class="vam title-text">Engineering Blog</span></h2>
+    </div>
+  </div>
+</section>
+{% else %}
+<section class="hero hero-flush hero-inverse phero" id="phero">
+  <div class="phero_mask"></div>
+  <div class="hero_content">
+    <div class="hero_content-inner l-content tac title">
+      <h2 class="l-inline-block phero_title hero_title"><div class="img-gear vam mr10 title-gear"></div> <span class="vam title-text">Engineering Blog</span></h2>
+    </div>
+  </div>
+</section>
+{% endif %}
 
 <main class="l-content">
-
-  <section class="section tac title">
-    <h2><div class="img-gear vam mr10 title-gear"></div> <span class="vam title-text">Engineering Blog</span></h2>
-  </section>
-
-
   <section class="section">
 
 
 
     {% for post in site.posts %}
-      <div class="section-divider"><hr /></div>
       {% include post-body.html %}
     {% endfor %}
 
