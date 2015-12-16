@@ -81,7 +81,17 @@ translate: false
     </div>
 
     <div class="post_actions">
-      <a target="_blank" class="btn btn-secondary btn-large" href="http://twitter.com/share?text=Guidebook Engineering - {{ page.title }}{% if twitterNames != ''%} by{{twitterNames}}{% endif %}&url=http://engineering.guidebook.com{{ page.url }}&via=guidebook">Share on Twitter</a>
+      <a target="_blank" class="btn btn-secondary btn-large" href="http://twitter.com/share?text=Guidebook Engineering - {{ page.title }}{% if twitterNames != ''%} by{{twitterNames}}{% endif %}&url=http://engineering.guidebook.com{{ page.url }}&via=guidebook">
+        <i class="fa fa-twitter"></i> Share on Twitter
+      </a>
+      {% for button in page.custom_buttons %}
+      <a href="{{button.url}}" class="btn btn-large {{button.class}}">
+        {% if button.fa %}
+        <i class="fa fa-{{button.fa}}"></i>
+        {% endif %}
+        {{button.title}}
+      </a>
+      {% endfor %}
     </div>
   </section>
 </main>

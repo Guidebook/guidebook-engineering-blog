@@ -322,6 +322,10 @@ $post-width-desktop: 675px;
   @include element (actions) {
     margin-top: rhythm(2);
 
+    .btn + .btn {
+      margin-left: 10px;
+    }
+
     @include mobile {
       .btn {
         display: block;
@@ -330,6 +334,7 @@ $post-width-desktop: 675px;
 
         + .btn {
           margin-top: 10px;
+          margin-left: 0;
         }
       }
     }
@@ -343,7 +348,13 @@ $post-width-desktop: 675px;
     max-width: 100%;
     @include border-radius($base-border-radius);
     overflow: hidden;
-    margin-bottom: rhythm(1);
+    margin-bottom: rhythm(2);
+    margin-top: rhythm(2);
+
+    + .post_caption {
+      margin-top: -1 * rhythm(1);
+      margin-bottom: rhythm(2);
+    }
 
     &:before {
       position: absolute;
@@ -360,6 +371,16 @@ $post-width-desktop: 675px;
       max-width: 100%;
       display: block;
       @include border-radius($base-border-radius);
+    }
+
+    @include mobile {
+      margin-top: 0;
+      margin-bottom: rhythm(1);
+
+      + .post_caption {
+        margin-top: 0;
+        margin-bottom: rhythm(1);
+      }
     }
   }
 
