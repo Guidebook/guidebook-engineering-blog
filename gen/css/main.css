@@ -4110,6 +4110,10 @@ p > code, ul > code, ol > code {
     line-height: 1.8rem;
   }
 }
+.post_body ul {
+  list-style: outside;
+  padding-left: 20px;
+}
 .post_body > h3, .post_body > .hero_text {
   font-size: 16px;
   font-size: 1.23077rem;

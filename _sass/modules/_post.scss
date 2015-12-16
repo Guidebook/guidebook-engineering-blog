@@ -193,6 +193,11 @@ $post-width-desktop: 675px;
       }
     }
 
+    ul {
+      list-style: outside;
+      padding-left: $base-padding;
+    }
+
     > h3 {
       @include adjust-font-size-to(16px);
       @include adjust-leading-to(1, 16px);
