@@ -100,6 +100,10 @@ gulp.task('clean', function(cb) {
     del(['gen/css', 'gen/js/**/*'], cb());
 });
 
+gulp.task('fonts', function(){
+  return gulp.src('node_modules/font-awesome/fonts/*')
+    .pipe(gulp.dest('gen/fonts'));
+});
 
 
 //   DEFAULT & WATCH
@@ -122,5 +126,5 @@ gulp.task('default', ['clean'], function(){
 
 // Default Gulp task
 gulp.task('doit', ['styles', 'scripts', 'vendor-scripts'], function() {
-    gulp.start('images', 'jekyll', 'watch');
+    gulp.start('images', 'jekyll', 'watch', 'fonts');
 });

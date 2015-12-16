@@ -39,9 +39,19 @@
     {{ post.excerpt }}
   </div>
 
-  <div class="post_actions">
+  <div class="post_actions tac">
     <a class="btn btn-primary js-pjax" href="{{ site.baseurl }}{{ post.url }}">Continue reading</a>
-    <a target="_blank" class="btn btn-secondary l-h-half-spaced js-pjax" href="http://twitter.com/share?text=Guidebook Engineering - {{ post.title }}{% if twitterNames != ''%} by{{twitterNames}}{% endif %}&url=http://engineering.guidebook.com{{ post.url }}&via=guidebook">Share on Twitter</a>
+    <a target="_blank" class="btn btn-secondary js-pjax" href="http://twitter.com/share?text=Guidebook Engineering - {{ post.title }}{% if twitterNames != ''%} by{{twitterNames}}{% endif %}&url=http://engineering.guidebook.com{{ post.url }}&via=guidebook">
+      <i class="fa fa-twitter"></i> Share on Twitter
+    </a>
+    {% for button in post.custom_buttons %}
+    <a href="{{button.url}}" class="btn {{button.class}}">
+      {% if button.fa %}
+      <i class="fa fa-{{button.fa}}"></i>
+      {% endif %}
+      {{button.title}}
+    </a>
+    {% endfor %}
   </div>
 
 
