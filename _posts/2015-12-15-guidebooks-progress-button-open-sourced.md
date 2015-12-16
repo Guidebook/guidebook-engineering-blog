@@ -26,7 +26,7 @@ tags:
   - objective-c
 ---
 
-The recent release of Guidebook 4.0 included a new version of our download progress button which was heavily inspired by the progress button employed in the iOS app store. We received a number of requests to demonstrate how we created the progress button, and we decided to take it even further: [we open-sourced it](https://github.com/Guidebook/gbkui-button-progress-view).
+The recent release of Guidebook 4.0 included a new version of our download progress button which was heavily inspired by the progress button employed in the iOS app store. We received a number of requests to demonstrate how we created the progress button, and we decided to take it even further: [we open sourced it](https://github.com/Guidebook/gbkui-button-progress-view).
 
 <div class="tac">
   <div class="post_image">
