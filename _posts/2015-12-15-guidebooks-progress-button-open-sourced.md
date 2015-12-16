@@ -3,6 +3,7 @@ layout: post
 title:  "Guidebook's Progress Button Open Sourced"
 date:   2015-12-15
 has_excerpt: true
+img: 'https://camo.githubusercontent.com/c21307792a960e90d630440e09d308d7c854dac3/687474703a2f2f706574656c6164612e636f6d2f696d616765732f706c6164612d6c6f6164696e672d627574746f6e2e676966'
 authors:
   - slug: plada
     name: Pete Lada
@@ -18,6 +19,10 @@ custom_buttons:
     url: "https://github.com/Guidebook/gbkui-button-progress-view"
     class: "btn-secondary"
     fa: 'github'
+
+particle:
+  lineColor: "rgba(0,0,0,.05)"
+  dotColor: "rgba(0,0,0,.14)"
 
 tags:
   - open-source

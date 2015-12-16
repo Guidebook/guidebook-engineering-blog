@@ -7,15 +7,19 @@
 
   <div class="layout">
 
-  {% include nav.html %}
+    {% if page.particle %}
+    <div class="particle"></div>
+    {% endif %}
 
-  <div class="content">
+    {% include nav.html %}
 
-  {{ content }}
+    <div class="content">
 
-  </div>
+      {{ content }}
 
-  {% include footer.html %}
+    </div>
+
+    {% include footer.html %}
 
   </div>
 
@@ -57,6 +61,23 @@
 
   <script type="text/javascript" src="{{ site.baseurl }}/gen/js/vendor.js"></script>
   <script type="text/javascript" src="{{ site.baseurl }}/gen/js/main.js"></script>
+
+  {% if page.particle %}
+  <script type="text/javascript">
+  // particle hero effect
+  particleground(document.getElementsByClassName("particle")[0], {
+    dotColor: "{{page.particle.dotColor}}",
+    lineColor: "{{page.particle.lineColor}}",
+    parallaxMultiplier: 20,
+    curvedLines: false,
+    particleRadius: 4,
+    lineWidth: .5,
+    density: 8000, // higher = less
+    maxSpeedX: .4,
+    maxSpeedY: .4
+  });
+  </script>
+  {% endif %}
 
 
 </body>
