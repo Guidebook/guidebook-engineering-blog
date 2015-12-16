@@ -1,0 +1,26 @@
+
+
+@include module ("particle") {
+  position: absolute;
+  height: 500px;
+  left: 0;
+  right: 0;
+
+  @include tablet {
+    height: 400px;
+  }
+
+  @include mobile {
+    height: 300px;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    @include background(linear-gradient(top, transparentize(color('bg'), 1), transparentize(color('bg'), 0)));
+  }
+}

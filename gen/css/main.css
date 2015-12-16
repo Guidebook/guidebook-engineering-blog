@@ -7036,6 +7036,33 @@ p > code, ul > code, ol > code {
   text-align: center;
 }
 
+.particle {
+  position: absolute;
+  height: 500px;
+  left: 0;
+  right: 0;
+}
+@media only screen and (min-width: 601px) and (max-width: 800px) {
+  .particle {
+    height: 400px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .particle {
+    height: 300px;
+  }
+}
+.particle:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), #ffffff);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);
+}
+
 .highlight {
   border: 1px solid #dadde1;
   padding: 20px;
