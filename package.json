@@ -28,7 +28,7 @@
     "uglifycss": "^0.0.19",
     "vinyl-source-stream": "^1.1.0",
     "jshint": "^2.8.0",
-    "pjax": "^0.1.0"
+    "pjax": "git://github.com/pklada/pjax.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
