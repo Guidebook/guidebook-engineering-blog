@@ -1,11 +1,21 @@
 pjax = require('pjax');
 
-new pjax({
-  elements: "a.js-pjax",
-  selectors: ["title", "meta", '.layout', '.end-body-scripts']
-})
+if (pjax.isSupported !== undefined && pjax.isSupported()) {
+  new pjax({
+    elements: "a.js-pjax",
+    selectors: ["title", "meta", '.layout', '.end-body-scripts']
+  })
+}
 
 $(document).on('ready pjax:complete', function(){
+
+  // toggle mobile menu
+  $('.js-mobile-menu').on('click', function(e) {
+    e.preventDefault();
+    $('html').removeClass('mobile-menu-hidden');
+    $('.layout').toggleClass('is-open');
+  });
+
   // particle hero effect
   if (document.getElementById('phero')) {
     particleground(document.getElementById('phero'), {

@@ -1,12 +1,22 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 pjax = require('pjax');
 
-new pjax({
-  elements: "a.js-pjax",
-  selectors: ["title", "meta", '.layout', '.end-body-scripts']
-})
+if (pjax.isSupported !== undefined && pjax.isSupported()) {
+  new pjax({
+    elements: "a.js-pjax",
+    selectors: ["title", "meta", '.layout', '.end-body-scripts']
+  })
+}
 
 $(document).on('ready pjax:complete', function(){
+
+  // toggle mobile menu
+  $('.js-mobile-menu').on('click', function(e) {
+    e.preventDefault();
+    $('html').removeClass('mobile-menu-hidden');
+    $('.layout').toggleClass('is-open');
+  });
+
   // particle hero effect
   if (document.getElementById('phero')) {
     particleground(document.getElementById('phero'), {
@@ -652,4 +662,4 @@ $(document).on('ready pjax:complete', function(){
 
 }));
 
-},{}]},{},[1])
+},{}]},{},[1]);

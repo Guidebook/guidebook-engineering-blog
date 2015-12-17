@@ -101,7 +101,7 @@ gulp.task('kill4000', shell.task('kill -9 $(lsof -i:4000 -t) 2> /dev/null', {ign
 
 gulp.task('jekyll', shell.task([
   // Without --watch, we will be missing files from other tasks as they stream in
-  'bundle exec jekyll serve --watch',
+  'bundle exec jekyll serve --watch --config _config.yml,_config-dev.yml',
 ]));
 
 // Cleanup
