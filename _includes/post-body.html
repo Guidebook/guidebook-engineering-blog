@@ -41,7 +41,7 @@
 
   <div class="post_actions tac">
     <a class="btn btn-primary js-pjax" href="{{ site.baseurl }}{{ post.url }}">Continue reading</a>
-    <a target="_blank" class="btn btn-secondary js-pjax" href="http://twitter.com/share?text=Guidebook Engineering - {{ post.title }}{% if twitterNames != ''%} by{{twitterNames}}{% endif %}&url=http://engineering.guidebook.com{{ post.url }}&via=guidebook">
+    <a target="_blank" class="btn btn-secondary " href="http://twitter.com/share?text=Guidebook Engineering - {{ post.title }}{% if twitterNames != ''%} by{{twitterNames}}{% endif %}&url=http://engineering.guidebook.com{{ post.url }}&via=guidebook">
       <i class="fa fa-twitter"></i> Share on Twitter
     </a>
     {% for button in post.custom_buttons %}

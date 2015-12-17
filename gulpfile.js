@@ -56,15 +56,11 @@ gulp.task('styles', function(cb) {
   cb();
 });
 
-
 // Scripts
 gulp.task('scripts', function(cb) {
-  gulp.src(['_js/*.js'])
-    .pipe(concat('main.js'))
-    .pipe(browserify())
-    .pipe(gulp.dest('gen/js'))
-    .on('error', swallowError)
-    .pipe(notify({ message: 'Scripts task complete' }));
+  var b = bfy('_js/main.js');
+
+  return b.bundle().pipe(source('main.js')).pipe(gulp.dest('./gen/js/'));
 
   cb();
 });
@@ -88,11 +84,14 @@ gulp.task('images', function() {
     .pipe(notify({ message: 'Images task complete' }));
 });
 
+// kill processes on port 4000
+gulp.task('kill4000', shell.task('kill -9 $(lsof -i:4000 -t) 2> /dev/null', {ignoreErrors: true}));
+
 // Jekyll
 
 gulp.task('jekyll', shell.task([
   // Without --watch, we will be missing files from other tasks as they stream in
-  'bundle exec jekyll serve --watch',
+  'bundle exec jekyll serve --watch --config _config.yml,_config-dev.yml',
 ]));
 
 // Cleanup
@@ -120,7 +119,7 @@ gulp.task('watch', function() {
 });
 
 
-gulp.task('default', ['clean'], function(){
+gulp.task('default', ['clean', 'kill4000'], function(){
   gulp.start('doit');
 })
 
