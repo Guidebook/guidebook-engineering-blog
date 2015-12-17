@@ -50,35 +50,36 @@
   <!-- test for mobile browser size -->
   <div class="js-mobile-test"></div>
 
-  <script type="text/javascript">
-  // toggle mobile menu
-  $('.js-mobile-menu').on('click', function(e) {
-    e.preventDefault();
-    $('html').removeClass('mobile-menu-hidden');
-    $('.layout').toggleClass('is-open');
-  });
-  </script>
+  <div class="end-body-scripts">
+    <script type="text/javascript">
+    // toggle mobile menu
+    $('.js-mobile-menu').on('click', function(e) {
+      e.preventDefault();
+      $('html').removeClass('mobile-menu-hidden');
+      $('.layout').toggleClass('is-open');
+    });
+    </script>
 
-  <script type="text/javascript" src="{{ site.baseurl }}/gen/js/vendor.js"></script>
-  <script type="text/javascript" src="{{ site.baseurl }}/gen/js/main.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}/gen/js/vendor.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}/gen/js/main.js"></script>
 
-  {% if page.particle %}
-  <script type="text/javascript">
-  // particle hero effect
-  particleground(document.getElementsByClassName("particle")[0], {
-    dotColor: "{{page.particle.dotColor}}",
-    lineColor: "{{page.particle.lineColor}}",
-    parallaxMultiplier: 20,
-    curvedLines: false,
-    particleRadius: 4,
-    lineWidth: .5,
-    density: 8000, // higher = less
-    maxSpeedX: .4,
-    maxSpeedY: .4
-  });
-  </script>
-  {% endif %}
-
+    {% if page.particle %}
+    <script type="text/javascript">
+    // particle hero effect
+    particleground(document.getElementsByClassName("particle")[0], {
+      dotColor: "{{page.particle.dotColor}}",
+      lineColor: "{{page.particle.lineColor}}",
+      parallaxMultiplier: 20,
+      curvedLines: false,
+      particleRadius: 4,
+      lineWidth: .5,
+      density: 8000, // higher = less
+      maxSpeedX: .4,
+      maxSpeedY: .4
+    });
+    </script>
+    {% endif %}
+  </div>
 
 </body>
 

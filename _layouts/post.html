@@ -9,7 +9,7 @@ translate: false
   <section class="section tac">
     <p>
       <span class="l-pipes">
-        <a href="{{ site.url }}" class="js-pjax">
+        <a href="{{ site.baseurl }}/" class="js-pjax">
           <span class="l-hidden-mobile l-v-align-middle"><i class="fa fa-gear"></i> Guidebook </span>
           <span class="l-v-align-middle">Engineering Blog</span>
         </a>
@@ -49,7 +49,7 @@ translate: false
       {% if page.tags %}
       <div class="post_tags">
         {% for tag in page.tags %}
-        <span class="post_tags_tag js-pjax">
+        <span class="post_tags_tag ">
           <span class="post_tags_tag_hash">#</span>{{tag | downcase | replace: ' ', '-'}}
         </span>
         {% endfor %}

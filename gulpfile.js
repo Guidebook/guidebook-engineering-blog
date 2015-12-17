@@ -56,6 +56,12 @@ gulp.task('styles', function(cb) {
   cb();
 });
 
+gulp.task('javascript', function () {
+  // set up the browserify instance on a task basis
+  var b = bfy('_js/main.js');
+
+  return b.bundle().pipe(source('main.js')).pipe(gulp.dest('./gen/js/'));
+});
 
 // Scripts
 gulp.task('scripts', function(cb) {
@@ -87,6 +93,9 @@ gulp.task('images', function() {
     .pipe(gulp.dest('gen/img'))
     .pipe(notify({ message: 'Images task complete' }));
 });
+
+// kill processes on port 4000
+gulp.task('kill4000', shell.task('kill -9 $(lsof -i:4000 -t) 2> /dev/null', {ignoreErrors: true}));
 
 // Jekyll
 
@@ -120,11 +129,11 @@ gulp.task('watch', function() {
 });
 
 
-gulp.task('default', ['clean'], function(){
+gulp.task('default', ['clean', 'kill4000'], function(){
   gulp.start('doit');
 })
 
 // Default Gulp task
-gulp.task('doit', ['styles', 'scripts', 'vendor-scripts'], function() {
+gulp.task('doit', ['styles', 'javascript', 'vendor-scripts'], function() {
     gulp.start('images', 'jekyll', 'watch', 'fonts');
 });
