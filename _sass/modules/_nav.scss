@@ -289,6 +289,7 @@ $navbar-roof-height: 30px;
         @include image-2x("../img/2x/img_nav_logo_light@2x.png", 145px, 31px);
 
         @include mobile {
+          background-size: 109px 23px;
           @include image-2x("../img/2x/img_nav_logo_light@2x.png", 109px, 23px);
         }
       }
