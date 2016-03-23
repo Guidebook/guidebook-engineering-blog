@@ -3377,6 +3377,11 @@ p > code, ul > code, ol > code {
     background-size: 145px 31px;
   }
 }
+@media only screen and (max-width: 600px) {
+  .nav-inverse .nav_item > .logo {
+    background-size: 109px 23px;
+  }
+}
 @media only screen and (max-width: 600px) and (min--moz-device-pixel-ratio: 1.3), only screen and (max-width: 600px) and (-o-min-device-pixel-ratio: 2.6 / 2), only screen and (max-width: 600px) and (-webkit-min-device-pixel-ratio: 1.3), only screen and (max-width: 600px) and (min-device-pixel-ratio: 1.3), only screen and (max-width: 600px) and (min-resolution: 1.3dppx) {
   .nav-inverse .nav_item > .logo {
     /* on retina, use image that's scaled by 2 */
