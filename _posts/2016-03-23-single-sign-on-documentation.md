@@ -4,7 +4,7 @@ title:  "Single Sign-On Using Guidebook"
 date:   2016-03-23
 has_excerpt: true
 authors:
-  - slug: sean
+  - slug: scoonce
     name: Sean Coonce
     title: Director, Web Services
     twitter: cooncesean
@@ -28,6 +28,9 @@ Using SAML, Guidebook can serve as a SAML Service Provider (SP) allowing you to 
 This document outlines the steps required to add a new SAML Identity Provider (IdP) to Guidebook.
 
 <!--end-->
+
+{% include image-container.html image='https://s3.amazonaws.com/media.guidebook.com/sso-docs/sso-control-flow.png' caption='SSO Control Flow' %}
+
 
 ## Guidebook's Service Provider Details
 
