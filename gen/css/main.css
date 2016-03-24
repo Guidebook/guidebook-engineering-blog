@@ -3368,7 +3368,7 @@ p > code, ul > code, ol > code {
   color: #fff !important;
 }
 .nav-inverse .nav_item > .logo {
-  background: url('../img/img_nav_logo_light.png?1458755185') center no-repeat;
+  background: url('../img/img_nav_logo_light.png?1450169970') center no-repeat;
 }
 @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
   .nav-inverse .nav_item > .logo {
@@ -6679,8 +6679,8 @@ p > code, ul > code, ol > code {
 
 .post {
   width: 750px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 100px;
+  padding-right: 100px;
   position: relative;
   margin: 0 auto;
 }
@@ -6834,11 +6834,26 @@ p > code, ul > code, ol > code {
     line-height: 1.8rem;
   }
 }
+.post_body p + h2, .post_body ul + h2, .post_body ol + h2,
+.post_body p + h3,
+.post_body ul + h3,
+.post_body ol + h3,
+.post_body p + .hero_text,
+.post_body ul + .hero_text,
+.post_body ol + .hero_text,
+.post_body p + h4,
+.post_body ul + h4,
+.post_body ol + h4, .post_body ul + h2,
+.post_body ul + h3,
+.post_body ul + .hero_text,
+.post_body ul + h4 {
+  margin-top: 1.8rem;
+}
 .post_body ul {
   list-style: outside;
   padding-left: 20px;
 }
-.post_body > h3, .post_body > .hero_text {
+.post_body > h3, .post_body > .hero_text, .post_body h2 {
   font-size: 16px;
   font-size: 1.23077rem;
   line-height: 17px;
@@ -6846,16 +6861,35 @@ p > code, ul > code, ol > code {
   line-height: 29px;
   line-height: 2.21538rem;
   font-weight: 600;
-  padding-bottom: 1.8rem;
+  padding-bottom: 0.9rem;
 }
 @media only screen and (max-width: 600px) {
-  .post_body > h3, .post_body > .hero_text {
+  .post_body > h3, .post_body > .hero_text, .post_body h2 {
     font-size: 13px;
     font-size: 1rem;
     line-height: 14px;
     line-height: 1.10769rem;
     line-height: 23px;
     line-height: 1.8rem;
+  }
+}
+.post_body > h2 {
+  font-size: 20px;
+  font-size: 1.53846rem;
+  line-height: 22px;
+  line-height: 1.66154rem;
+  line-height: 36px;
+  line-height: 2.76923rem;
+}
+@media only screen and (max-width: 600px) {
+  .post_body > h2 {
+    font-size: 16px;
+    font-size: 1.23077rem;
+    line-height: 17px;
+    line-height: 1.31538rem;
+    line-height: 29px;
+    line-height: 2.21538rem;
+    font-weight: 600;
   }
 }
 .post_body > h4 {
@@ -6867,7 +6901,7 @@ p > code, ul > code, ol > code {
   line-height: 2.07692rem;
   color: #48565e;
   opacity: .7;
-  padding-bottom: 1.8rem;
+  padding-bottom: 0.9rem;
 }
 @media only screen and (max-width: 600px) {
   .post_body > h4 {
@@ -6996,7 +7030,7 @@ p > code, ul > code, ol > code {
   margin-right: auto;
   max-width: 100%;
   border-radius: 3px;
-  overflow: hidden;
+  overflow: visible;
   margin-bottom: 3.6rem;
   margin-top: 3.6rem;
 }
@@ -7004,7 +7038,7 @@ p > code, ul > code, ol > code {
   margin-top: -1.8rem;
   margin-bottom: 3.6rem;
 }
-.post_image:before {
+.post_image:after {
   position: absolute;
   content: "";
   left: 0;

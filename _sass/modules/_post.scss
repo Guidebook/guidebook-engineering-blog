@@ -22,8 +22,8 @@ $post-width-desktop: 675px;
 @include module (post) {
 
   width: $post-width;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 100px;
+  padding-right: 100px;
   position: relative;
   margin: 0 auto;
 
@@ -191,6 +191,12 @@ $post-width-desktop: 675px;
         @include adjust-font-size-to($base-font-size);
         @include adjust-leading-to(1, $base-font-size);
       }
+
+      + h2,
+      + h3,
+      + h4 {
+        margin-top: rhythm(1);
+      }
     }
 
     ul {
@@ -198,15 +204,26 @@ $post-width-desktop: 675px;
       padding-left: $base-padding;
     }
 
-    > h3 {
+    > h3, h2 {
       @include adjust-font-size-to(16px);
       @include adjust-leading-to(1, 16px);
       font-weight: $base-weight-bold;
-      padding-bottom: rhythm(1);
+      padding-bottom: rhythm(.5);
 
       @include mobile {
         @include adjust-font-size-to($base-font-size);
         @include adjust-leading-to(1, $base-font-size);
+      }
+    }
+
+    > h2 {
+      @include adjust-font-size-to(20px);
+      @include adjust-leading-to(1, 20px);
+
+      @include mobile {
+        @include adjust-font-size-to($base-font-size + 3);
+        @include adjust-leading-to(1, $base-font-size + 3);
+        font-weight: $base-weight-bold;
       }
     }
 
@@ -215,7 +232,7 @@ $post-width-desktop: 675px;
       @include adjust-leading-to(1, 15px);
       color: color('dark-gray');
       opacity: .7;
-      padding-bottom: rhythm(1);
+      padding-bottom: rhythm(.5);
 
       @include mobile {
         @include adjust-font-size-to($base-font-size);
@@ -347,7 +364,7 @@ $post-width-desktop: 675px;
     margin-right: auto;
     max-width: 100%;
     @include border-radius($base-border-radius);
-    overflow: hidden;
+    overflow: visible;
     margin-bottom: rhythm(2);
     margin-top: rhythm(2);
 
@@ -356,7 +373,7 @@ $post-width-desktop: 675px;
       margin-bottom: rhythm(2);
     }
 
-    &:before {
+    &:after {
       position: absolute;
       content: "";
       left:0;

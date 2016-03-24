@@ -4,7 +4,7 @@ title:  "Single Sign-On Using Guidebook"
 date:   2016-03-23
 has_excerpt: true
 authors:
-  - slug: sean
+  - slug: scoonce
     name: Sean Coonce
     title: Director, Web Services
     twitter: cooncesean
