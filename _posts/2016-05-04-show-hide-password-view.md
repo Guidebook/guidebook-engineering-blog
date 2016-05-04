@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Show/Hide Password Text View--In Swift!"
+title:  "Show/Hide Password Text View&mdash;In Swift!"
 date:   2016-05-04
 has_excerpt: true
 img: 'https://camo.githubusercontent.com/e86b3414e77d02a218a19007d47a8d919ce793e1/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f662e636c2e6c792f6974656d732f31453359313933383373334a336730623259304d2f70617373776f72645f6769662e6769663f763d6663393761633937'
