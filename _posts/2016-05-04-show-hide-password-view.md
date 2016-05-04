@@ -54,10 +54,17 @@ The code is pretty simple.  It's all in Swift (yay!) and boils down to two class
 
 The former, `PasswordToggleVisibilityView`, is a simple `UIView` with a button and an optional checkbox image.  The button toggles it's background image between "open eye" and "closed eye" states, and the checkbox is configurable with a delegate to show the user when the password is "valid".  
 
-`HideShowPasswordTextField` is a `UITextField` subclass that creates the `PasswordToggleVisibilityView` as it's `rightView` and properly configures the view based on the state of `secureTextEntry`.  `secureTextEntry` is a property on `UITextField` that determines whether the text shows up as plaintext, or as "secure" password characters.  Unfortunately, toggling between `secureTextEntry` states causes some weird visual bugs with padding and font changes (if you use a custom font).  `HideShowPasswordTextField` takes care of all of that for you!
+`HideShowPasswordTextField` is a `UITextField` subclass that creates the `PasswordToggleVisibilityView` as it's `rightView` and configures the view based on the state of `secureTextEntry`.  `secureTextEntry` is a property on `UITextField` that determines whether the text shows up as plaintext, or as "secure" password characters.  This view specifically handles visual bugs that may occur when toggling between `secureTextEntry` states.<sup>1</sup>
 
 Checkout `README.md` in the repo to see how to use it.  It's pretty simple.
 
-Let us know if you use it within your app or if you have any questions on implementation.  Look for this to be out in a new version of the Guidebook app in the coming weeks :)
+Let us know if you use it within your app or if you have any questions on implementation.  Look for this to be out in a new version of the [Guidebook app](www.guidebook.com) in the coming weeks.
 
 [View the project on Github](https://github.com/Guidebook/HideShowPasswordTextField).
+
+
+---
+<sup>1</sup>
+[secureTextEntry clearing text](http://stackoverflow.com/a/29195723/1417922),
+[secureTextEntry incorrect Font](https://stackoverflow.com/questions/35293379/uitextfield-securetextentry-toggle-set-incorrect-font),
+[rightView wonky animation](https://stackoverflow.com/questions/18853972/how-to-stop-the-animation-of-uitextfield-rightview)
