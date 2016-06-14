@@ -27,41 +27,43 @@ Dogfooding references scenarios in which a company _actually uses_ the same prod
 
 >>> Nothing gets you closer to the perspective of your users than becoming one of them.
 
-While the conference itself was interesting, I found that I got more value out of seeing and feeling the attendee experience firsthand. What follows are the key takeaw
+While the conference itself was interesting, I found that I got more value out of seeing and feeling the attendee experience firsthand. What follows are the key takeaways.
 
 
 
 **1. Dogfooding Enables Us To Develop A Deeper Understanding Of The Product:**
 By using the product as an event attendee, you quickly become familiar with the pain points in our product. For instance, how many of us have actually added a session to the "My Schedule" section of the app? Did you set an alert? Did you set the same alert for _every single session within the guide_? Do you wish the product was smart enough remember your preferences and apply them across the board?
 
-Conversely, dogfooding also helps identify value. For instance, after using the app to navigate the conference, it was readily apparent that the ability to add upcoming sessions to my schedule, coupled with detailed location information is a huge value add and something we should continue to lean into.
+Conversely, dogfooding also helps identify value. For instance, after using the app to navigate the conference, it was readily apparent that the ability to add upcoming sessions to my schedule, coupled with detailed location information of each session was a huge value add and something we should continue to tune.
 
-Either way, I now have a much deeper understanding of _how_ an end user interacts with our product. I know what parts of the guide are important to them and I know . The experience had a more meaningful impact than any user metric or analytics report could ever inform.
+Either way, I now have a much deeper understanding of _how_ an end user interacts with our product. I know which sections of the guide are important to them and I have a better understanding of the workflows that hamstring their experience. The process of seeing this first hand had a more meaningful impact than any metric or analytics report could ever inform.
+
 
 
 **2. Dogfooding Facilitates A Deeper Connection With Our Users:**
 Attending a conference in which the company you represent is responsible for the attendee experience, presented me with a heightened sense of accountability.
 
-I became acutely aware of even the smallest bugs and limitations and felt a sense of responsibility to make it better that I have never experienced before, being so disconnected from our end users.
-
 >>> The gap between developer and user can be enormous.
 It's a canyon, and it takes serious effort to cross it.
 
+I became acutely aware of even the smallest bugs and limitations and felt an amplified sense of responsibility to address them.
+
+**3. Dogfooding Provides Motivation For Us To Improve:** Overhearing praise and pains from other event goers is both enlightening and motivating. Getting such direct feedback provides a different sense of motivation and ownership to continue to add value via improvements we can make to our product.
+
 
 ## Product Insights
-After spending a week plus with the app and talking to numerous attendees at the conference, I came away with a handful of insights that had never occurred to me before (or had been weighted differently in my head).
+After spending a week plus with the app and talking to numerous attendees at the conference, I came away with a handful of insights that had never occurred to me before (or had been weighted differently in my mind).
 
-* **Content Is King:** Guide content and the architecture of that content are as important as the product itself. If a guide is easy to quickly understand and consume, users will find value. The ability for a user to quickly understand and navigate the information that the guide presents is penultimate and we should do everything in our power to make it easy for guide builders (internally and externally) to build great looking, coherent guides for their attendees.
-* **Motivation:** Overhearing praise and pains from other event goers is incredibly enlightening. Motivation to continue to add value - and to come back home and reflect on attendee feedback and solve it!
-* **We Need To Get Guidebook Into More Hands:** There were a lot of people not using Guidebook. Some attendees were carrying paper schedules, some were opening their laptops and navigating to the on the PyCon website. I'd say it was a fifty/fifty shot (I was close - 3,209 attendees/1,566 guide downloads) that an attendee was using Guidebook. This blew my mind (I thought we'd be at >75% usage) and got me thinking about ways we need to improve this number. We need to do a better job ensuring that attendees are well informed about guidebook, that our promotional tools are effective and the event planners actually leverage them to get Guidebook into the hands of their attendees.
-* **The Schedule Is The Focus:** The schedule was the most widely used section of the guide (garnering >60% views compared to all other sections within the guide) and I firmly believe that work Kelly and her team is doing with interact will do two things:
-    - Expose people to different parts of the guide in s natural way.
-    - Push important schedule information to the front of their attn.
+* **Content Is King:** Guide content and the architecture of that content are as important as the product itself. The ability for a user to quickly understand and navigate the information within a guide is of the upmost importance and we should do everything in our power to make it easy for guide builders (internally and externally) to build great looking, coherent guides for their attendees.
+* **We Need To Get Guidebook Into More Hands:** There were a lot of people at the event that were not using Guidebook. Some attendees were carrying paper schedules, some were opening their laptops and navigating to the schedule on the PyCon website. After inspecting the download metrics, we had a ~50% adoption rate for the guide at this particular conference. This blew my mind (I thought we'd be at >75% usage) and got me thinking about ways we need to improve this metric. We need to do a better job ensuring that attendees are well informed about Guidebook, that our promotional tools are effective and the event planners actually leverage them to get Guidebook into the hands of their attendees.
+* **The Schedule Is The Focus:** The schedule was the most widely used section of the guide (garnering >60% views compared to all other sections within the guide) and I firmly believe that work Kelly and her team is doing with Interact will do two things:
+    - Expose users to different parts of the guide in a very natural way.
+    - Push important schedule information to the front of their attention.
 
 
 ## Homework
-Think of different ways you can use
+Think of different ways you can work your company's products into your everyday life. I promise it will help you empathize with your users and quickly find the most effective optimizations you can make to solve their needs.
 
-For Guidebook employees, we are in the unique position in which we can kill two birds with one stone. Guidebook has budget for learning and engagement experiences, so go find a conference in an area that you're passionate about, figure out how Guidebook can be involved as the app provider for the event and attend.
+For Guidebook employees, we are in the unique position in which we can kill two birds with one stone. Guidebook has budget for learning and devlopment experiences, so go find a conference in an area that you're passionate about, figure out how Guidebook can be involved as the app provider for the event and attend.
 
 Ask your manager and go experience our product first hand.
