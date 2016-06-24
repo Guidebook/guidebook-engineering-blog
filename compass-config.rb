@@ -1,7 +1,6 @@
 require 'compass/import-once/activate'
 # Require any additional compass plugins here.
 
-add_import_path "bower_components/"
 add_import_path "node_modules/"
 
 # Set this to the root of your project when deployed:
