@@ -198,15 +198,7 @@ $navbar-roof-height: 30px;
     margin-top: -3px;
 
     &.btn:not(.btn-primary) {
-      background: rgba(255, 255, 255, .3);
-
-      &:hover{
-        background: rgba(255, 255, 255, .5);
-      }
-
-      &:active {
-        font-weight: 600;
-      }
+      @extend .btn-dark-hero;
     }
   }
 
@@ -279,7 +271,9 @@ $navbar-roof-height: 30px;
     }
 
     @include element ("btn", nested) {
-      color: color('white') !important;
+      &.btn:not(.btn-primary) {
+        @extend .btn-light;
+      }
     }
 
     @include element ("item", nested) {

@@ -11,7 +11,7 @@
 
 
 // Import compass & guidebook common mixins/variables/etc
-@import "guidebook-common-styles/library";
+@import "guidebook-common-styles/sass/library";
 
 // Settings
 @import "settings";
@@ -27,7 +27,7 @@
 @import "normalize";
 
 // our base, layouts, & utility classes
-@import "guidebook-common-styles/blu";
+@import "guidebook-common-styles/sass/blu";
 
 
 @import "base";
@@ -35,15 +35,15 @@
 // Animations
 
 @import "animations";
-@import "guidebook-common-styles/animations";
+@import "guidebook-common-styles/sass/animations";
 
 // Modules
 
-@import "guidebook-common-styles/modules/btn";
-@import "guidebook-common-styles/modules/chk";
-@import "guidebook-common-styles/modules/shp";
-@import "guidebook-common-styles/modules/pvr";
-@import "guidebook-common-styles/modules/spinner";
+@import "guidebook-common-styles/sass/modules/v2/btn";
+@import "guidebook-common-styles/sass/modules/chk";
+@import "guidebook-common-styles/sass/modules/shp";
+@import "guidebook-common-styles/sass/modules/pvr";
+@import "guidebook-common-styles/sass/modules/spinner";
 @import "typography";
 @import "modules/nav";
 @import "modules/footer";
