@@ -67,7 +67,7 @@ $sct-background: #F4F9FC;
     left: 0;
     padding: 0;
     position: relative;
-    @include transition(left $anim-ease $anim-speed-fast);
+    @include transition(left $global-anim-ease $global-anim-speed-fast);
 
     @include mobile {
       overflow-y: hidden;
@@ -85,7 +85,7 @@ $sct-background: #F4F9FC;
     margin-bottom: -1px;
     border-bottom: 1px solid transparent;
     font-size: 0;
-    @include transition(border $anim-ease $anim-speed-normal);
+    @include transition(border $global-anim-ease $global-anim-speed-normal);
 
     a {
       display: block;
@@ -146,7 +146,7 @@ $sct-background: #F4F9FC;
     line-height: 54px;
     opacity: 0;
     visibility: hidden;
-    @include transition(opacity $anim-ease $anim-speed-fast, visibility $anim-ease $anim-speed-fast);
+    @include transition(opacity $global-anim-ease $global-anim-speed-fast, visibility $global-anim-ease $global-anim-speed-fast);
 
     > .btn {
       display: inline-block;
@@ -215,8 +215,8 @@ $sct-background: #F4F9FC;
 
     &.animations-enabled {
       @include transition-property(left, width);
-      @include transition-timing-function($anim-ease);
-      @include transition-duration($anim-speed-normal);
+      @include transition-timing-function($global-anim-ease);
+      @include transition-duration($global-anim-speed-normal);
     }
   }
 
@@ -243,7 +243,7 @@ $sct-background: #F4F9FC;
     background-repeat: no-repeat;
     background-position: center;
     vertical-align: middle;
-    @include transition(transform $anim-slight-bounce $anim-speed-normal);
+    @include transition(transform $global-anim-slight-bounce $global-anim-speed-normal);
 
     @include mobile {
       display: none !important;
@@ -272,7 +272,7 @@ $sct-background: #F4F9FC;
   }
 
   @include element(title) {
-    @include transition(color $anim-ease $anim-speed-normal);
+    @include transition(color $global-anim-ease $global-anim-speed-normal);
     display: block;
     width:100%;
     line-height: 1;

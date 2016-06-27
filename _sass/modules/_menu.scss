@@ -77,7 +77,7 @@
       border-left-color: transparent;
       content: "";
       opacity: 0;
-      @include transition(opacity $anim-ease $anim-speed-normal);
+      @include transition(opacity $global-anim-ease $global-anim-speed-normal);
       @include animation(rotate 1250ms infinite linear);
     }
 

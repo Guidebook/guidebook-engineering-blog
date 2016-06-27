@@ -215,7 +215,7 @@ $pfr-padding: 20px;
   @include element (screen) {
     visibility: hidden;
     opacity: 0;
-    @include transition(all $anim-ease $anim-speed-normal);
+    @include transition(all $global-anim-ease $global-anim-speed-normal);
   
     &.is-visible {
       visibility: visible;

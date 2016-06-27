@@ -58,8 +58,8 @@ $hero-max-height-tablet: 700px;
     opacity: 0;
     visibility: hidden;
     @include transition-property(opacity, visibility);
-    @include transition-duration($anim-speed-normal);
-    @include transition-timing-function($anim-ease);
+    @include transition-duration($global-anim-speed-normal);
+    @include transition-timing-function($global-anim-ease);
   }
 
   @include submodule ( flush ) {
@@ -140,8 +140,8 @@ $hero-max-height-tablet: 700px;
     opacity: 0;
     visibility: hidden;
     @include transition-property(opacity, visibility);
-    @include transition-duration($anim-speed-v-slow);
-    @include transition-timing-function($anim-ease);
+    @include transition-duration($global-anim-speed-v-slow);
+    @include transition-timing-function($global-anim-ease);
 
     .hero-loaded & {
       opacity: 1;
@@ -267,8 +267,8 @@ $hero-max-height-tablet: 700px;
     visibility: hidden;
     vertical-align: middle;
     @include transition-property(opacity, visibility);
-    @include transition-duration($anim-speed-v-slow);
-    @include transition-timing-function($anim-ease);
+    @include transition-duration($global-anim-speed-v-slow);
+    @include transition-timing-function($global-anim-ease);
 
     &.has-loaded {
       opacity: 1;
@@ -297,8 +297,8 @@ $hero-max-height-tablet: 700px;
     visibility: hidden;
     @include transition-property(transform, opacity, visibility);
     @include transition-delay(0.2s);
-    @include transition-duration($anim-speed-v-slow);
-    @include transition-timing-function($anim-slight-bounce);
+    @include transition-duration($global-anim-speed-v-slow);
+    @include transition-timing-function($global-anim-slight-bounce);
     @include transform(translate3d(0, 3em, 0));
 
     &.has-loaded {

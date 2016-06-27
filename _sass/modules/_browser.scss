@@ -1,6 +1,6 @@
 @include module("browser") {
   position: relative;
-  @include transition(transform $anim-slight-resistance 1s, opacity $anim-ease 1s, visibility $anim-ease 1s);
+  @include transition(transform $global-anim-slight-resistance 1s, opacity $global-anim-ease 1s, visibility $global-anim-ease 1s);
 
   @include element("screen") {
     width: 574px;
