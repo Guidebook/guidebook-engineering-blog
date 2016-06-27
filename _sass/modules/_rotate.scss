@@ -34,7 +34,7 @@ $pagination-height: 24px;
     right: 0;
     left: 0;
     height: $pagination-height;
-    z-index: $z-content + 2;
+    z-index: $global-z-content + 2;
   }
 
   @include element (pagination_item) {
@@ -75,7 +75,7 @@ $pagination-height: 24px;
     left: 0;
     top: 50%;
     margin-top: -(image-height('sprites/icons/ic_flipper.png')/2) - $pagination-height;
-    z-index: $z-content + 1;
+    z-index: $global-z-content + 1;
     opacity: .7;
     padding: 20px 15px;
     @include border-radius(5px);

@@ -38,7 +38,7 @@ $tooltip-margin: 5px;
   @include transition-timing-function($global-anim-slight-bounce);
   @include transition-duration($global-anim-speed-normal);
   @include transform(translateY(10px) scale(.965));
-  z-index: $z-level-2;
+  z-index: $global-z-level-2;
 
   @include tablet-and-mobile {
     display: none;

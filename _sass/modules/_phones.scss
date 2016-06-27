@@ -36,7 +36,7 @@ $screen-color-dark: #787878;
       height: 300px;
       content: "";
       @include background(radial-gradient(ellipse closest-side, rgba(0,0,0,.5), rgba(0,0,0,0) 100%));
-      z-index: $z-content;
+      z-index: $global-z-content;
     }
   }
 
@@ -108,7 +108,7 @@ $screen-color-dark: #787878;
     @include image-2x($asset-url + 'img/2x/img_iphone6_flat@2x.png', $iphone6-width, $iphone6-height);
     width: $iphone6-width;
     height: $iphone6-height;
-    z-index: $z-content + 1;
+    z-index: $global-z-content + 1;
     position: relative;
 
     @include mobile {
@@ -154,7 +154,7 @@ $screen-color-dark: #787878;
     left: 24px;
     overflow: hidden;
     @include border-radius(2px);
-    z-index: $z-content + 2;
+    z-index: $global-z-content + 2;
     padding: 0;
 
     @include mobile {

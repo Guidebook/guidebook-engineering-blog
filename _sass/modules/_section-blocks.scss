@@ -12,11 +12,11 @@
     bottom: 0;
     top: 0;
     content: "";
-    z-index: $z-content;
+    z-index: $global-z-content;
   }
 
   > .l-content {
-    z-index: $z-content + 1;
+    z-index: $global-z-content + 1;
     position: relative;
   }
 

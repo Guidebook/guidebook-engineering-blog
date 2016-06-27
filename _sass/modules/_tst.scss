@@ -34,7 +34,7 @@ $testimonial-height-tablet: 350px;
     bottom: 0;
     width: 1px;
     background: rgba(0, 0, 0, .2);
-    z-index: $z-content + 3;
+    z-index: $global-z-content + 3;
   }
    
   &:before {
@@ -46,7 +46,7 @@ $testimonial-height-tablet: 350px;
     width: 1px;
     z-index: 2;
     background: rgba(0, 0, 0, .2);
-    z-index: $z-content + 3;
+    z-index: $global-z-content + 3;
   }
 
   @include mobile {
@@ -121,7 +121,7 @@ $testimonial-height-tablet: 350px;
     right: 0;
     opacity: .7;
     background: white;
-    z-index: $z-content + 1;
+    z-index: $global-z-content + 1;
   }
 
   @include element (content) {
@@ -134,7 +134,7 @@ $testimonial-height-tablet: 350px;
     min-height: 380px;
     background: rgba(255, 255, 255, .95);
     @include box-shadow(0 -1px 0 rgba(0, 0, 0, .2));
-    z-index: $z-content + 2;
+    z-index: $global-z-content + 2;
 
     @include mobile {
       top: 0;

@@ -112,7 +112,7 @@ $tsg-border-color: lighten(color('border'), 5%);
   @include element (content) {
     width: 100%;
     padding: 40px;
-    z-index: $z-content + 1;
+    z-index: $global-z-content + 1;
     position: relative;
   }
 
@@ -124,7 +124,7 @@ $tsg-border-color: lighten(color('border'), 5%);
     bottom: 1px;
     overflow: hidden;
     background-size: cover;
-    z-index: $z-content;
+    z-index: $global-z-content;
 
     &:before {
       position: absolute;

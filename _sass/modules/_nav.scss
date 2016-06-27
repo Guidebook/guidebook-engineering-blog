@@ -30,7 +30,7 @@ $navbar-roof-height: 30px;
   margin: 0;
   height: $navbar-height;
   line-height: $navbar-height;
-  z-index: $z-content-over;
+  z-index: $global-z-content-over;
 
   @include mobile {
     height: $navbar-height-mobile;
@@ -205,7 +205,7 @@ $navbar-roof-height: 30px;
   @include element (roof) {
     height: $navbar-roof-height;
     line-height: $navbar-roof-height;
-    z-index: $z-content-over;
+    z-index: $global-z-content-over;
     position: relative;
     border-bottom: 1px solid rgba(0,0,0,.05);
     background-color: rgba(255, 255, 255, .4);

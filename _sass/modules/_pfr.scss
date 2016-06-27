@@ -96,7 +96,7 @@ $pfr-padding: 20px;
         position: absolute;
         @include transform(rotate(45deg) skew(20deg, 20deg));
         @include border-radius($base-border-radius);
-        z-index: $z-content + 1;
+        z-index: $global-z-content + 1;
       }
 
       &:after {
@@ -107,7 +107,7 @@ $pfr-padding: 20px;
         top: 0;
         bottom: 0;
         position: absolute;
-        z-index: $z-content;
+        z-index: $global-z-content;
       }
 
       .pfr-phone-left & {
@@ -150,7 +150,7 @@ $pfr-padding: 20px;
     padding-right: 0;
     width: 100px;
     text-align: center;
-    z-index: $z-content + 2;
+    z-index: $global-z-content + 2;
     position: relative;
 
     .pfr-phone-left & {
@@ -172,7 +172,7 @@ $pfr-padding: 20px;
     vertical-align: middle;
     padding: $pfr-padding;
     padding-right: $pfr-padding + 20;
-    z-index: $z-content + 2;
+    z-index: $global-z-content + 2;
     position: relative;
 
     .pfr-phone-left & {

@@ -116,7 +116,7 @@ $video-aspect-ratio: (281/500);
     left: 50%;
     margin-left: -25px;
     @include transition(all ease-in-out 200ms);
-    z-index: $z-content + 2;
+    z-index: $global-z-content + 2;
 
     &:hover {
       opacity: 1;
@@ -133,7 +133,7 @@ $video-aspect-ratio: (281/500);
     @include adjust-font-size-to(10px);
     @include adjust-leading-to(1, 10px);
     @include border-radius($base-border-radius - 1);
-    z-index: $z-content + 2;
+    z-index: $global-z-content + 2;
     padding: 0 3px;
     border: 1px solid rgba(0,0,0,.18);
   }

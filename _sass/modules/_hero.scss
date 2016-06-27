@@ -26,7 +26,7 @@ $hero-max-height-tablet: 700px;
   height: $hero-max-height;
   min-height: $hero-min-height;
   position: relative;
-  z-index: $z-content;
+  z-index: $global-z-content;
 
   @include mobile {
     height: auto;
@@ -45,7 +45,7 @@ $hero-max-height-tablet: 700px;
     top: 0;
     height: $navbar-height * 4;
     content: "";
-    z-index: $z-content; // added so this is above the hero bgd
+    z-index: $global-z-content; // added so this is above the hero bgd
     @include background(linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.6)));
   }
 
@@ -64,7 +64,7 @@ $hero-max-height-tablet: 700px;
 
   @include submodule ( flush ) {
     margin-top:-($navbar-height) - $navbar-roof-height + 1; // fixes issues with zooming in/out in chromium, probably a rounding bug
-    z-index: $z-content;
+    z-index: $global-z-content;
     padding-top: $navbar-height + $navbar-roof-height;
 
     @include mobile {
@@ -126,7 +126,7 @@ $hero-max-height-tablet: 700px;
     bottom: 0;
     height: 1px;
     background-color: rgba(0, 0, 0, .15);
-    z-index: $z-content + 2;
+    z-index: $global-z-content + 2;
   }
 
   @include element (bgd) {
@@ -149,7 +149,7 @@ $hero-max-height-tablet: 700px;
     }
 
     > img {
-      z-index: $z-content;
+      z-index: $global-z-content;
     }
   }
 
@@ -162,7 +162,7 @@ $hero-max-height-tablet: 700px;
       right: 0;
       bottom: 0;
       content: "";
-      z-index: $z-content + 1;
+      z-index: $global-z-content + 1;
       @include background(
         linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, .7))
       );
@@ -219,7 +219,7 @@ $hero-max-height-tablet: 700px;
   @include element (content) {
     height: 100%;
     position: relative;
-    z-index: $z-content + 2;
+    z-index: $global-z-content + 2;
     overflow: hidden;
   }
 
@@ -229,7 +229,7 @@ $hero-max-height-tablet: 700px;
     height: 100%;
     position: relative;
     padding-left: 4px;
-    z-index: $z-content + 2;
+    z-index: $global-z-content + 2;
 
     &:before {
       content: '';
@@ -260,7 +260,7 @@ $hero-max-height-tablet: 700px;
 
   @include element (cta) {
     position: relative;
-    z-index: $z-content + 1;
+    z-index: $global-z-content + 1;
     width: 50%;
     display: inline-block;
     opacity: 0;
@@ -291,7 +291,7 @@ $hero-max-height-tablet: 700px;
     right: 100px;
     top: 0;
     bottom: 0;
-    z-index: $z-content + 1;
+    z-index: $global-z-content + 1;
     margin-top: 1em;
     opacity: 0;
     visibility: hidden;
