@@ -188,8 +188,8 @@ $post-width-desktop: 675px;
       color: color('dark-gray');
 
       @include mobile {
-        @include adjust-font-size-to($base-font-size);
-        @include adjust-leading-to(1, $base-font-size);
+        @include adjust-font-size-to($global-font-size);
+        @include adjust-leading-to(1, $global-font-size);
       }
 
       + h2,
@@ -207,12 +207,12 @@ $post-width-desktop: 675px;
     > h3, h2 {
       @include adjust-font-size-to(16px);
       @include adjust-leading-to(1, 16px);
-      font-weight: $base-weight-bold;
+      font-weight: $global-weight-bold;
       padding-bottom: rhythm(.5);
 
       @include mobile {
-        @include adjust-font-size-to($base-font-size);
-        @include adjust-leading-to(1, $base-font-size);
+        @include adjust-font-size-to($global-font-size);
+        @include adjust-leading-to(1, $global-font-size);
       }
     }
 
@@ -221,9 +221,9 @@ $post-width-desktop: 675px;
       @include adjust-leading-to(1, 20px);
 
       @include mobile {
-        @include adjust-font-size-to($base-font-size + 3);
-        @include adjust-leading-to(1, $base-font-size + 3);
-        font-weight: $base-weight-bold;
+        @include adjust-font-size-to($global-font-size + 3);
+        @include adjust-leading-to(1, $global-font-size + 3);
+        font-weight: $global-weight-bold;
       }
     }
 
@@ -235,9 +235,9 @@ $post-width-desktop: 675px;
       padding-bottom: rhythm(.5);
 
       @include mobile {
-        @include adjust-font-size-to($base-font-size);
-        @include adjust-leading-to(1, $base-font-size);
-        font-weight: $base-weight;
+        @include adjust-font-size-to($global-font-size);
+        @include adjust-leading-to(1, $global-font-size);
+        font-weight: $global-weight-regular;
       }
     }
   }

@@ -154,7 +154,7 @@ $navbar-roof-height: 30px;
   @include element ( link ) {
     @extend .gray-link;
     text-transform: uppercase;
-    font-family: $gotham;
+    font-family: $global-gotham;
     letter-spacing: 1px;
     position: relative;
     border-bottom: 0 solid transparent;
@@ -192,7 +192,7 @@ $navbar-roof-height: 30px;
 
   @include element ( btn ) {
     text-transform: uppercase;
-    font-family: $gotham;
+    font-family: $global-gotham;
     letter-spacing: 1px;
     vertical-align: middle;
     margin-top: -3px;

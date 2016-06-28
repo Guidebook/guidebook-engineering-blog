@@ -98,7 +98,7 @@ $gdc-height-mobile: 170px;
     @include adjust-font-size-to(14px);
     display: block;
     color: color('steel-gray');
-    font-weight: $base-weight-bold;
+    font-weight: $global-weight-bold;
     @include adjust-leading-to(1, 14px);
     height: 80px;
     overflow: hidden;
@@ -129,7 +129,7 @@ $gdc-height-mobile: 170px;
     bottom: 20px;
     left: 20px;
     right: 20px;
-    font-weight: $base-weight;
+    font-weight: $global-weight-regular;
     color: color('steel-gray');
 
     @include mobile {

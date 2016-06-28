@@ -5,23 +5,23 @@
 
 h1, h2, h3, h4, h5, h6 {
   color: $base-ink-light;
-  font-family: $base-font-family;
-  font-weight: $base-weight;
+  font-family: $global-font-family;
+  font-weight: $global-weight-regular;
   margin: 0; 
 }
-h1 { @include adjust-font-size-to(50px); @include adjust-leading-to(2.5); padding-bottom: rhythm(1); font-weight: $base-weight-light}
-h2 { @include adjust-font-size-to(40px); @include adjust-leading-to(2.5); padding-bottom: rhythm(1); font-weight: $base-weight-light}
+h1 { @include adjust-font-size-to(50px); @include adjust-leading-to(2.5); padding-bottom: rhythm(1); font-weight: $global-weight-light;}
+h2 { @include adjust-font-size-to(40px); @include adjust-leading-to(2.5); padding-bottom: rhythm(1); font-weight: $global-weight-light;}
 h3 { @include adjust-font-size-to(22px); @include adjust-leading-to(1.5); padding-bottom: rhythm(1); }
-h4 { @include adjust-font-size-to(14px); @include adjust-leading-to(1); padding-bottom: rhythm(.5); font-weight: $base-weight-bold;}
+h4 { @include adjust-font-size-to(14px); @include adjust-leading-to(1); padding-bottom: rhythm(.5); font-weight: $global-weight-bold;}
 h5 { @include adjust-font-size-to(14px); @include adjust-leading-to(1); padding-bottom: rhythm(.5); }
 h6 { font-size: 17px; line-height: 24px; }
 .subheader { color: #777; }
 
 
 p {
-  @include font-size($base-font-size);
+  @include font-size($global-font-size);
   color: $base-ink;
-  font-weight: $base-weight;
+  font-weight: $global-weight-regular;
   padding-bottom: rhythm(1);
   margin-bottom: 0;
   margin-top: 0;
@@ -43,8 +43,8 @@ p {
   @include adjust-leading-to(1, 16px);
 
   @include mobile {
-    @include adjust-font-size-to($base-font-size);
-    @include adjust-leading-to(1, $base-font-size);
+    @include adjust-font-size-to($global-font-size);
+    @include adjust-leading-to(1, $global-font-size);
   }
 }
 
@@ -111,8 +111,8 @@ ul, ol {
   color: color('dark-gray');
 
   @include mobile {
-    @include adjust-font-size-to($base-font-size);
-    @include adjust-leading-to(1, $base-font-size);
+    @include adjust-font-size-to($global-font-size);
+    @include adjust-leading-to(1, $global-font-size);
   }
 }
 

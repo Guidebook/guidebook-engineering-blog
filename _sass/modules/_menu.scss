@@ -55,7 +55,7 @@
   @include element (link) {
     color: color('white');
     text-transform: uppercase;
-    font-family: $gotham;
+    font-family: $global-gotham;
     letter-spacing: 1px;
     position: relative;
     display: block;
@@ -98,7 +98,7 @@
     margin: 0 0 20px 0;
     width: 100%;
     text-transform: uppercase;
-    font-family: $gotham;
+    font-family: $global-gotham;
     letter-spacing: 1px;
   }
 

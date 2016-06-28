@@ -184,7 +184,7 @@ input[type="search"]::-webkit-search-results-decoration {
     @extend .frm_textfield;
     background: color('tint-gray') url($asset-url + "img/ic_select_arrows.png") 97% no-repeat;
     -webkit-appearance: none;
-    font-weight: $base-weight-bold;
+    font-weight: $global-weight-bold;
   }
 
 }

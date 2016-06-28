@@ -118,8 +118,8 @@ $fct-gutter: 40px;
     }
 
     @include mobile {
-      @include adjust-font-size-to($base-font-size);
-      @include adjust-leading-to(1, $base-font-size);
+      @include adjust-font-size-to($global-font-size);
+      @include adjust-leading-to(1, $global-font-size);
     }
   }
 

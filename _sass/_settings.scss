@@ -29,35 +29,3 @@ $base-avatar-border-radius: 100%;
 // ======================================
 
 $max-width: 1200px;
-
-
-// Type
-// ======================================
-
-// Families
-$whitney: 'Whitney SSm A', 'Whitney SSm B', 'Whitney A', 'Whitney B', sans-serif;
-$gotham: 'Gotham SSm A', 'Gotham SSm B', Gotham, sans-serif;
-$monospace: 'menlo', "bitstream vera sans mono", monospace;
-$base-font-family: $whitney;
-$secondary-font-family: $gotham;
-
-// Weights
-$base-weight: 400;
-$base-weight-light: 300;
-$base-weight-bold: 600;
-
-// Sizes
-$base-font-size: 13px;
-$base-line-height: 1.8em;
-$round-to-nearest-half-line: true;
-$rhythm-unit: "rem";
-
-
-%base-font {
-  font-family: $base-font-family;
-  font-weight: $base-weight;
-}
-
-%secondary-font {
-  font-family: $secondary-font-family;
-}

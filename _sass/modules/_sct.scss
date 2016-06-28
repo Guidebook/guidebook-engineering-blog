@@ -156,8 +156,8 @@ $sct-background: #F4F9FC;
       padding-bottom: 0;
       height: 40px;
       vertical-align: middle;
-      font-family: $gotham;
-      font-weight: $base-weight-bold;
+      font-family: $global-gotham;
+      font-weight: $global-weight-bold;
       text-transform: uppercase;
     }
   }
@@ -278,10 +278,10 @@ $sct-background: #F4F9FC;
     line-height: 1;
     text-align: center;
     text-transform: uppercase;
-    font-family: $gotham;
+    font-family: $global-gotham;
     letter-spacing: 1px;
     color: color("medium-gray");
-    font-weight: $base-weight-bold;
+    font-weight: $global-weight-bold;
     white-space: nowrap;
   }
 }

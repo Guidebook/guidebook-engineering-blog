@@ -19,7 +19,7 @@ $numWidth: 49px;
     @extend %xlarge-font;
     height: $numWidth;
     line-height: $numWidth;
-    font-weight: $base-font-weight + 200;
+    font-weight: $global-font-weight + 200;
     position: relative;
     left: -1px;
   }

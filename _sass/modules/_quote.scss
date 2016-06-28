@@ -18,8 +18,8 @@ $quote-large-font-size: 16px;
       @include adjust-leading-to(1, $quote-large-font-size);
 
       @include mobile {
-        @include adjust-font-size-to($base-font-size);
-        @include adjust-leading-to(1, $base-font-size);
+        @include adjust-font-size-to($global-font-size);
+        @include adjust-leading-to(1, $global-font-size);
       }
     }
   }
@@ -70,7 +70,7 @@ $quote-large-font-size: 16px;
 
 
   @include element(byline_author) {
-    font-weight: $base-weight-bold;
+    font-weight: $global-weight-bold;
   }
 
   @include element(avatar) {

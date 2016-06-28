@@ -182,7 +182,7 @@ $testimonial-height-tablet: 350px;
 
   @include element (byline_author) {
       display:block;
-      font-weight: $base-weight-bold;
+      font-weight: $global-weight-bold;
   }
 
   @include element (card) {
