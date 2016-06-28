@@ -22,8 +22,8 @@
     }
 
     @include mobile {
-      margin-left: -$base-margin;
-      margin-right: -$base-margin;
+      margin-left: -$global-margin;
+      margin-right: -$global-margin;
       border-left: 0;
       border-right: 0;
     }

@@ -65,7 +65,7 @@ $callout-height: 30px;
     top: -$callout-height;
     left: -1px;
     right: -1px;
-    @include border-radius($base-border-radius $base-border-radius 0 0);
+    @include border-radius($global-border-radius $global-border-radius 0 0);
 
     > p {
       color: white;
@@ -78,7 +78,7 @@ $callout-height: 30px;
       top: 0;
       position: relative;
       margin-bottom: rhythm(1);
-      @include border-radius($base-border-radius);
+      @include border-radius($global-border-radius);
       margin-top: -1 * rhythm(1);
     }
   }

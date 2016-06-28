@@ -24,7 +24,7 @@ $tooltip-margin: 5px;
   position: absolute;
   padding: 5px 10px;
   width: $tooltip-width;
-  @include border-radius($base-border-radius);
+  @include border-radius($global-border-radius);
   border: 1px solid #ccc;
   border-color: rgba(0,0,0,0);
   @include box-shadow(0 0 0 1px rgba(0,0,0,.2), 0 2px 4px rgba(0,0,0,.1));

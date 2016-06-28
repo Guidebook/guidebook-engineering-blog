@@ -78,7 +78,7 @@ $pfr-padding: 20px;
 
   @include element (feature) {
     position: relative;
-    @include border-radius($base-border-radius);
+    @include border-radius($global-border-radius);
     overflow: hidden;
 
     &.is-selected {
@@ -95,7 +95,7 @@ $pfr-padding: 20px;
         width: 200px;
         position: absolute;
         @include transform(rotate(45deg) skew(20deg, 20deg));
-        @include border-radius($base-border-radius);
+        @include border-radius($global-border-radius);
         z-index: $global-z-content + 1;
       }
 

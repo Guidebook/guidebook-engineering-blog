@@ -201,7 +201,7 @@ $post-width-desktop: 675px;
 
     ul {
       list-style: outside;
-      padding-left: $base-padding;
+      padding-left: $global-padding;
     }
 
     > h3, h2 {
@@ -363,7 +363,7 @@ $post-width-desktop: 675px;
     margin-left: auto;
     margin-right: auto;
     max-width: 100%;
-    @include border-radius($base-border-radius);
+    @include border-radius($global-border-radius);
     overflow: visible;
     margin-bottom: rhythm(2);
     margin-top: rhythm(2);
@@ -381,13 +381,13 @@ $post-width-desktop: 675px;
       top:0;
       bottom:0;
       border: 1px solid rgba(0,0,0,.1);
-      @include border-radius($base-border-radius);
+      @include border-radius($global-border-radius);
     }
 
     > img {
       max-width: 100%;
       display: block;
-      @include border-radius($base-border-radius);
+      @include border-radius($global-border-radius);
     }
 
     @include mobile {

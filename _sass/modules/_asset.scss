@@ -1,6 +1,6 @@
 @include module("asset") {
   position: relative;
-  border-radius: $base-border-radius;
+  border-radius: $global-border-radius;
   display: block;
   @include box-shadow(0 2px 2px rgba(0,0,0,.05));
   text-decoration: none !important;
@@ -14,7 +14,7 @@
     bottom: 0;
     content: "";
     border: 1px solid rgba(0,0,0,.2);
-    border-radius: $base-border-radius;
+    border-radius: $global-border-radius;
   }
 
   &:hover {

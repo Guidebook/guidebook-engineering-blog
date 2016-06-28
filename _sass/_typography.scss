@@ -129,7 +129,7 @@ hr { border: solid $base-placeholder; border-width: 1px 0 0; clear: both; margin
 
 p > code {
   border: 1px solid color('border');
-  @include border-radius($base-border-radius);
+  @include border-radius($global-border-radius);
   background: #fcfdfe;
   padding: 2px 5px;
 }

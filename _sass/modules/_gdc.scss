@@ -22,7 +22,7 @@ $gdc-height-mobile: 170px;
   width: $gdc-width;
   height: $gdc-height;
   border-radius: $gdc-border-radius;
-  padding: $base-padding;
+  padding: $global-padding;
   background-color: white;
   display: block;
   text-decoration: none !important;
@@ -79,7 +79,7 @@ $gdc-height-mobile: 170px;
     width: 100px;
     height: 82px;
     border-radius: $gdc-border-radius;
-    margin: 0 auto ($base-padding * 0.75) auto;
+    margin: 0 auto ($global-padding * 0.75) auto;
     display: block;
     text-align: left;
     
