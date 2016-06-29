@@ -5,22 +5,22 @@
 // *************************************
 
 // -------------------------------------
-//   Variables
-// -------------------------------------
-
-$testimonial-height: 650px;
-$testimonial-height-mobile: 0;
-$testimonial-height-tablet: 350px;
-
-// -------------------------------------
 //   Base
 // -------------------------------------
 
 
 @include module (tst) {
+  // -------------------------------------
+  //   Variables
+  // -------------------------------------
+
+  $testimonial-block-height: 650px;
+  $testimonial-block-height-mobile: 0;
+  $testimonial-block-height-tablet: 350px;
+  
   display: block;
   width: 100%;
-  min-height: $testimonial-height;
+  min-height: $testimonial-block-height;
   position: relative;
   border-bottom: 1px solid #ccc;
   border-top: 1px solid #ccc;
@@ -50,7 +50,7 @@ $testimonial-height-tablet: 350px;
   }
 
   @include mobile {
-    min-height: $testimonial-height-mobile;
+    min-height: $testimonial-block-height-mobile;
     margin-bottom: rhythm(1);
 
     &:before, &:after {
@@ -59,7 +59,7 @@ $testimonial-height-tablet: 350px;
   }
 
   @include tablet {
-    min-height: $testimonial-height-tablet;
+    min-height: $testimonial-block-height-tablet;
     margin-bottom: rhythm(1);
 
     &:before, &:after {
@@ -164,7 +164,7 @@ $testimonial-height-tablet: 350px;
   @include element (byline) {
     padding: 0;
     margin-left: ($gdc-width + 40px);
-    color: $base-secondary;
+    color: $color-secondary;
     @include adjust-font-size-to(13px);
     @include adjust-leading-to(1, 13px);
 

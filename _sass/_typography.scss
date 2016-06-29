@@ -4,7 +4,7 @@
 // ======================================
 
 h1, h2, h3, h4, h5, h6 {
-  color: $base-ink-light;
+  color: $color-ink-light;
   font-family: $global-font-family;
   font-weight: $global-weight-regular;
   margin: 0; 
@@ -20,7 +20,7 @@ h6 { font-size: 17px; line-height: 24px; }
 
 p {
   @include font-size($global-font-size);
-  color: $base-ink;
+  color: $color-ink;
   font-weight: $global-weight-regular;
   padding-bottom: rhythm(1);
   margin-bottom: 0;
@@ -117,7 +117,7 @@ ul, ol {
 }
 
 a {
-  color: $base-primary;
+  color: $color-primary;
   text-decoration: none;
   &:hover,
   &:focus {
@@ -125,7 +125,7 @@ a {
   }
 }
 
-hr { border: solid $base-placeholder; border-width: 1px 0 0; clear: both; margin: 10px auto 30px auto; height: 0; }
+hr { border: solid $color-placeholder; border-width: 1px 0 0; clear: both; margin: 10px auto 30px auto; height: 0; }
 
 p > code {
   border: 1px solid color('border');

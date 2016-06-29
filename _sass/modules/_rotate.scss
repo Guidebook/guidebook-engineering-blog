@@ -2,15 +2,16 @@
 // Content rotate w/ pagination
 // ======================================
 
-// Variables
-
-$pagination-height: 24px;
 
 // Base
 
 @include module(rot) {
+  // Variables
+
+  $rotate-pagination-height: 24px;
+  
   position: relative;
-  min-height: 500px + $pagination-height;
+  min-height: 500px + $rotate-pagination-height;
 
   @include element (item) {
     opacity: 0;
@@ -33,7 +34,7 @@ $pagination-height: 24px;
     bottom: 0;
     right: 0;
     left: 0;
-    height: $pagination-height;
+    height: $rotate-pagination-height;
     z-index: $global-z-content + 2;
   }
 
@@ -74,7 +75,7 @@ $pagination-height: 24px;
     display: block;
     left: 0;
     top: 50%;
-    margin-top: -(image-height('sprites/icons/ic_flipper.png')/2) - $pagination-height;
+    margin-top: -(image-height('sprites/icons/ic_flipper.png')/2) - $rotate-pagination-height;
     z-index: $global-z-content + 1;
     opacity: .7;
     padding: 20px 15px;

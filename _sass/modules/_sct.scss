@@ -2,20 +2,20 @@
 //   Section Menu (SCT)
 // =====================================
 
-//   Variables
-
-$sct-background: #F4F9FC;
-
 //   Base
 
 @include module (sct) {
+  //   Variables
+
+  $section-menu-background: #F4F9FC;
+
   display: block;
   padding: 0;
   position: relative;
   width: 100%;
-  background-color: $sct-background;
-  border-bottom: 1px solid $base-stroke;
-  border-top: 1px solid $base-stroke;
+  background-color: $section-menu-background;
+  border-bottom: 1px solid $color-stroke;
+  border-top: 1px solid $color-stroke;
   height: auto;
   font-size: 0;
   line-height: 0;
@@ -52,7 +52,7 @@ $sct-background: #F4F9FC;
       left: 0;
       height: 1px;
       width: 100%;
-      background: $base-stroke;
+      background: $color-stroke;
       z-index: $global-z-content;
     }
   }
@@ -109,7 +109,7 @@ $sct-background: #F4F9FC;
     // Is Selected
 
     &.is-selected {
-      border-bottom-color: $base-ink !important;
+      border-bottom-color: $color-ink !important;
 
       .sct_title {
         color: color("steel-gray");
@@ -117,7 +117,7 @@ $sct-background: #F4F9FC;
     }
 
     &:hover {
-      border-bottom-color: transparentize($base-ink, .8);
+      border-bottom-color: transparentize($color-ink, .8);
 
       .sct_title {
         color: color("steel-gray");
@@ -168,7 +168,7 @@ $sct-background: #F4F9FC;
 
     @include non-mobile {
       @include box-shadow(0 1px 10px rgba(0,0,0,.06));
-      border-bottom: 1px solid darken($base-stroke, 10%);
+      border-bottom: 1px solid darken($color-stroke, 10%);
       position: fixed;
       top: 0;
       height: auto;
@@ -207,7 +207,7 @@ $sct-background: #F4F9FC;
     bottom: -1px;
     left: 0;
     width: 20%;
-    background: $base-ink;
+    background: $color-ink;
 
     .pjax-enabled & {
       visibility: visible;

@@ -2,27 +2,25 @@
 // Content rotate w/ pagination
 // ======================================
 
-// Variables
-
-$iphone6-width: 320px;
-$iphone6-height: 643px;
-$mobile-scale-factor: .75;
-$iphone6-screen-width: 272px;
-$iphone6-screen-height: 484px;
-
-
-$nexus5-width: 360px;
-$nexus5-height: 672px;
-$nexus5-screen-width: 290px;
-$nexus5-screen-height: 518px;
-
-
-$screen-color-light: #8F99A0;
-$screen-color-dark: #787878;
-
 // Base
 
 @include module(phn) {
+  // Variables
+
+  $phone-iphone6-width: 320px;
+  $phone-iphone6-height: 643px;
+  $phone-mobile-scale-factor: .75;
+  $phone-iphone6-screen-width: 272px;
+  $phone-iphone6-screen-height: 484px;
+
+  $phone-nexus5-width: 360px;
+  $phone-nexus5-height: 672px;
+  $phone-nexus5-screen-width: 290px;
+  $phone-nexus5-screen-height: 518px;
+
+  $phone-screen-color-light: #8F99A0;
+  $phone-screen-color-dark: #787878;
+  
   position: relative;
   display: inline-block;
 
@@ -72,32 +70,32 @@ $screen-color-dark: #787878;
 
     .phn_chrome {
       background-image: url($asset-url + 'img/img_nexus5_chrome.png');
-      width: $nexus5-width;
-      height: $nexus5-height;
+      width: $phone-nexus5-width;
+      height: $phone-nexus5-height;
       @include image-2x($asset-url + 'img/2x/img_nexus5_chrome@2x.png', 354px, 665px);
 
       @include mobile {
-        width: $nexus5-width * $mobile-scale-factor;
-        height: $nexus5-height * $mobile-scale-factor;
-        background-size: ($nexus5-width * $mobile-scale-factor) ($nexus5-height * $mobile-scale-factor);
-        @include image-2x($asset-url + 'img/2x/img_nexus5_chrome@2x.png', $nexus5-width * $mobile-scale-factor, $nexus5-height * $mobile-scale-factor);
+        width: $phone-nexus5-width * $phone-mobile-scale-factor;
+        height: $phone-nexus5-height * $phone-mobile-scale-factor;
+        background-size: ($phone-nexus5-width * $phone-mobile-scale-factor) ($phone-nexus5-height * $phone-mobile-scale-factor);
+        @include image-2x($asset-url + 'img/2x/img_nexus5_chrome@2x.png', $phone-nexus5-width * $phone-mobile-scale-factor, $phone-nexus5-height * $phone-mobile-scale-factor);
       }
     }
 
     .phn_screen {
-      width: $nexus5-screen-width;
-      height: $nexus5-screen-height;
+      width: $phone-nexus5-screen-width;
+      height: $phone-nexus5-screen-height;
       top: 63px;
       left: 35px;
       padding: 0;
-      background-color: $screen-color-light;
+      background-color: $phone-screen-color-light;
       @include border-radius(0);
 
       @include mobile {
-        width: $nexus5-screen-width * $mobile-scale-factor;
-        height: $nexus5-screen-height * $mobile-scale-factor;
-        top: 63px * $mobile-scale-factor;
-        left: 35px * $mobile-scale-factor;
+        width: $phone-nexus5-screen-width * $phone-mobile-scale-factor;
+        height: $phone-nexus5-screen-height * $phone-mobile-scale-factor;
+        top: 63px * $phone-mobile-scale-factor;
+        left: 35px * $phone-mobile-scale-factor;
       }
     }
 
@@ -105,17 +103,17 @@ $screen-color-dark: #787878;
 
   @include element (chrome) {
     background: url($asset-url + 'img/img_iphone6_flat.png') center center no-repeat;
-    @include image-2x($asset-url + 'img/2x/img_iphone6_flat@2x.png', $iphone6-width, $iphone6-height);
-    width: $iphone6-width;
-    height: $iphone6-height;
+    @include image-2x($asset-url + 'img/2x/img_iphone6_flat@2x.png', $phone-iphone6-width, $phone-iphone6-height);
+    width: $phone-iphone6-width;
+    height: $phone-iphone6-height;
     z-index: $global-z-content + 1;
     position: relative;
 
     @include mobile {
-      width: $iphone6-width * $mobile-scale-factor;
-      height: $iphone6-height * $mobile-scale-factor;
-      background-size: ($iphone6-width * $mobile-scale-factor) ($iphone6-height * $mobile-scale-factor);
-      @include image-2x($asset-url + 'img/2x/img_iphone6_flat@2x.png', $iphone6-width * $mobile-scale-factor, $iphone6-height * $mobile-scale-factor);
+      width: $phone-iphone6-width * $phone-mobile-scale-factor;
+      height: $phone-iphone6-height * $phone-mobile-scale-factor;
+      background-size: ($phone-iphone6-width * $phone-mobile-scale-factor) ($phone-iphone6-height * $phone-mobile-scale-factor);
+      @include image-2x($asset-url + 'img/2x/img_iphone6_flat@2x.png', $phone-iphone6-width * $phone-mobile-scale-factor, $phone-iphone6-height * $phone-mobile-scale-factor);
     }
   }
 
@@ -123,10 +121,10 @@ $screen-color-dark: #787878;
 
     .phn_chrome {
       background-image: url($asset-url + 'img/img_iphone6_chrome_flat.png');
-      @include image-2x($asset-url + 'img/2x/img_iphone6_chrome_flat@2x.png', $iphone6-width, $iphone6-height);
+      @include image-2x($asset-url + 'img/2x/img_iphone6_chrome_flat@2x.png', $phone-iphone6-width, $phone-iphone6-height);
 
       @include mobile {
-        @include image-2x($asset-url + 'img/2x/img_iphone6_chrome_flat@2x.png', $iphone6-width * $mobile-scale-factor, $iphone6-height * $mobile-scale-factor);
+        @include image-2x($asset-url + 'img/2x/img_iphone6_chrome_flat@2x.png', $phone-iphone6-width * $phone-mobile-scale-factor, $phone-iphone6-height * $phone-mobile-scale-factor);
       }
     }
   }
@@ -138,7 +136,7 @@ $screen-color-dark: #787878;
       @include image-2x($asset-url + 'img/2x/img_nexus5_chrome_light@2x.png', 354px, 665px);
 
       @include mobile {
-        @include image-2x($asset-url + 'img/2x/img_nexus5_chrome_light@2x.png', $nexus5-width * $mobile-scale-factor, $nexus5-height * $mobile-scale-factor);
+        @include image-2x($asset-url + 'img/2x/img_nexus5_chrome_light@2x.png', $phone-nexus5-width * $phone-mobile-scale-factor, $phone-nexus5-height * $phone-mobile-scale-factor);
       }
     }
   }
@@ -147,9 +145,9 @@ $screen-color-dark: #787878;
 
   @include element (screen) {
     position: absolute;
-    //background: $screen-color-light;
-    width: $iphone6-screen-width;
-    height: $iphone6-screen-height;
+    //background: $phone-screen-color-light;
+    width: $phone-iphone6-screen-width;
+    height: $phone-iphone6-screen-height;
     top: 74px;
     left: 24px;
     overflow: hidden;
@@ -158,10 +156,10 @@ $screen-color-dark: #787878;
     padding: 0;
 
     @include mobile {
-      width: $iphone6-screen-width * $mobile-scale-factor;
-      height: $iphone6-screen-height * $mobile-scale-factor;
-      left: 23px * $mobile-scale-factor;
-      top: 75px * $mobile-scale-factor;
+      width: $phone-iphone6-screen-width * $phone-mobile-scale-factor;
+      height: $phone-iphone6-screen-height * $phone-mobile-scale-factor;
+      left: 23px * $phone-mobile-scale-factor;
+      top: 75px * $phone-mobile-scale-factor;
     }
     
     > img {
@@ -185,5 +183,5 @@ $screen-color-dark: #787878;
       @include border-radius(2px);
     }
   }
- 
+
 }

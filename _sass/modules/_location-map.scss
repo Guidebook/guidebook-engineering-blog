@@ -11,7 +11,7 @@
 //   Variables
 // -------------------------------------
 
-$ping-speed: 2s;
+$location-map-ping-speed: 2s;
 
 // -------------------------------------
 //   Base
@@ -31,7 +31,7 @@ $ping-speed: 2s;
   opacity: 1;
   @include transform(scale(0));
   @include transition-property(opacity, visibility, transform);
-  @include transition-duration($ping-speed);
+  @include transition-duration($location-map-ping-speed);
   @include transition-timing-function(ease);
 
   &.is-visible {

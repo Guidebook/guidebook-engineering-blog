@@ -14,7 +14,6 @@ $hero-max-height: 740px;
 $hero-max-height-mobile: 630px;
 $hero-max-height-tablet: 700px;
 
-
 // -------------------------------------
 //   Base
 // -------------------------------------
@@ -43,7 +42,7 @@ $hero-max-height-tablet: 700px;
     left: 0;
     right: 0;
     top: 0;
-    height: $navbar-height * 4;
+    height: $global-navbar-height * 4;
     content: "";
     z-index: $global-z-content; // added so this is above the hero bgd
     @include background(linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.6)));
@@ -63,18 +62,18 @@ $hero-max-height-tablet: 700px;
   }
 
   @include submodule ( flush ) {
-    margin-top:-($navbar-height) - $navbar-roof-height + 1; // fixes issues with zooming in/out in chromium, probably a rounding bug
+    margin-top:-($global-navbar-height) - $global-navbar-roof-height + 1; // fixes issues with zooming in/out in chromium, probably a rounding bug
     z-index: $global-z-content;
-    padding-top: $navbar-height + $navbar-roof-height;
+    padding-top: $global-navbar-height + $global-navbar-roof-height;
 
     @include mobile {
-      margin-top: -$navbar-height-mobile;
-      padding-top: $navbar-height-mobile;
+      margin-top: -$global-navbar-height-mobile;
+      padding-top: $global-navbar-height-mobile;
     }
 
     @include tablet {
-      margin-top: -$navbar-height-mobile;
-      padding-top: $navbar-height-mobile;
+      margin-top: -$global-navbar-height-mobile;
+      padding-top: $global-navbar-height-mobile;
     }
   }
 

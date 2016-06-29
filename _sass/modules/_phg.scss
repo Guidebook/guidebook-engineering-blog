@@ -2,17 +2,16 @@
 // Photo Grid
 // ======================================
 
-// Variables
-
-$margin: rhythm(1);
-$mobile-margin: 10px;
-$desktop-height: 450px;
-$tablet-height: 300px;
-$mobile-height: 200px;
-
 // Base
 
 @include module(phg) {
+  // Variables
+  $photo-grid-margin: rhythm(1);
+  $photo-grid-mobile-margin: 10px;
+  $photo-grid-desktop-height: 450px;
+  $photo-grid-tablet-height: 300px;
+  $photo-grid-mobile-height: 200px;
+
   position: relative;
 
   // Modifiers
@@ -36,7 +35,7 @@ $mobile-height: 200px;
   @include element(photo) {
     float: left;
     position: relative;
-    height: $desktop-height;
+    height: $photo-grid-desktop-height;
     width: 100%;
     background: color('white');
 
@@ -61,11 +60,11 @@ $mobile-height: 200px;
     }
 
     @include tablet {
-      height: $tablet-height;
+      height: $photo-grid-tablet-height;
     }
 
     @include mobile {
-      height: $mobile-height;
+      height: $photo-grid-mobile-height;
     }
 
   }
@@ -75,14 +74,14 @@ $mobile-height: 200px;
     left: 0;
     top: 0;
     right: 0;
-    bottom: $margin;
+    bottom: $photo-grid-margin;
     background-color: color('border');
     background-size: cover;
-    @include border-radius($base-img-border-radius);
+    @include border-radius($global-img-border-radius);
     overflow: hidden;
 
     @include mobile {
-      bottom: $mobile-margin;
+      bottom: $photo-grid-mobile-margin;
     }
 
     &:before {
@@ -93,34 +92,38 @@ $mobile-height: 200px;
       bottom: 0;
       content: "";
       border: 1px solid rgba(0,0,0,.15);
-      @include border-radius($base-img-border-radius);
+      @include border-radius($global-img-border-radius);
       z-index: $global-z-content + 1;
     }
 
     > img {
       z-index: $global-z-content;
-      @include border-radius($base-img-border-radius);
+      @include border-radius($global-img-border-radius);
     }
   }
 
 }
 
 .phg_photo-small + .phg_photo-med {
+  $photo-grid-margin: rhythm(1);
+  $photo-grid-mobile-margin: 10px;
   .phg_bgd {
-    left: $margin;
+    left: $photo-grid-margin;
 
     @include mobile {
-      left: $mobile-margin;
+      left: $photo-grid-mobile-margin;
     }
   }
 }
 
 .phg_photo-half + .phg_photo-half {
+  $photo-grid-margin: rhythm(1);
+  $photo-grid-mobile-margin: 10px;
   .phg_bgd {
-    left: $margin;
+    left: $photo-grid-margin;
 
     @include mobile {
-      left: $mobile-margin;
+      left: $photo-grid-mobile-margin;
     }
   }
 }

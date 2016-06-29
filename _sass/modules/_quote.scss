@@ -2,13 +2,14 @@
 // Avatars
 // ======================================
 
-// Variables
-
-$quote-large-font-size: 16px;
-
 // Base
 
 @include module(quote) {
+
+  // Variables
+
+  $quote-large-font-size: 16px;
+  
   position: relative;
 
 

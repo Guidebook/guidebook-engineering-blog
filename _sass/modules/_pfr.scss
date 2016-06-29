@@ -4,21 +4,16 @@
 //
 // *************************************
 
-//   Variables
-
-
-$pfr-height: image-height('img_iphone6_flat.png');
-$pfr-height-nexus: image-height('img_nexus5_chrome.png');
-$pfr-padding: 20px;
-
-
 //   Base
 
 
 @include module (pfr) {
+  $phone-feature-picker-height: image-height('img_iphone6_flat.png');
+  $phone-feature-picker-height-nexus: image-height('img_nexus5_chrome.png');
+  $phone-feature-picker-padding: 20px;
 
   position: relative;
-  min-height: $pfr-height;
+  min-height: $phone-feature-picker-height;
 
   @include mobile {
     min-height: 0;
@@ -31,24 +26,24 @@ $pfr-padding: 20px;
   }
 
   @include submodule (nexus) {
-    min-height: $pfr-height-nexus;
+    min-height: $phone-feature-picker-height-nexus;
   }
 
   //   Elements
 
 
   @include element (features) {
-    margin-right: image-width('img_iphone6_flat.png') + $pfr-padding*2;
+    margin-right: image-width('img_iphone6_flat.png') + $phone-feature-picker-padding*2;
 
     @include tablet {
-      margin-right: image-width('img_iphone6_flat.png') + $pfr-padding*2 - 70;
+      margin-right: image-width('img_iphone6_flat.png') + $phone-feature-picker-padding*2 - 70;
     }
 
     .pfr-nexus & {
-      margin-right: image-width('img_nexus5_chrome.png') + $pfr-padding*2;
+      margin-right: image-width('img_nexus5_chrome.png') + $phone-feature-picker-padding*2;
 
       @include tablet {
-        margin-right: image-width('img_nexus5_chrome.png') + $pfr-padding*2 - 70;
+        margin-right: image-width('img_nexus5_chrome.png') + $phone-feature-picker-padding*2 - 70;
       }
     }
 
@@ -59,18 +54,18 @@ $pfr-padding: 20px;
 
     .pfr-phone-left & {
       margin-right: 0;
-      margin-left: image-width('img_iphone6_flat.png') + $pfr-padding*2;
+      margin-left: image-width('img_iphone6_flat.png') + $phone-feature-picker-padding*2;
 
       @include tablet {
-        margin-left: image-width('img_iphone6_flat.png') + $pfr-padding*2 - 70;
+        margin-left: image-width('img_iphone6_flat.png') + $phone-feature-picker-padding*2 - 70;
       }
     }
 
     .pfr-phone-left.pfr-nexus & {
-      margin-left: image-width('img_nexus5_chrome.png') + $pfr-padding*2;
+      margin-left: image-width('img_nexus5_chrome.png') + $phone-feature-picker-padding*2;
 
       @include tablet {
-        margin-left: image-width('img_nexus5_chrome.png') + $pfr-padding*2 - 70;
+        margin-left: image-width('img_nexus5_chrome.png') + $phone-feature-picker-padding*2 - 70;
       }
     }
 
@@ -146,7 +141,7 @@ $pfr-padding: 20px;
   @include element (feature_image) {
     display: table-cell;
     vertical-align: middle;
-    padding: $pfr-padding;
+    padding: $phone-feature-picker-padding;
     padding-right: 0;
     width: 100px;
     text-align: center;
@@ -154,7 +149,7 @@ $pfr-padding: 20px;
     position: relative;
 
     .pfr-phone-left & {
-      padding-left: $pfr-padding + 20;
+      padding-left: $phone-feature-picker-padding + 20;
     }
 
     @include mobile {
@@ -170,17 +165,17 @@ $pfr-padding: 20px;
   @include element (feature_text) {
     display: table-cell;
     vertical-align: middle;
-    padding: $pfr-padding;
-    padding-right: $pfr-padding + 20;
+    padding: $phone-feature-picker-padding;
+    padding-right: $phone-feature-picker-padding + 20;
     z-index: $global-z-content + 2;
     position: relative;
 
     .pfr-phone-left & {
-      padding-right: $pfr-padding;
+      padding-right: $phone-feature-picker-padding;
     }
 
     @include mobile {
-      padding: 0 $pfr-padding;
+      padding: 0 $phone-feature-picker-padding;
     }
   }
 

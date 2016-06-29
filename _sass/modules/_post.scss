@@ -5,21 +5,19 @@
 // This is a module describing a post, mainly used for the development blog
 
 
-
-
-// -------------------------------------
-//   Variables
-// -------------------------------------
-
-$post-width: 750px;
-$post-width-laptop: 600px;
-$post-width-desktop: 675px;
-
 // -------------------------------------
 //   Base
 // -------------------------------------
 
 @include module (post) {
+
+  // -------------------------------------
+  //   Variables
+  // -------------------------------------
+
+  $post-width: 750px;
+  $post-width-laptop: 600px;
+  $post-width-desktop: 675px;
 
   width: $post-width;
   padding-left: 100px;

@@ -1,24 +1,23 @@
-
-$numWidth: 49px;
-
 @include module("num") {
 
+  $number-width: 49px;
+
   display: inline-block;
-  width: $numWidth;
-  height: $numWidth;
-  line-height: $numWidth;
+  width: $number-width;
+  height: $number-width;
+  line-height: $number-width;
   border: 1px solid color('green');
   border-radius: 50%;
   font-size: 0;
 
   @include element("number") {
-    width: $numWidth;
+    width: $number-width;
     text-align: center;
     display: inline-block;
     vertical-align: middle;
     @extend %xlarge-font;
-    height: $numWidth;
-    line-height: $numWidth;
+    height: $number-width;
+    line-height: $number-width;
     font-weight: $global-font-weight + 200;
     position: relative;
     left: -1px;

@@ -4,20 +4,18 @@
 //
 // *************************************
 
-// -------------------------------------
-//   Variables
-// -------------------------------------
-
-$navbar-height: 70px;
-$navbar-height-mobile: 60px;
-$navbar-roof-height: 30px;
 
 // -------------------------------------
 //   Base
 // -------------------------------------
 
+$global-navbar-height: 70px;
+$global-navbar-height-mobile: 60px;
+$global-navbar-roof-height: 30px;
 
 @include module (nav) {
+
+
   @include pie-clearfix();
   @include font-size(12px);
   display: block;
@@ -28,19 +26,19 @@ $navbar-roof-height: 30px;
   text-align: left;
   position: relative;
   margin: 0;
-  height: $navbar-height;
-  line-height: $navbar-height;
+  height: $global-navbar-height;
+  line-height: $global-navbar-height;
   z-index: $global-z-content-over;
 
   @include mobile {
-    height: $navbar-height-mobile;
-    line-height: $navbar-height-mobile;
+    height: $global-navbar-height-mobile;
+    line-height: $global-navbar-height-mobile;
     padding: 0 20px;
   }
 
   @include tablet {
-    height: $navbar-height-mobile;
-    line-height: $navbar-height-mobile;
+    height: $global-navbar-height-mobile;
+    line-height: $global-navbar-height-mobile;
     padding: 0 20px;
   }
 
@@ -101,12 +99,12 @@ $navbar-roof-height: 30px;
   @include element( item ) {
     display: table-cell;
     padding:0 20px;
-    height: $navbar-height;
+    height: $global-navbar-height;
     vertical-align: middle;
     position: relative;
 
     @include tablet-and-mobile {
-      height: $navbar-height-mobile;
+      height: $global-navbar-height-mobile;
     }
 
     &.flush {
@@ -115,13 +113,13 @@ $navbar-roof-height: 30px;
 
     > .logo {
       display: block;
-      height: $navbar-height;
+      height: $global-navbar-height;
       width: 145px;
       @include background(image-url($guidebook-image-url + "img_nav_logo.png") center no-repeat);
       @include image-2x($guidebook-image-url + "img_nav_logo@2x.png", 145px, 31px);
 
       @include tablet-and-mobile {
-        height: $navbar-height-mobile;
+        height: $global-navbar-height-mobile;
       }
 
       &:hover {
@@ -203,8 +201,8 @@ $navbar-roof-height: 30px;
   }
 
   @include element (roof) {
-    height: $navbar-roof-height;
-    line-height: $navbar-roof-height;
+    height: $global-navbar-roof-height;
+    line-height: $global-navbar-roof-height;
     z-index: $global-z-content-over;
     position: relative;
     border-bottom: 1px solid rgba(0,0,0,.05);
@@ -238,7 +236,7 @@ $navbar-roof-height: 30px;
 
     > p {
       @include adjust-font-size-to(11px);
-      line-height: $navbar-roof-height;
+      line-height: $global-navbar-roof-height;
     }
 
     a {

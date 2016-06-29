@@ -2,13 +2,13 @@
 //   Table
 // =====================================
 
-//   Variables
-
-$callout-height: 30px;
-
 //   Base
 
 @include module (table) {
+  //   Variables
+
+  $table-callout-height: 30px;
+  
   display: table;
   border: 1px solid color('border');
   border-collapse: collapse;

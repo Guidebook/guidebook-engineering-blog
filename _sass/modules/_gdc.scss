@@ -4,13 +4,13 @@
 
 // Variables
 
-$gdc-border-radius: 4px;
-$gdc-width: 140px;
-$gdc-height: 240px;
-$gdc-background: #fff;
+$guide-card-border-radius: 4px;
+$guide-card-width: 140px;
+$guide-card-height: 240px;
+$guide-card-background: #fff;
 
-$gdc-width-mobile: 100px;
-$gdc-height-mobile: 170px;
+$guide-card-width-mobile: 100px;
+$guide-card-height-mobile: 170px;
 
 
 // Base
@@ -19,9 +19,9 @@ $gdc-height-mobile: 170px;
 
   @include box-shadow(0 3px 7px rgba(0, 0, 0, .2), 0 0 1px rgba(0, 0, 0, .55));
   position: relative;
-  width: $gdc-width;
-  height: $gdc-height;
-  border-radius: $gdc-border-radius;
+  width: $guide-card-width;
+  height: $guide-card-height;
+  border-radius: $guide-card-border-radius;
   padding: $global-padding;
   background-color: white;
   display: block;
@@ -70,15 +70,15 @@ $gdc-height-mobile: 170px;
 
   @include mobile {
     width: 100%;
-    max-width: $gdc-width-mobile;
-    height: $gdc-height-mobile;
+    max-width: $guide-card-width-mobile;
+    height: $guide-card-height-mobile;
     padding: 10px;
   }
 
   @include element(icon) {
     width: 100px;
     height: 82px;
-    border-radius: $gdc-border-radius;
+    border-radius: $guide-card-border-radius;
     margin: 0 auto ($global-padding * 0.75) auto;
     display: block;
     text-align: left;
