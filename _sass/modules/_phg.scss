@@ -77,7 +77,7 @@
     bottom: $photo-grid-margin;
     background-color: color('border');
     background-size: cover;
-    @include border-radius($global-img-border-radius);
+    @include border-radius($default-img-border-radius);
     overflow: hidden;
 
     @include mobile {
@@ -92,13 +92,13 @@
       bottom: 0;
       content: "";
       border: 1px solid rgba(0,0,0,.15);
-      @include border-radius($global-img-border-radius);
+      @include border-radius($default-img-border-radius);
       z-index: $global-z-content + 1;
     }
 
     > img {
       z-index: $global-z-content;
-      @include border-radius($global-img-border-radius);
+      @include border-radius($default-img-border-radius);
     }
   }
 

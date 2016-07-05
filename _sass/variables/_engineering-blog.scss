@@ -1,0 +1,49 @@
+/**   
+  * ENGINEERING BLOG VARIABLES
+  * ========================== 
+  *
+  * These SASS variables are used only within the engineering 
+  * blog (guidebook-engineering-blog). 
+  */
+
+/* Server Variables
+   ========================================================================== */
+
+$eng-blog-asset-url: '/';
+
+
+/* Colors
+   ========================================================================== */
+
+// Colors used specifically in this project
+$color-background: #fff;
+$color-ink: #222;
+$color-ink-light: #4E4E4E;
+$color-primary: #439fd8;
+$color-secondary: #515152; // #444
+$color-danger: #ea5f5f;
+$color-placeholder: #dce5eb;
+$color-stroke: #e9e9e9;
+
+
+/* Module Project Globals
+   ========================================================================== */
+
+// Guide card
+$eng-blog-guide-card-border-radius: 4px;
+$eng-blog-guide-card-width: 140px;
+$eng-blog-guide-card-height: 240px;
+$eng-blog-guide-card-background: #fff;
+$eng-blog-guide-card-width-mobile: 100px;
+$eng-blog-guide-card-height-mobile: 170px;
+
+// Hero
+$eng-blog-hero-min-height: 370px;
+$eng-blog-hero-max-height: 740px;
+$eng-blog-hero-max-height-mobile: 630px;
+$eng-blog-hero-max-height-tablet: 700px;
+
+// Navbar
+$eng-blog-navbar-height: 70px;
+$eng-blog-navbar-height-mobile: 60px;
+$eng-blog-navbar-roof-height: 30px;

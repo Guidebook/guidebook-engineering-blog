@@ -73,7 +73,7 @@
 
   @include element (feature) {
     position: relative;
-    @include border-radius($global-border-radius);
+    @include border-radius($default-border-radius);
     overflow: hidden;
 
     &.is-selected {
@@ -90,7 +90,7 @@
         width: 200px;
         position: absolute;
         @include transform(rotate(45deg) skew(20deg, 20deg));
-        @include border-radius($global-border-radius);
+        @include border-radius($default-border-radius);
         z-index: $global-z-content + 1;
       }
 

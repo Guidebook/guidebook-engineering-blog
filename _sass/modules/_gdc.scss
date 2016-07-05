@@ -2,27 +2,16 @@
 // Guide Cards (GDC)
 // ======================================
 
-// Variables
-
-$guide-card-border-radius: 4px;
-$guide-card-width: 140px;
-$guide-card-height: 240px;
-$guide-card-background: #fff;
-
-$guide-card-width-mobile: 100px;
-$guide-card-height-mobile: 170px;
-
-
 // Base
 
 @include module(gdc) {
 
   @include box-shadow(0 3px 7px rgba(0, 0, 0, .2), 0 0 1px rgba(0, 0, 0, .55));
   position: relative;
-  width: $guide-card-width;
-  height: $guide-card-height;
-  border-radius: $guide-card-border-radius;
-  padding: $global-padding;
+  width: $eng-blog-guide-card-width;
+  height: $eng-blog-guide-card-height;
+  border-radius: $eng-blog-guide-card-border-radius;
+  padding: $default-padding;
   background-color: white;
   display: block;
   text-decoration: none !important;
@@ -70,16 +59,16 @@ $guide-card-height-mobile: 170px;
 
   @include mobile {
     width: 100%;
-    max-width: $guide-card-width-mobile;
-    height: $guide-card-height-mobile;
+    max-width: $eng-blog-guide-card-width-mobile;
+    height: $eng-blog-guide-card-height-mobile;
     padding: 10px;
   }
 
   @include element(icon) {
     width: 100px;
     height: 82px;
-    border-radius: $guide-card-border-radius;
-    margin: 0 auto ($global-padding * 0.75) auto;
+    border-radius: $eng-blog-guide-card-border-radius;
+    margin: 0 auto ($default-padding * 0.75) auto;
     display: block;
     text-align: left;
     
@@ -98,7 +87,7 @@ $guide-card-height-mobile: 170px;
     @include adjust-font-size-to(14px);
     display: block;
     color: color('steel-gray');
-    font-weight: $global-weight-bold;
+    font-weight: $default-weight-bold;
     @include adjust-leading-to(1, 14px);
     height: 80px;
     overflow: hidden;
@@ -129,7 +118,7 @@ $guide-card-height-mobile: 170px;
     bottom: 20px;
     left: 20px;
     right: 20px;
-    font-weight: $global-weight-regular;
+    font-weight: $default-weight-regular;
     color: color('steel-gray');
 
     @include mobile {

@@ -40,8 +40,8 @@
       @include element("aside", nested) {
         width: 100%;
         text-align: center;
-        margin: $global-margin 0;
-        padding: 0 $global-margin;
+        margin: $default-margin 0;
+        padding: 0 $default-margin;
       }
     }
 

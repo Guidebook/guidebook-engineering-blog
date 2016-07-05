@@ -4,9 +4,6 @@
 //
 // *************************************
 
-//   Variables
-
-
 
 //   Base
 
@@ -46,8 +43,8 @@
         right: 10px;
         top: 50%;
         margin-top: -10px;
-        background: url($asset-url + 'img/sprites/icons/ic_pvr_check.png');
-        @include image-2x($asset-url + 'img/sprites@2x/icons/ic_pvr_check.png', 20px, 20px);
+        background: url($eng-blog-asset-url + 'img/sprites/icons/ic_pvr_check.png');
+        @include image-2x($eng-blog-asset-url + 'img/sprites@2x/icons/ic_pvr_check.png', 20px, 20px);
       }
     }
   }

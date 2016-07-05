@@ -186,8 +186,8 @@
       color: color('dark-gray');
 
       @include mobile {
-        @include adjust-font-size-to($global-font-size);
-        @include adjust-leading-to(1, $global-font-size);
+        @include adjust-font-size-to($default-font-size);
+        @include adjust-leading-to(1, $default-font-size);
       }
 
       + h2,
@@ -199,18 +199,18 @@
 
     ul {
       list-style: outside;
-      padding-left: $global-padding;
+      padding-left: $default-padding;
     }
 
     > h3, h2 {
       @include adjust-font-size-to(16px);
       @include adjust-leading-to(1, 16px);
-      font-weight: $global-weight-bold;
+      font-weight: $default-weight-bold;
       padding-bottom: rhythm(.5);
 
       @include mobile {
-        @include adjust-font-size-to($global-font-size);
-        @include adjust-leading-to(1, $global-font-size);
+        @include adjust-font-size-to($default-font-size);
+        @include adjust-leading-to(1, $default-font-size);
       }
     }
 
@@ -219,9 +219,9 @@
       @include adjust-leading-to(1, 20px);
 
       @include mobile {
-        @include adjust-font-size-to($global-font-size + 3);
-        @include adjust-leading-to(1, $global-font-size + 3);
-        font-weight: $global-weight-bold;
+        @include adjust-font-size-to($default-font-size + 3);
+        @include adjust-leading-to(1, $default-font-size + 3);
+        font-weight: $default-weight-bold;
       }
     }
 
@@ -233,9 +233,9 @@
       padding-bottom: rhythm(.5);
 
       @include mobile {
-        @include adjust-font-size-to($global-font-size);
-        @include adjust-leading-to(1, $global-font-size);
-        font-weight: $global-weight-regular;
+        @include adjust-font-size-to($default-font-size);
+        @include adjust-leading-to(1, $default-font-size);
+        font-weight: $default-weight-regular;
       }
     }
   }
@@ -361,7 +361,7 @@
     margin-left: auto;
     margin-right: auto;
     max-width: 100%;
-    @include border-radius($global-border-radius);
+    @include border-radius($default-border-radius);
     overflow: visible;
     margin-bottom: rhythm(2);
     margin-top: rhythm(2);
@@ -379,13 +379,13 @@
       top:0;
       bottom:0;
       border: 1px solid rgba(0,0,0,.1);
-      @include border-radius($global-border-radius);
+      @include border-radius($default-border-radius);
     }
 
     > img {
       max-width: 100%;
       display: block;
-      @include border-radius($global-border-radius);
+      @include border-radius($default-border-radius);
     }
 
     @include mobile {

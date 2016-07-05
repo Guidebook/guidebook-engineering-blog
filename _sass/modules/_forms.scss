@@ -183,9 +183,9 @@ input[type="search"]::-webkit-search-results-decoration {
 
   @include element (select) {
     @extend .frm_textfield;
-    background: color('tint-gray') url($asset-url + "img/ic_select_arrows.png") 97% no-repeat;
+    background: color('tint-gray') url($eng-blog-asset-url + "img/ic_select_arrows.png") 97% no-repeat;
     -webkit-appearance: none;
-    font-weight: $global-weight-bold;
+    font-weight: $default-weight-bold;
   }
 
 }

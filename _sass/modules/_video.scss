@@ -56,12 +56,12 @@
     display: block;
     width: 150px;
     overflow: hidden;
-    @include border-radius($global-border-radius);
+    @include border-radius($default-border-radius);
     cursor: pointer;
 
     > img {
       width: 150px;
-      @include border-radius($global-border-radius);
+      @include border-radius($default-border-radius);
       display: block;
       @include transition(transform $global-anim-ease $global-anim-speed-fast);
     }
@@ -75,7 +75,7 @@
       background: rgba(255,255,255,.2);
       content: "";
       border: 1px solid rgba(0,0,0,.22);
-      @include border-radius($global-border-radius);
+      @include border-radius($default-border-radius);
       @include transition(background $global-anim-ease $global-anim-speed-fast);
       cursor: pointer;
     }
@@ -131,7 +131,7 @@
     color: color('steel-gray');
     @include adjust-font-size-to(10px);
     @include adjust-leading-to(1, 10px);
-    @include border-radius($global-border-radius - 1);
+    @include border-radius($default-border-radius - 1);
     z-index: $global-z-content + 2;
     padding: 0 3px;
     border: 1px solid rgba(0,0,0,.18);

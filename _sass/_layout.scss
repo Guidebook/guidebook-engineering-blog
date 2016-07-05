@@ -1,5 +1,4 @@
 .l-content {
-  $l-max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   @include pie-clearfix();
@@ -22,7 +21,7 @@
 
   @include widescreen {
     width: 100%;
-    max-width: $l-max-width;
+    max-width: $default-max-width;
   }
 }
 

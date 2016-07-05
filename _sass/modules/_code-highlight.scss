@@ -1,7 +1,7 @@
 .highlight  {
   border: 1px solid color('border');
   padding: 20px;
-  @include border-radius($global-border-radius);
+  @include border-radius($default-border-radius);
   margin-bottom: rhythm(1);
   background: #fcfdfe;
   margin-left: -20px;

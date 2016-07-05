@@ -65,11 +65,11 @@
     top: -$callout-height;
     left: -1px;
     right: -1px;
-    @include border-radius($global-border-radius $global-border-radius 0 0);
+    @include border-radius($default-border-radius $default-border-radius 0 0);
 
     > p {
       color: white;
-      font-weight: $global-weight-bold;
+      font-weight: $default-weight-bold;
       height: $callout-height;
       line-height: $callout-height;
     }
@@ -78,7 +78,7 @@
       top: 0;
       position: relative;
       margin-bottom: rhythm(1);
-      @include border-radius($global-border-radius);
+      @include border-radius($default-border-radius);
       margin-top: -1 * rhythm(1);
     }
   }

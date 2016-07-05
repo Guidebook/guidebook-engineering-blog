@@ -18,7 +18,7 @@
     @extend %xlarge-font;
     height: $number-width;
     line-height: $number-width;
-    font-weight: $global-font-weight + 200;
+    font-weight: $default-font-weight + 200;
     position: relative;
     left: -1px;
   }

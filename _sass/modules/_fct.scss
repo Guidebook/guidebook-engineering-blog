@@ -117,8 +117,8 @@
     }
 
     @include mobile {
-      @include adjust-font-size-to($global-font-size);
-      @include adjust-leading-to(1, $global-font-size);
+      @include adjust-font-size-to($default-font-size);
+      @include adjust-leading-to(1, $default-font-size);
     }
   }
 

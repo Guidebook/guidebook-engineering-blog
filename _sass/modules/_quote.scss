@@ -19,8 +19,8 @@
       @include adjust-leading-to(1, $quote-large-font-size);
 
       @include mobile {
-        @include adjust-font-size-to($global-font-size);
-        @include adjust-leading-to(1, $global-font-size);
+        @include adjust-font-size-to($default-font-size);
+        @include adjust-leading-to(1, $default-font-size);
       }
     }
   }
@@ -71,7 +71,7 @@
 
 
   @include element(byline_author) {
-    font-weight: $global-weight-bold;
+    font-weight: $default-weight-bold;
   }
 
   @include element(avatar) {

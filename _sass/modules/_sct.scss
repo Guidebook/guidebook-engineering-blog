@@ -157,7 +157,7 @@
       height: 40px;
       vertical-align: middle;
       font-family: $global-gotham;
-      font-weight: $global-weight-bold;
+      font-weight: $default-weight-bold;
       text-transform: uppercase;
     }
   }
@@ -252,23 +252,23 @@
 
 
   @include element(icon-overview) {
-    background-image: url($asset-url + "img/img_overview.png")
+    background-image: url($eng-blog-asset-url + "img/img_overview.png")
   }
 
   @include element(icon-events) {
-    background-image: url($asset-url + "img/img_events.png")
+    background-image: url($eng-blog-asset-url + "img/img_events.png")
   }
 
   @include element(icon-campuses) {
-    background-image: url($asset-url + "img/img_campuses.png")
+    background-image: url($eng-blog-asset-url + "img/img_campuses.png")
   }
 
   @include element(icon-places) {
-    background-image: url($asset-url + "img/img_places.png")
+    background-image: url($eng-blog-asset-url + "img/img_places.png")
   }
 
   @include element(icon-enterprise) {
-    background-image: url($asset-url + "img/img_enterprise.png")
+    background-image: url($eng-blog-asset-url + "img/img_enterprise.png")
   }
 
   @include element(title) {
@@ -281,7 +281,7 @@
     font-family: $global-gotham;
     letter-spacing: 1px;
     color: color("medium-gray");
-    font-weight: $global-weight-bold;
+    font-weight: $default-weight-bold;
     white-space: nowrap;
   }
 }

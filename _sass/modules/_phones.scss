@@ -69,16 +69,16 @@
   @include submodule (nexus5) {
 
     .phn_chrome {
-      background-image: url($asset-url + 'img/img_nexus5_chrome.png');
+      background-image: url($eng-blog-asset-url + 'img/img_nexus5_chrome.png');
       width: $phone-nexus5-width;
       height: $phone-nexus5-height;
-      @include image-2x($asset-url + 'img/2x/img_nexus5_chrome@2x.png', 354px, 665px);
+      @include image-2x($eng-blog-asset-url + 'img/2x/img_nexus5_chrome@2x.png', 354px, 665px);
 
       @include mobile {
         width: $phone-nexus5-width * $phone-mobile-scale-factor;
         height: $phone-nexus5-height * $phone-mobile-scale-factor;
         background-size: ($phone-nexus5-width * $phone-mobile-scale-factor) ($phone-nexus5-height * $phone-mobile-scale-factor);
-        @include image-2x($asset-url + 'img/2x/img_nexus5_chrome@2x.png', $phone-nexus5-width * $phone-mobile-scale-factor, $phone-nexus5-height * $phone-mobile-scale-factor);
+        @include image-2x($eng-blog-asset-url + 'img/2x/img_nexus5_chrome@2x.png', $phone-nexus5-width * $phone-mobile-scale-factor, $phone-nexus5-height * $phone-mobile-scale-factor);
       }
     }
 
@@ -102,8 +102,8 @@
   }
 
   @include element (chrome) {
-    background: url($asset-url + 'img/img_iphone6_flat.png') center center no-repeat;
-    @include image-2x($asset-url + 'img/2x/img_iphone6_flat@2x.png', $phone-iphone6-width, $phone-iphone6-height);
+    background: url($eng-blog-asset-url + 'img/img_iphone6_flat.png') center center no-repeat;
+    @include image-2x($eng-blog-asset-url + 'img/2x/img_iphone6_flat@2x.png', $phone-iphone6-width, $phone-iphone6-height);
     width: $phone-iphone6-width;
     height: $phone-iphone6-height;
     z-index: $global-z-content + 1;
@@ -113,18 +113,18 @@
       width: $phone-iphone6-width * $phone-mobile-scale-factor;
       height: $phone-iphone6-height * $phone-mobile-scale-factor;
       background-size: ($phone-iphone6-width * $phone-mobile-scale-factor) ($phone-iphone6-height * $phone-mobile-scale-factor);
-      @include image-2x($asset-url + 'img/2x/img_iphone6_flat@2x.png', $phone-iphone6-width * $phone-mobile-scale-factor, $phone-iphone6-height * $phone-mobile-scale-factor);
+      @include image-2x($eng-blog-asset-url + 'img/2x/img_iphone6_flat@2x.png', $phone-iphone6-width * $phone-mobile-scale-factor, $phone-iphone6-height * $phone-mobile-scale-factor);
     }
   }
 
   @include submodule (iphone6-med) {
 
     .phn_chrome {
-      background-image: url($asset-url + 'img/img_iphone6_chrome_flat.png');
-      @include image-2x($asset-url + 'img/2x/img_iphone6_chrome_flat@2x.png', $phone-iphone6-width, $phone-iphone6-height);
+      background-image: url($eng-blog-asset-url + 'img/img_iphone6_chrome_flat.png');
+      @include image-2x($eng-blog-asset-url + 'img/2x/img_iphone6_chrome_flat@2x.png', $phone-iphone6-width, $phone-iphone6-height);
 
       @include mobile {
-        @include image-2x($asset-url + 'img/2x/img_iphone6_chrome_flat@2x.png', $phone-iphone6-width * $phone-mobile-scale-factor, $phone-iphone6-height * $phone-mobile-scale-factor);
+        @include image-2x($eng-blog-asset-url + 'img/2x/img_iphone6_chrome_flat@2x.png', $phone-iphone6-width * $phone-mobile-scale-factor, $phone-iphone6-height * $phone-mobile-scale-factor);
       }
     }
   }
@@ -132,11 +132,11 @@
   @include submodule (nexus5-light) {
 
     .phn_chrome {
-      background-image: url($asset-url + 'img/img_nexus5_chrome_light.png');
-      @include image-2x($asset-url + 'img/2x/img_nexus5_chrome_light@2x.png', 354px, 665px);
+      background-image: url($eng-blog-asset-url + 'img/img_nexus5_chrome_light.png');
+      @include image-2x($eng-blog-asset-url + 'img/2x/img_nexus5_chrome_light@2x.png', 354px, 665px);
 
       @include mobile {
-        @include image-2x($asset-url + 'img/2x/img_nexus5_chrome_light@2x.png', $phone-nexus5-width * $phone-mobile-scale-factor, $phone-nexus5-height * $phone-mobile-scale-factor);
+        @include image-2x($eng-blog-asset-url + 'img/2x/img_nexus5_chrome_light@2x.png', $phone-nexus5-width * $phone-mobile-scale-factor, $phone-nexus5-height * $phone-mobile-scale-factor);
       }
     }
   }
