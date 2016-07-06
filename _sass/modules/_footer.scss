@@ -69,7 +69,7 @@
   }
 
   @include element (blurb) {
-    color: $base-secondary;
+    color: $color-secondary;
     @include adjust-font-size-to(11px);
   }
 

@@ -9,11 +9,13 @@
 // Base
 
 @include module(ltf) {
+  $labeled-input-height: 60px;
+  $unlabeled-input-height: 40px;
 
   position: relative;
   height: $labeled-input-height;
   padding: 0;
-  padding-top: $labeled-input-height - $input-height;
+  padding-top: $labeled-input-height - $unlabeled-input-height;
   display: block;
 
   @include element (label) {
@@ -38,7 +40,7 @@
     right: 0;
     bottom: 0;
     height: $labeled-input-height; 
-    padding-top: $labeled-input-height - $input-height;
+    padding-top: $labeled-input-height - $unlabeled-input-height;
   }
 
   > :focus ~ .ltf_label {

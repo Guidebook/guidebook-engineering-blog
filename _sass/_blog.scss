@@ -14,8 +14,9 @@
 // Import compass & guidebook common mixins/variables/etc
 @import "guidebook-common-styles/sass/library";
 
-// Settings
-@import "settings";
+// Variables
+@import "variables/default";
+@import "variables/engineering-blog";
 
 // Blog title
 

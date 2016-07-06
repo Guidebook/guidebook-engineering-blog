@@ -12,7 +12,7 @@
 .img-full-width {
   width: 100%;
   position: relative;
-  @include border-radius($base-img-border-radius);
+  @include border-radius($default-img-border-radius);
   overflow: hidden;
 
   &:before {
@@ -23,7 +23,7 @@
     bottom: 0;
     border: 1px solid rgba(0,0,0,.15);
     content: "";
-    @include border-radius($base-img-border-radius);
+    @include border-radius($default-img-border-radius);
   }
 
   &.no-border {

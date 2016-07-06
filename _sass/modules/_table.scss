@@ -2,13 +2,13 @@
 //   Table
 // =====================================
 
-//   Variables
-
-$callout-height: 30px;
-
 //   Base
 
 @include module (table) {
+  //   Variables
+
+  $table-callout-height: 30px;
+  
   display: table;
   border: 1px solid color('border');
   border-collapse: collapse;
@@ -65,11 +65,11 @@ $callout-height: 30px;
     top: -$callout-height;
     left: -1px;
     right: -1px;
-    @include border-radius($base-border-radius $base-border-radius 0 0);
+    @include border-radius($default-border-radius $default-border-radius 0 0);
 
     > p {
       color: white;
-      font-weight: $base-weight-bold;
+      font-weight: $default-weight-bold;
       height: $callout-height;
       line-height: $callout-height;
     }
@@ -78,7 +78,7 @@ $callout-height: 30px;
       top: 0;
       position: relative;
       margin-bottom: rhythm(1);
-      @include border-radius($base-border-radius);
+      @include border-radius($default-border-radius);
       margin-top: -1 * rhythm(1);
     }
   }

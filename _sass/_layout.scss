@@ -21,7 +21,7 @@
 
   @include widescreen {
     width: 100%;
-    max-width: $max-width
+    max-width: $default-max-width;
   }
 }
 

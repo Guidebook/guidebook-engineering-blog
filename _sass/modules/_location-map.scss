@@ -5,14 +5,6 @@
 // This controls the "pings" on the location map.  
 
 
-
-
-// -------------------------------------
-//   Variables
-// -------------------------------------
-
-$ping-speed: 2s;
-
 // -------------------------------------
 //   Base
 // -------------------------------------
@@ -22,6 +14,8 @@ $ping-speed: 2s;
 }
 
 .map-ping {
+  $location-map-ping-speed: 2s;
+
   position: absolute;
   width: 10px;
   height: 10px;
@@ -31,7 +25,7 @@ $ping-speed: 2s;
   opacity: 1;
   @include transform(scale(0));
   @include transition-property(opacity, visibility, transform);
-  @include transition-duration($ping-speed);
+  @include transition-duration($location-map-ping-speed);
   @include transition-timing-function(ease);
 
   &.is-visible {

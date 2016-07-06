@@ -4,13 +4,6 @@
 //
 // *************************************
 
-// -------------------------------------
-//   Variables
-// -------------------------------------
-
-$navbar-height: 70px;
-$navbar-height-mobile: 60px;
-$navbar-roof-height: 30px;
 
 // -------------------------------------
 //   Base
@@ -18,6 +11,8 @@ $navbar-roof-height: 30px;
 
 
 @include module (nav) {
+
+
   @include pie-clearfix();
   @include font-size(12px);
   display: block;
@@ -28,19 +23,19 @@ $navbar-roof-height: 30px;
   text-align: left;
   position: relative;
   margin: 0;
-  height: $navbar-height;
-  line-height: $navbar-height;
-  z-index: $z-content-over;
+  height: $eng-blog-navbar-height;
+  line-height: $eng-blog-navbar-height;
+  z-index: $global-z-content-over;
 
   @include mobile {
-    height: $navbar-height-mobile;
-    line-height: $navbar-height-mobile;
+    height: $eng-blog-navbar-height-mobile;
+    line-height: $eng-blog-navbar-height-mobile;
     padding: 0 20px;
   }
 
   @include tablet {
-    height: $navbar-height-mobile;
-    line-height: $navbar-height-mobile;
+    height: $eng-blog-navbar-height-mobile;
+    line-height: $eng-blog-navbar-height-mobile;
     padding: 0 20px;
   }
 
@@ -101,12 +96,12 @@ $navbar-roof-height: 30px;
   @include element( item ) {
     display: table-cell;
     padding:0 20px;
-    height: $navbar-height;
+    height: $eng-blog-navbar-height;
     vertical-align: middle;
     position: relative;
 
     @include tablet-and-mobile {
-      height: $navbar-height-mobile;
+      height: $eng-blog-navbar-height-mobile;
     }
 
     &.flush {
@@ -115,13 +110,13 @@ $navbar-roof-height: 30px;
 
     > .logo {
       display: block;
-      height: $navbar-height;
+      height: $eng-blog-navbar-height;
       width: 145px;
-      @include background(image-url($guidebook-image-url + "img_nav_logo.png") center no-repeat);
-      @include image-2x($guidebook-image-url + "img_nav_logo@2x.png", 145px, 31px);
+      @include background(image-url($global-guidebook-image-url + "img_nav_logo.png") center no-repeat);
+      @include image-2x($global-guidebook-image-url + "img_nav_logo@2x.png", 145px, 31px);
 
       @include tablet-and-mobile {
-        height: $navbar-height-mobile;
+        height: $eng-blog-navbar-height-mobile;
       }
 
       &:hover {
@@ -134,7 +129,7 @@ $navbar-roof-height: 30px;
         background-size: 109px 23px;
         position: relative;
         top: 2px;
-        @include image-2x($guidebook-image-url + "img_nav_logo@2x.png", 109px, 23px);
+        @include image-2x($global-guidebook-image-url + "img_nav_logo@2x.png", 109px, 23px);
       }
 
       > h1 {
@@ -154,7 +149,7 @@ $navbar-roof-height: 30px;
   @include element ( link ) {
     @extend .gray-link;
     text-transform: uppercase;
-    font-family: $gotham;
+    font-family: $global-gotham;
     letter-spacing: 1px;
     position: relative;
     border-bottom: 0 solid transparent;
@@ -192,7 +187,7 @@ $navbar-roof-height: 30px;
 
   @include element ( btn ) {
     text-transform: uppercase;
-    font-family: $gotham;
+    font-family: $global-gotham;
     letter-spacing: 1px;
     vertical-align: middle;
     margin-top: -3px;
@@ -203,9 +198,9 @@ $navbar-roof-height: 30px;
   }
 
   @include element (roof) {
-    height: $navbar-roof-height;
-    line-height: $navbar-roof-height;
-    z-index: $z-content-over;
+    height: $eng-blog-navbar-roof-height;
+    line-height: $eng-blog-navbar-roof-height;
+    z-index: $global-z-content-over;
     position: relative;
     border-bottom: 1px solid rgba(0,0,0,.05);
     background-color: rgba(255, 255, 255, .4);
@@ -238,7 +233,7 @@ $navbar-roof-height: 30px;
 
     > p {
       @include adjust-font-size-to(11px);
-      line-height: $navbar-roof-height;
+      line-height: $eng-blog-navbar-roof-height;
     }
 
     a {

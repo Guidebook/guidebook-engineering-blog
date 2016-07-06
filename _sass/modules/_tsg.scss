@@ -5,24 +5,23 @@
 // *************************************
 
 // -------------------------------------
-//   Variables
-// -------------------------------------
-
-$tsg-width: 900px;
-$tsg-width-desktop: 800px;
-$tsg-width-laptop: 100%;
-$tsg-border-color: lighten(color('border'), 5%);
-
-
-// -------------------------------------
 //   Base
 // -------------------------------------
 
 
 @include module (tsg) {
-  width: $tsg-width;
+  // -------------------------------------
+  //   Variables
+  // -------------------------------------
+
+  $testimonial-grid-width: 900px;
+  $testimonial-grid-width-desktop: 800px;
+  $testimonial-grid-width-laptop: 100%;
+  $testimonial-grid-border-color: lighten(color('border'), 5%);
+
+  width: $testimonial-grid-width;
   margin: 0 auto;
-  border: 1px solid $tsg-border-color;
+  border: 1px solid $testimonial-grid-border-color;
   display: table;
   @include border-radius(3px);
 
@@ -31,11 +30,11 @@ $tsg-border-color: lighten(color('border'), 5%);
   }
 
   @include desktop {
-    width: $tsg-width-desktop;
+    width: $testimonial-grid-width-desktop;
   }
 
   @include laptop {
-    width: $tsg-width-laptop;
+    width: $testimonial-grid-width-laptop;
   }
 
 
@@ -74,10 +73,10 @@ $tsg-border-color: lighten(color('border'), 5%);
   }
 
   @include element (item) {
-    height: $tsg-width/4;
+    height: $testimonial-grid-width/4;
     display: table-cell;
-    border-right: 1px solid $tsg-border-color;
-    border-bottom: 1px solid $tsg-border-color;
+    border-right: 1px solid $testimonial-grid-border-color;
+    border-bottom: 1px solid $testimonial-grid-border-color;
     position: relative;
     text-align: center;
     vertical-align: middle;
@@ -112,7 +111,7 @@ $tsg-border-color: lighten(color('border'), 5%);
   @include element (content) {
     width: 100%;
     padding: 40px;
-    z-index: $z-content + 1;
+    z-index: $global-z-content + 1;
     position: relative;
   }
 
@@ -124,7 +123,7 @@ $tsg-border-color: lighten(color('border'), 5%);
     bottom: 1px;
     overflow: hidden;
     background-size: cover;
-    z-index: $z-content;
+    z-index: $global-z-content;
 
     &:before {
       position: absolute;

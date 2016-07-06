@@ -5,21 +5,20 @@
 // This is for content that has a media item (usually an image) pulled to the left or right with text to the side. 
 
 
-
-
-// -------------------------------------
-//   Variables
-// -------------------------------------
-
-$fct-gutter: 40px;
-
 // -------------------------------------
 //   Base
 // -------------------------------------
 
 @include module( fct ) {
+
+  // -------------------------------------
+  //   Variables
+  // -------------------------------------
+
+  $featured-content-gutter: 40px;
+
   text-align: center;
-  padding-right: $fct-gutter;
+  padding-right: $featured-content-gutter;
 
   &:last-child {
     padding-right: 0;
@@ -118,8 +117,8 @@ $fct-gutter: 40px;
     }
 
     @include mobile {
-      @include adjust-font-size-to($base-font-size);
-      @include adjust-leading-to(1, $base-font-size);
+      @include adjust-font-size-to($default-font-size);
+      @include adjust-leading-to(1, $default-font-size);
     }
   }
 

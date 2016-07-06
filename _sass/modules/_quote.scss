@@ -2,13 +2,14 @@
 // Avatars
 // ======================================
 
-// Variables
-
-$quote-large-font-size: 16px;
-
 // Base
 
 @include module(quote) {
+
+  // Variables
+
+  $quote-large-font-size: 16px;
+  
   position: relative;
 
 
@@ -18,8 +19,8 @@ $quote-large-font-size: 16px;
       @include adjust-leading-to(1, $quote-large-font-size);
 
       @include mobile {
-        @include adjust-font-size-to($base-font-size);
-        @include adjust-leading-to(1, $base-font-size);
+        @include adjust-font-size-to($default-font-size);
+        @include adjust-leading-to(1, $default-font-size);
       }
     }
   }
@@ -70,7 +71,7 @@ $quote-large-font-size: 16px;
 
 
   @include element(byline_author) {
-    font-weight: $base-weight-bold;
+    font-weight: $default-weight-bold;
   }
 
   @include element(avatar) {

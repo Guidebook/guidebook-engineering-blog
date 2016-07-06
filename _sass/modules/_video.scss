@@ -6,18 +6,17 @@
 
 
 
-
-// -------------------------------------
-//   Variables
-// -------------------------------------
-
-$video-aspect-ratio: (281/500);
-
 // -------------------------------------
 //   Base
 // -------------------------------------
 
 @include module (vdo) {
+  // -------------------------------------
+  //   Variables
+  // -------------------------------------
+
+  $video-aspect-ratio: (281/500);
+  
   position: relative;
 
   &:before {
@@ -57,14 +56,14 @@ $video-aspect-ratio: (281/500);
     display: block;
     width: 150px;
     overflow: hidden;
-    @include border-radius($base-border-radius);
+    @include border-radius($default-border-radius);
     cursor: pointer;
 
     > img {
       width: 150px;
-      @include border-radius($base-border-radius);
+      @include border-radius($default-border-radius);
       display: block;
-      @include transition(transform $anim-ease $anim-speed-fast);
+      @include transition(transform $global-anim-ease $global-anim-speed-fast);
     }
 
     &:after {
@@ -76,8 +75,8 @@ $video-aspect-ratio: (281/500);
       background: rgba(255,255,255,.2);
       content: "";
       border: 1px solid rgba(0,0,0,.22);
-      @include border-radius($base-border-radius);
-      @include transition(background $anim-ease $anim-speed-fast);
+      @include border-radius($default-border-radius);
+      @include transition(background $global-anim-ease $global-anim-speed-fast);
       cursor: pointer;
     }
 
@@ -116,7 +115,7 @@ $video-aspect-ratio: (281/500);
     left: 50%;
     margin-left: -25px;
     @include transition(all ease-in-out 200ms);
-    z-index: $z-content + 2;
+    z-index: $global-z-content + 2;
 
     &:hover {
       opacity: 1;
@@ -132,8 +131,8 @@ $video-aspect-ratio: (281/500);
     color: color('steel-gray');
     @include adjust-font-size-to(10px);
     @include adjust-leading-to(1, 10px);
-    @include border-radius($base-border-radius - 1);
-    z-index: $z-content + 2;
+    @include border-radius($default-border-radius - 1);
+    z-index: $global-z-content + 2;
     padding: 0 3px;
     border: 1px solid rgba(0,0,0,.18);
   }

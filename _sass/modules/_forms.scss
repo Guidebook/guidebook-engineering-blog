@@ -4,16 +4,6 @@
 //
 // *************************************
 
-// -------------------------------------
-//   Variables
-// -------------------------------------
-
-$input-height: 40px;
-$labeled-input-height: 60px;
-$input-padding: 8px;
-$input-padding-large: 12px;
-$input-height-large: 50px;
-$input-height-large-mobile: 30px;
 
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
@@ -28,6 +18,17 @@ input[type="search"]::-webkit-search-results-decoration {
 
 
 @include module (frm) {
+
+  // -------------------------------------
+  //   Variables
+  // -------------------------------------
+
+  $form-input-height: 40px;
+  $form-input-padding: 8px;
+  $form-input-padding-large: 12px;
+  $form-input-height-large: 50px;
+  $form-input-height-large-mobile: 30px;
+
   position: relative;
     
 
@@ -55,11 +56,11 @@ input[type="search"]::-webkit-search-results-decoration {
 
   @include element( textfield ) {
     display: inline-block;
-    height: $input-height;
+    height: $form-input-height;
     @include border-radius(5px);
     -webkit-appearance: none;
     border: 1px solid color(border);
-    padding: 0 $input-padding;
+    padding: 0 $form-input-padding;
     outline: none;
     position: relative;
     z-index: 1;
@@ -105,14 +106,14 @@ input[type="search"]::-webkit-search-results-decoration {
 
   @include element (textfield-large) {
     @include adjust-font-size-to(40px);
-    padding: 0 $input-padding-large;
-    height: $input-height-large;
+    padding: 0 $form-input-padding-large;
+    height: $form-input-height-large;
     line-height: normal;
     font-weight: 400;
 
     @include tablet-and-mobile {
       @include adjust-font-size-to(20px);
-      height: $input-height-large-mobile;
+      height: $form-input-height-large-mobile;
     }
   }
 
@@ -177,14 +178,14 @@ input[type="search"]::-webkit-search-results-decoration {
   @include element (textarea) {
     @extend .frm_textfield;
     min-height: 150px;
-    padding: $input-padding;
+    padding: $form-input-padding;
   }
 
   @include element (select) {
     @extend .frm_textfield;
-    background: color('tint-gray') url($asset-url + "img/ic_select_arrows.png") 97% no-repeat;
+    background: color('tint-gray') url($eng-blog-asset-url + "img/ic_select_arrows.png") 97% no-repeat;
     -webkit-appearance: none;
-    font-weight: $base-weight-bold;
+    font-weight: $default-weight-bold;
   }
 
 }

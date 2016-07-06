@@ -1,0 +1,71 @@
+/**   
+  * DEFAULT VARIABLES
+  * ================= 
+  *
+  * These SASS variables overwrite global variables imported from common styles
+  * for this specific project only.
+  */
+
+/* Layout
+   ========================================================================== */
+
+// Maxes
+$default-max-width: 1200px;
+
+
+/* Grid Settings
+  ========================================================================== */
+$column-count : 24;
+$gutter : $default-padding * 2;
+$gutter-mobile: 20px;
+
+
+/* Breakpoints
+  ========================================================================== */
+$widescreen : 1300px;
+$desktop : 1240px;
+$laptop : 1020px;
+$tablet : 800px;
+$mobile : 400px;
+
+@mixin respond-to($type){
+  @if $type == mobile{
+    @media only screen and (max-width: $mobile) { @content; }
+  }
+  @elseif $type == tablet{
+    @media only screen and (min-width: $mobile + 1) and (max-width: $tablet) { @content; }
+  }
+  @elseif $type == laptop {
+    @media only screen and (min-width: $tablet + 1) and (max-width: $laptop) { @content; }
+  }
+  @elseif $type == desktop {
+    @media only screen and (min-width: $laptop + 1) and (max-width: $desktop) { @content; }
+  }
+  @elseif $type == widescreen {
+    @media only screen and (min-width: $desktop + 1) { @content; }
+  }
+}
+
+
+/* Grid Generator
+  ========================================================================== */
+
+  @function generateCols ($n){
+    @return ($n * 100% / $column-count);
+  }
+
+
+  @mixin col($n){
+
+    width : generateCols($n);
+    float : left;
+    display : inline;
+
+    @include respond-to(mobile) {
+      width: 100% !important;
+    }
+
+    @include respond-to(tablet) {
+      width: 100% !important;
+    }
+  }

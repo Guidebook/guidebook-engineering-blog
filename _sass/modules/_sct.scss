@@ -2,24 +2,24 @@
 //   Section Menu (SCT)
 // =====================================
 
-//   Variables
-
-$sct-background: #F4F9FC;
-
 //   Base
 
 @include module (sct) {
+  //   Variables
+
+  $section-menu-background: #F4F9FC;
+
   display: block;
   padding: 0;
   position: relative;
   width: 100%;
-  background-color: $sct-background;
-  border-bottom: 1px solid $base-stroke;
-  border-top: 1px solid $base-stroke;
+  background-color: $section-menu-background;
+  border-bottom: 1px solid $color-stroke;
+  border-top: 1px solid $color-stroke;
   height: auto;
   font-size: 0;
   line-height: 0;
-  z-index: $z-fixed;
+  z-index: $global-z-fixed;
   @include transform(translateZ(0));
 
 
@@ -52,8 +52,8 @@ $sct-background: #F4F9FC;
       left: 0;
       height: 1px;
       width: 100%;
-      background: $base-stroke;
-      z-index: $z-content;
+      background: $color-stroke;
+      z-index: $global-z-content;
     }
   }
 
@@ -67,13 +67,13 @@ $sct-background: #F4F9FC;
     left: 0;
     padding: 0;
     position: relative;
-    @include transition(left $anim-ease $anim-speed-fast);
+    @include transition(left $global-anim-ease $global-anim-speed-fast);
 
     @include mobile {
       overflow-y: hidden;
       overflow-x: scroll;
       position: relative;
-      z-index: $z-content + 1;
+      z-index: $global-z-content + 1;
       -webkit-overflow-scrolling: touch;
     }
   }
@@ -85,7 +85,7 @@ $sct-background: #F4F9FC;
     margin-bottom: -1px;
     border-bottom: 1px solid transparent;
     font-size: 0;
-    @include transition(border $anim-ease $anim-speed-normal);
+    @include transition(border $global-anim-ease $global-anim-speed-normal);
 
     a {
       display: block;
@@ -109,7 +109,7 @@ $sct-background: #F4F9FC;
     // Is Selected
 
     &.is-selected {
-      border-bottom-color: $base-ink !important;
+      border-bottom-color: $color-ink !important;
 
       .sct_title {
         color: color("steel-gray");
@@ -117,7 +117,7 @@ $sct-background: #F4F9FC;
     }
 
     &:hover {
-      border-bottom-color: transparentize($base-ink, .8);
+      border-bottom-color: transparentize($color-ink, .8);
 
       .sct_title {
         color: color("steel-gray");
@@ -146,7 +146,7 @@ $sct-background: #F4F9FC;
     line-height: 54px;
     opacity: 0;
     visibility: hidden;
-    @include transition(opacity $anim-ease $anim-speed-fast, visibility $anim-ease $anim-speed-fast);
+    @include transition(opacity $global-anim-ease $global-anim-speed-fast, visibility $global-anim-ease $global-anim-speed-fast);
 
     > .btn {
       display: inline-block;
@@ -156,8 +156,8 @@ $sct-background: #F4F9FC;
       padding-bottom: 0;
       height: 40px;
       vertical-align: middle;
-      font-family: $gotham;
-      font-weight: $base-weight-bold;
+      font-family: $global-gotham;
+      font-weight: $default-weight-bold;
       text-transform: uppercase;
     }
   }
@@ -168,7 +168,7 @@ $sct-background: #F4F9FC;
 
     @include non-mobile {
       @include box-shadow(0 1px 10px rgba(0,0,0,.06));
-      border-bottom: 1px solid darken($base-stroke, 10%);
+      border-bottom: 1px solid darken($color-stroke, 10%);
       position: fixed;
       top: 0;
       height: auto;
@@ -207,7 +207,7 @@ $sct-background: #F4F9FC;
     bottom: -1px;
     left: 0;
     width: 20%;
-    background: $base-ink;
+    background: $color-ink;
 
     .pjax-enabled & {
       visibility: visible;
@@ -215,8 +215,8 @@ $sct-background: #F4F9FC;
 
     &.animations-enabled {
       @include transition-property(left, width);
-      @include transition-timing-function($anim-ease);
-      @include transition-duration($anim-speed-normal);
+      @include transition-timing-function($global-anim-ease);
+      @include transition-duration($global-anim-speed-normal);
     }
   }
 
@@ -243,7 +243,7 @@ $sct-background: #F4F9FC;
     background-repeat: no-repeat;
     background-position: center;
     vertical-align: middle;
-    @include transition(transform $anim-slight-bounce $anim-speed-normal);
+    @include transition(transform $global-anim-slight-bounce $global-anim-speed-normal);
 
     @include mobile {
       display: none !important;
@@ -252,36 +252,36 @@ $sct-background: #F4F9FC;
 
 
   @include element(icon-overview) {
-    background-image: url($asset-url + "img/img_overview.png")
+    background-image: url($eng-blog-asset-url + "img/img_overview.png")
   }
 
   @include element(icon-events) {
-    background-image: url($asset-url + "img/img_events.png")
+    background-image: url($eng-blog-asset-url + "img/img_events.png")
   }
 
   @include element(icon-campuses) {
-    background-image: url($asset-url + "img/img_campuses.png")
+    background-image: url($eng-blog-asset-url + "img/img_campuses.png")
   }
 
   @include element(icon-places) {
-    background-image: url($asset-url + "img/img_places.png")
+    background-image: url($eng-blog-asset-url + "img/img_places.png")
   }
 
   @include element(icon-enterprise) {
-    background-image: url($asset-url + "img/img_enterprise.png")
+    background-image: url($eng-blog-asset-url + "img/img_enterprise.png")
   }
 
   @include element(title) {
-    @include transition(color $anim-ease $anim-speed-normal);
+    @include transition(color $global-anim-ease $global-anim-speed-normal);
     display: block;
     width:100%;
     line-height: 1;
     text-align: center;
     text-transform: uppercase;
-    font-family: $gotham;
+    font-family: $global-gotham;
     letter-spacing: 1px;
     color: color("medium-gray");
-    font-weight: $base-weight-bold;
+    font-weight: $default-weight-bold;
     white-space: nowrap;
   }
 }

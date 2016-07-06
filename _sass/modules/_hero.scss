@@ -4,16 +4,6 @@
 //
 // *************************************
 
-// -------------------------------------
-//   Variables
-// -------------------------------------
-
-
-$hero-min-height: 370px;
-$hero-max-height: 740px;
-$hero-max-height-mobile: 630px;
-$hero-max-height-tablet: 700px;
-
 
 // -------------------------------------
 //   Base
@@ -23,19 +13,19 @@ $hero-max-height-tablet: 700px;
 @include module (hero) {
   display: block;
   width: 100%;
-  height: $hero-max-height;
-  min-height: $hero-min-height;
+  height: $eng-blog-hero-max-height;
+  min-height: $eng-blog-hero-min-height;
   position: relative;
-  z-index: $z-content;
+  z-index: $global-z-content;
 
   @include mobile {
     height: auto;
-    max-height: $hero-max-height-mobile;
+    max-height: $eng-blog-hero-max-height-mobile;
   }
 
   @include tablet {
     height: auto;
-    max-height: $hero-max-height-tablet;
+    max-height: $eng-blog-hero-max-height-tablet;
   }
 
   &:after {
@@ -43,9 +33,9 @@ $hero-max-height-tablet: 700px;
     left: 0;
     right: 0;
     top: 0;
-    height: $navbar-height * 4;
+    height: $eng-blog-navbar-height * 4;
     content: "";
-    z-index: $z-content; // added so this is above the hero bgd
+    z-index: $global-z-content; // added so this is above the hero bgd
     @include background(linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.6)));
   }
 
@@ -58,34 +48,34 @@ $hero-max-height-tablet: 700px;
     opacity: 0;
     visibility: hidden;
     @include transition-property(opacity, visibility);
-    @include transition-duration($anim-speed-normal);
-    @include transition-timing-function($anim-ease);
+    @include transition-duration($global-anim-speed-normal);
+    @include transition-timing-function($global-anim-ease);
   }
 
   @include submodule ( flush ) {
-    margin-top:-($navbar-height) - $navbar-roof-height + 1; // fixes issues with zooming in/out in chromium, probably a rounding bug
-    z-index: $z-content;
-    padding-top: $navbar-height + $navbar-roof-height;
+    margin-top:-($eng-blog-navbar-height) - $eng-blog-navbar-roof-height + 1; // fixes issues with zooming in/out in chromium, probably a rounding bug
+    z-index: $global-z-content;
+    padding-top: $eng-blog-navbar-height + $eng-blog-navbar-roof-height;
 
     @include mobile {
-      margin-top: -$navbar-height-mobile;
-      padding-top: $navbar-height-mobile;
+      margin-top: -$eng-blog-navbar-height-mobile;
+      padding-top: $eng-blog-navbar-height-mobile;
     }
 
     @include tablet {
-      margin-top: -$navbar-height-mobile;
-      padding-top: $navbar-height-mobile;
+      margin-top: -$eng-blog-navbar-height-mobile;
+      padding-top: $eng-blog-navbar-height-mobile;
     }
   }
 
   @include submodule (has-figure) {
 
     @include mobile {
-      height: $hero-max-height-mobile;
+      height: $eng-blog-hero-max-height-mobile;
     }
 
     @include tablet {
-      height: $hero-max-height-tablet;
+      height: $eng-blog-hero-max-height-tablet;
     }
   }
 
@@ -126,7 +116,7 @@ $hero-max-height-tablet: 700px;
     bottom: 0;
     height: 1px;
     background-color: rgba(0, 0, 0, .15);
-    z-index: $z-content + 2;
+    z-index: $global-z-content + 2;
   }
 
   @include element (bgd) {
@@ -140,8 +130,8 @@ $hero-max-height-tablet: 700px;
     opacity: 0;
     visibility: hidden;
     @include transition-property(opacity, visibility);
-    @include transition-duration($anim-speed-v-slow);
-    @include transition-timing-function($anim-ease);
+    @include transition-duration($global-anim-speed-v-slow);
+    @include transition-timing-function($global-anim-ease);
 
     .hero-loaded & {
       opacity: 1;
@@ -149,7 +139,7 @@ $hero-max-height-tablet: 700px;
     }
 
     > img {
-      z-index: $z-content;
+      z-index: $global-z-content;
     }
   }
 
@@ -162,7 +152,7 @@ $hero-max-height-tablet: 700px;
       right: 0;
       bottom: 0;
       content: "";
-      z-index: $z-content + 1;
+      z-index: $global-z-content + 1;
       @include background(
         linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, .7))
       );
@@ -176,7 +166,7 @@ $hero-max-height-tablet: 700px;
   @include element (bgd-edu) {
     @include background(
       linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, .7)),
-      url($asset-url + "img/hero/img_hero_overview_blurred.jpg")
+      url($eng-blog-asset-url + "img/hero/img_hero_overview_blurred.jpg")
     );
   }
 
@@ -191,35 +181,35 @@ $hero-max-height-tablet: 700px;
   @include element (bgd-about) {
     @include background(
       linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, .7)),
-      url($asset-url + "img/hero/img_hero_tacos.jpg")
+      url($eng-blog-asset-url + "img/hero/img_hero_tacos.jpg")
     );
   }
 
   @include element (bgd-culture) {
     @include background(
       linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, .7)),
-      url($asset-url + "img/hero/img_hero_culture.jpg")
+      url($eng-blog-asset-url + "img/hero/img_hero_culture.jpg")
     );
   }
 
   @include element (bgd-team) {
     @include background(
       linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, .7)),
-      url($asset-url + "img/hero/img_hero_team.jpg")
+      url($eng-blog-asset-url + "img/hero/img_hero_team.jpg")
     );
   }
 
   @include element (bgd-careers) {
     @include background(
       linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, .7)),
-      url($asset-url + "img/hero/img_hero_company.jpg")
+      url($eng-blog-asset-url + "img/hero/img_hero_company.jpg")
     );
   }
 
   @include element (content) {
     height: 100%;
     position: relative;
-    z-index: $z-content + 2;
+    z-index: $global-z-content + 2;
     overflow: hidden;
   }
 
@@ -229,7 +219,7 @@ $hero-max-height-tablet: 700px;
     height: 100%;
     position: relative;
     padding-left: 4px;
-    z-index: $z-content + 2;
+    z-index: $global-z-content + 2;
 
     &:before {
       content: '';
@@ -260,15 +250,15 @@ $hero-max-height-tablet: 700px;
 
   @include element (cta) {
     position: relative;
-    z-index: $z-content + 1;
+    z-index: $global-z-content + 1;
     width: 50%;
     display: inline-block;
     opacity: 0;
     visibility: hidden;
     vertical-align: middle;
     @include transition-property(opacity, visibility);
-    @include transition-duration($anim-speed-v-slow);
-    @include transition-timing-function($anim-ease);
+    @include transition-duration($global-anim-speed-v-slow);
+    @include transition-timing-function($global-anim-ease);
 
     &.has-loaded {
       opacity: 1;
@@ -291,14 +281,14 @@ $hero-max-height-tablet: 700px;
     right: 100px;
     top: 0;
     bottom: 0;
-    z-index: $z-content + 1;
+    z-index: $global-z-content + 1;
     margin-top: 1em;
     opacity: 0;
     visibility: hidden;
     @include transition-property(transform, opacity, visibility);
     @include transition-delay(0.2s);
-    @include transition-duration($anim-speed-v-slow);
-    @include transition-timing-function($anim-slight-bounce);
+    @include transition-duration($global-anim-speed-v-slow);
+    @include transition-timing-function($global-anim-slight-bounce);
     @include transform(translate3d(0, 3em, 0));
 
     &.has-loaded {

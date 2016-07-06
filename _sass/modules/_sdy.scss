@@ -44,10 +44,10 @@
   }
 
   @include element (title) {
-    font-weight: $base-weight-bold;
+    font-weight: $default-weight-bold;
     text-transform: uppercase;
     color: color('blue');
-    font-family: $gotham;
+    font-family: $global-gotham;
 
     @include tablet-and-mobile {
       margin-top: 0;

@@ -10,11 +10,11 @@
     left: -25px;
     right: 0;
     bottom: 0;
-    background-image: url($asset-url + 'img/builder/img_builder_hero_bgd.png');
+    background-image: url($eng-blog-asset-url + 'img/builder/img_builder_hero_bgd.png');
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
-    @include transition(all $anim-slight-bounce 2s);
+    @include transition(all $global-anim-slight-bounce 2s);
     @include transform(scale(.9) translateZ(0));
     opacity: 0;
 
@@ -24,7 +24,7 @@
     }
 
     &.is-completed-animation {
-      @include animation(grow-shrink-slight 10s infinite $anim-ease);
+      @include animation(grow-shrink-slight 10s infinite $global-anim-ease);
       opacity: 1;
     }
 
@@ -36,7 +36,7 @@
 
   @include element("hero_phones") {
     opacity: 0;
-    @include transition(all $anim-slight-bounce 650ms);
+    @include transition(all $global-anim-slight-bounce 650ms);
     @include transform(translateY(50px) translateZ(0));
     @include transition-delay(350ms);
     max-width: 685px;
@@ -63,11 +63,11 @@
     left: 108%;
     height: 1px;
     top: 18px;
-    z-index: $z-content;
+    z-index: $global-z-content;
     opacity: 0;
     width: 0;
 
-    @include transition(all $anim-slight-resistance 1s);
+    @include transition(all $global-anim-slight-resistance 1s);
 
     &:after {
       position: absolute;

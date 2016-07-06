@@ -5,22 +5,22 @@
 // *************************************
 
 // -------------------------------------
-//   Variables
-// -------------------------------------
-
-$testimonial-height: 650px;
-$testimonial-height-mobile: 0;
-$testimonial-height-tablet: 350px;
-
-// -------------------------------------
 //   Base
 // -------------------------------------
 
 
 @include module (tst) {
+  // -------------------------------------
+  //   Variables
+  // -------------------------------------
+
+  $testimonial-block-height: 650px;
+  $testimonial-block-height-mobile: 0;
+  $testimonial-block-height-tablet: 350px;
+  
   display: block;
   width: 100%;
-  min-height: $testimonial-height;
+  min-height: $testimonial-block-height;
   position: relative;
   border-bottom: 1px solid #ccc;
   border-top: 1px solid #ccc;
@@ -34,7 +34,7 @@ $testimonial-height-tablet: 350px;
     bottom: 0;
     width: 1px;
     background: rgba(0, 0, 0, .2);
-    z-index: $z-content + 3;
+    z-index: $global-z-content + 3;
   }
    
   &:before {
@@ -46,11 +46,11 @@ $testimonial-height-tablet: 350px;
     width: 1px;
     z-index: 2;
     background: rgba(0, 0, 0, .2);
-    z-index: $z-content + 3;
+    z-index: $global-z-content + 3;
   }
 
   @include mobile {
-    min-height: $testimonial-height-mobile;
+    min-height: $testimonial-block-height-mobile;
     margin-bottom: rhythm(1);
 
     &:before, &:after {
@@ -59,7 +59,7 @@ $testimonial-height-tablet: 350px;
   }
 
   @include tablet {
-    min-height: $testimonial-height-tablet;
+    min-height: $testimonial-block-height-tablet;
     margin-bottom: rhythm(1);
 
     &:before, &:after {
@@ -121,7 +121,7 @@ $testimonial-height-tablet: 350px;
     right: 0;
     opacity: .7;
     background: white;
-    z-index: $z-content + 1;
+    z-index: $global-z-content + 1;
   }
 
   @include element (content) {
@@ -134,7 +134,7 @@ $testimonial-height-tablet: 350px;
     min-height: 380px;
     background: rgba(255, 255, 255, .95);
     @include box-shadow(0 -1px 0 rgba(0, 0, 0, .2));
-    z-index: $z-content + 2;
+    z-index: $global-z-content + 2;
 
     @include mobile {
       top: 0;
@@ -164,7 +164,7 @@ $testimonial-height-tablet: 350px;
   @include element (byline) {
     padding: 0;
     margin-left: ($gdc-width + 40px);
-    color: $base-secondary;
+    color: $color-secondary;
     @include adjust-font-size-to(13px);
     @include adjust-leading-to(1, 13px);
 
@@ -182,7 +182,7 @@ $testimonial-height-tablet: 350px;
 
   @include element (byline_author) {
       display:block;
-      font-weight: $base-weight-bold;
+      font-weight: $default-weight-bold;
   }
 
   @include element (card) {

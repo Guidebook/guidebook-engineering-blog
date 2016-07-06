@@ -29,7 +29,7 @@
     "vinyl-source-stream": "^1.1.0",
     "jshint": "^2.8.0",
     "pjax": "git://github.com/pklada/pjax.git",
-    "guidebook-common-styles": "git+ssh://git@github.guidebook.com:Guidebook/common-styles.git#v1.2.2"
+    "guidebook-common-styles": "git+ssh://git@github.guidebook.com:Guidebook/common-styles.git#v1.3.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
