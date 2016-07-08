@@ -43,7 +43,7 @@
   * ================= 
   *
   * These SASS variables will act as global variables in all projects unless
-  * overwritten in the project's default.scss.
+  * overwritten by the project's default.scss.
   */
 /* Font Properties
    ========================================================================== */
@@ -148,7 +148,7 @@ html {
   * ENGINEERING BLOG VARIABLES
   * ========================== 
   *
-  * These SASS variables are used globally only within the engineering 
+  * These SASS variables are used only within the engineering 
   * blog (guidebook-engineering-blog). 
   */
 /* Server Variables
