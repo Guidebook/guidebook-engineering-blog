@@ -47,34 +47,51 @@
   */
 /* Font Properties
    ========================================================================== */
+html {
+  font-size: 81.25%;
+  line-height: 1.76923em;
+}
+
 .small-font {
-  font-size: 0.6875em;
-  line-height: 2.18182em;
+  font-size: 11px;
+  font-size: 0.84615rem;
+  line-height: 23px;
+  line-height: 1.76923rem;
 }
 
 .normal-font {
-  font-size: 0.8125em;
-  line-height: 1.84615em;
+  font-size: 13px;
+  font-size: 1rem;
+  line-height: 23px;
+  line-height: 1.76923rem;
 }
 
 .med-font {
-  font-size: 0.9375em;
-  line-height: 1.6em;
+  font-size: 15px;
+  font-size: 1.15385rem;
+  line-height: 23px;
+  line-height: 1.76923rem;
 }
 
 .large-font {
-  font-size: 1.125em;
-  line-height: 1.33333em;
+  font-size: 18px;
+  font-size: 1.38462rem;
+  line-height: 23px;
+  line-height: 1.76923rem;
 }
 
 .xlarge-font {
-  font-size: 1.5em;
-  line-height: 2em;
+  font-size: 24px;
+  font-size: 1.84615rem;
+  line-height: 35px;
+  line-height: 2.65385rem;
 }
 
 .giant-font {
-  font-size: 2.25em;
-  line-height: 1.33333em;
+  font-size: 36px;
+  font-size: 2.76923rem;
+  line-height: 46px;
+  line-height: 3.53846rem;
 }
 
 /* Layout
@@ -83,11 +100,6 @@
    ========================================================================== */
 /* Compass Variables
    ========================================================================== */
-html {
-  font-size: 81.25%;
-  line-height: 1.76923em;
-}
-
 .img-responsive {
   max-width: 100%;
   height: auto;
@@ -3545,7 +3557,7 @@ p > code, ul > code, ol > code {
   border-color: rgba(255, 255, 255, 0.8);
 }
 .nav-inverse .nav_item > .logo {
-  background: url('../img/img_nav_logo_light.png?1467135860') center no-repeat;
+  background: url('../img/img_nav_logo_light.png?1547232548') center no-repeat;
 }
 @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
   .nav-inverse .nav_item > .logo {
@@ -4142,15 +4154,15 @@ p > code, ul > code, ol > code {
 }
 
 /*!
- *  Font Awesome 4.6.3 by @davegandy - http://fontawesome.io - @fontawesome
+ *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
 /* FONT PATH
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url("../fonts/fontawesome-webfont.eot?v=4.6.3");
-  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.6.3") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff2?v=4.6.3") format("woff2"), url("../fonts/fontawesome-webfont.woff?v=4.6.3") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.6.3") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular") format("svg");
+  src: url("../fonts/fontawesome-webfont.eot?v=4.7.0");
+  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("../fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -6527,6 +6539,7 @@ p > code, ul > code, ol > code {
 }
 
 .fa-battery-4:before,
+.fa-battery:before,
 .fa-battery-full:before {
   content: "";
 }
@@ -6981,6 +6994,184 @@ p > code, ul > code, ol > code {
 .fa-fa:before,
 .fa-font-awesome:before {
   content: "";
+}
+
+.fa-handshake-o:before {
+  content: "";
+}
+
+.fa-envelope-open:before {
+  content: "";
+}
+
+.fa-envelope-open-o:before {
+  content: "";
+}
+
+.fa-linode:before {
+  content: "";
+}
+
+.fa-address-book:before {
+  content: "";
+}
+
+.fa-address-book-o:before {
+  content: "";
+}
+
+.fa-vcard:before,
+.fa-address-card:before {
+  content: "";
+}
+
+.fa-vcard-o:before,
+.fa-address-card-o:before {
+  content: "";
+}
+
+.fa-user-circle:before {
+  content: "";
+}
+
+.fa-user-circle-o:before {
+  content: "";
+}
+
+.fa-user-o:before {
+  content: "";
+}
+
+.fa-id-badge:before {
+  content: "";
+}
+
+.fa-drivers-license:before,
+.fa-id-card:before {
+  content: "";
+}
+
+.fa-drivers-license-o:before,
+.fa-id-card-o:before {
+  content: "";
+}
+
+.fa-quora:before {
+  content: "";
+}
+
+.fa-free-code-camp:before {
+  content: "";
+}
+
+.fa-telegram:before {
+  content: "";
+}
+
+.fa-thermometer-4:before,
+.fa-thermometer:before,
+.fa-thermometer-full:before {
+  content: "";
+}
+
+.fa-thermometer-3:before,
+.fa-thermometer-three-quarters:before {
+  content: "";
+}
+
+.fa-thermometer-2:before,
+.fa-thermometer-half:before {
+  content: "";
+}
+
+.fa-thermometer-1:before,
+.fa-thermometer-quarter:before {
+  content: "";
+}
+
+.fa-thermometer-0:before,
+.fa-thermometer-empty:before {
+  content: "";
+}
+
+.fa-shower:before {
+  content: "";
+}
+
+.fa-bathtub:before,
+.fa-s15:before,
+.fa-bath:before {
+  content: "";
+}
+
+.fa-podcast:before {
+  content: "";
+}
+
+.fa-window-maximize:before {
+  content: "";
+}
+
+.fa-window-minimize:before {
+  content: "";
+}
+
+.fa-window-restore:before {
+  content: "";
+}
+
+.fa-times-rectangle:before,
+.fa-window-close:before {
+  content: "";
+}
+
+.fa-times-rectangle-o:before,
+.fa-window-close-o:before {
+  content: "";
+}
+
+.fa-bandcamp:before {
+  content: "";
+}
+
+.fa-grav:before {
+  content: "";
+}
+
+.fa-etsy:before {
+  content: "";
+}
+
+.fa-imdb:before {
+  content: "";
+}
+
+.fa-ravelry:before {
+  content: "";
+}
+
+.fa-eercast:before {
+  content: "";
+}
+
+.fa-microchip:before {
+  content: "";
+}
+
+.fa-snowflake-o:before {
+  content: "";
+}
+
+.fa-superpowers:before {
+  content: "";
+}
+
+.fa-wpexplorer:before {
+  content: "";
+}
+
+.fa-meetup:before {
+  content: "";
 }
 
 .sr-only {
