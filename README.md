@@ -1,6 +1,6 @@
 # Guidebook Engineering Blog
 
-This repo is a static site for the [Guidebook Engineering Blog](http://engineering.guidebook.com). The site leverages the [Jekyll static site generator](https://jekyllrb.com/).
+This repo is a static site for the [Guidebook Engineering Blog](https://engineering.guidebook.com). The site leverages the [Jekyll static site generator](https://jekyllrb.com/).
 
 # Adding Content
 Adding content should follow the same development workflow we use for code reviews.

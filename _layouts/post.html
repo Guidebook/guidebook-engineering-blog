@@ -26,14 +26,14 @@ translate: false
     <div class="post_meta">
       <div class="post_authors {% if page.authors.size == 1 %}l-hidden-desktop l-hidden-widescreen{% endif %}">
         {% for author in page.authors %}
-          <span class="avatar avatar-30 vam"><img src="http://guidebook.com/img/team/{{ author.slug }}.png" class="avatar_image" /></span>
+          <span class="avatar avatar-30 vam"><img src="https://guidebook.com/img/team/{{ author.slug }}.png" class="avatar_image" /></span>
         {% endfor %}
         <div class="post_authors_names">
           {% assign twitterNames = '' %}
           {% for author in page.authors %}
             <span class="post_authors_names_name">
               {% if author.twitter %}
-                <a href="http://twitter.com/{{author.twitter}}" class="gray-link">
+                <a href="https://twitter.com/{{author.twitter}}" class="gray-link">
                 {% capture twitterNames %}{{ twitterNames | append: " @" | append: author.twitter }}{% endcapture %}
               {% endif %}
               {{ author.name }}
@@ -68,9 +68,9 @@ translate: false
       {% if page.authors.size == 1 %}
       <div class="post_author tac l-hidden-laptop">
         <div class="avatar">
-          <img src="http://guidebook.com/img/team/{{ page.authors[0].slug }}.png" class="avatar_image" />
+          <img src="https://guidebook.com/img/team/{{ page.authors[0].slug }}.png" class="avatar_image" />
         </div>
-        <h3 class="post_author_name">{% if page.authors[0].twitter %}<a href="http://twitter.com/{{page.authors[0].twitter}}/" class="gray-link">{% endif %}{{ page.authors[0].name }}{% if page.authors[0].twitter %}</a>{% endif %}</h3>
+        <h3 class="post_author_name">{% if page.authors[0].twitter %}<a href="https://twitter.com/{{page.authors[0].twitter}}/" class="gray-link">{% endif %}{{ page.authors[0].name }}{% if page.authors[0].twitter %}</a>{% endif %}</h3>
         <span class="post_author_title">{{ page.authors[0].title }}</span>
       </div>
       {% endif %}
@@ -82,7 +82,7 @@ translate: false
     <div class="section-divider"><hr /></div>
 
     <div class="post_actions tac">
-      <a target="_blank" class="btn btn-secondary btn-large" href="http://twitter.com/share?text=Guidebook Engineering - {{ page.title }}{% if twitterNames != ''%} by{{twitterNames}}{% endif %}&url=http://engineering.guidebook.com{{ page.url }}&via=guidebook">
+      <a target="_blank" class="btn btn-secondary btn-large" href="https://twitter.com/share?text=Guidebook Engineering - {{ page.title }}{% if twitterNames != ''%} by{{twitterNames}}{% endif %}&url=https://engineering.guidebook.com{{ page.url }}&via=guidebook">
         <i class="fa fa-twitter"></i> Share on Twitter
       </a>
       {% for button in page.custom_buttons %}

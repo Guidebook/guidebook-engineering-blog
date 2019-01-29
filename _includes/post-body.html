@@ -7,14 +7,14 @@
 
     <div class="post_authors {% if page.authors.size == 1 %}l-hidden-desktop l-hidden-widescreen{% endif %}">
       {% for author in post.authors %}
-      <span class="avatar avatar-30 vam"><img src="http://guidebook.com/img/team/{{ author.slug }}.png" class="avatar_image" /></span>
+      <span class="avatar avatar-30 vam"><img src="https://guidebook.com/img/team/{{ author.slug }}.png" class="avatar_image" /></span>
       {% endfor %}
       <div class="post_authors_names l-pipes">
       {% assign twitterNames = '' %}
       {% for author in post.authors %}
         <span class="post_authors_names_name">
           {% if author.twitter %}
-            <a href="http://twitter.com/{{author.twitter}}" class="gray-link">
+            <a href="https://twitter.com/{{author.twitter}}" class="gray-link">
             {% capture twitterNames %}{{ twitterNames | append: " @" | append: author.twitter }}{% endcapture %}
           {% endif %}
           {{author.name}}
@@ -41,7 +41,7 @@
 
   <div class="post_actions tac">
     <a class="btn btn-primary js-pjax" href="{{ site.baseurl }}{{ post.url }}">Continue reading</a>
-    <a target="_blank" class="btn btn-secondary " href="http://twitter.com/share?text=Guidebook Engineering - {{ post.title }}{% if twitterNames != ''%} by{{twitterNames}}{% endif %}&url=http://engineering.guidebook.com{{ post.url }}&via=guidebook">
+    <a target="_blank" class="btn btn-secondary " href="https://twitter.com/share?text=Guidebook Engineering - {{ post.title }}{% if twitterNames != ''%} by{{twitterNames}}{% endif %}&url=https://engineering.guidebook.com{{ post.url }}&via=guidebook">
       <i class="fa fa-twitter"></i> Share on Twitter
     </a>
     {% for button in post.custom_buttons %}

@@ -65,6 +65,6 @@ Let us know if you use it within your app or if you have any questions on implem
 
 ---
 <sup>1</sup>
-[secureTextEntry clearing text](http://stackoverflow.com/a/29195723/1417922),
+[secureTextEntry clearing text](https://stackoverflow.com/a/29195723/1417922),
 [secureTextEntry incorrect Font](https://stackoverflow.com/questions/35293379/uitextfield-securetextentry-toggle-set-incorrect-font),
 [rightView wonky animation](https://stackoverflow.com/questions/18853972/how-to-stop-the-animation-of-uitextfield-rightview)

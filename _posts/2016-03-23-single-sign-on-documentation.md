@@ -136,6 +136,6 @@ Once you have verified that everything is working in the browser you will need t
 The Mobile Application will gate user access to both the application itself as well as guides within the application based on successful user authentication using the SSO handshake you created above.
 
 ## Help
-If you need help configuring your SAML IdP to work with Guidebook, feel free to reach out to your Account Executive or `web-team@guidebook.com` for assistance.
+If you need help configuring your SAML IdP to work with Guidebook, feel free to reach out to your Account Executive or `support@guidebook.com` for assistance.
 
 Here is more information around [using Google as an SSO IdP](https://support.google.com/a/answer/6087519?hl=en).
