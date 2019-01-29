@@ -76,7 +76,7 @@ Click on the 'Enable SSO for a SAML Application' button to add Guidebook as a ne
 
 
 ### Step 5 - Download IdP Information
-Copy your `SSO URL` and `Entity ID` values and download your SSO certificate (essentially your public key). You will need to send all three items to your Account Executive or email them to `web-team@guidebook.com` with the subject, "Your Company Name: SSO IdP Information".
+Copy your `SSO URL` and `Entity ID` values and download your SSO certificate (essentially your public key). You will need to send all three items to your Account Executive or email them to `support@guidebook.com@guidebook.com` with the subject, "Your Company Name: SSO IdP Information".
 
 {% include image-container.html image='https://s3.amazonaws.com/media.guidebook.com/sso-docs/07-idp-info.png' caption='Grab Your IdP Information' %}
 
